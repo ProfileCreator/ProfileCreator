@@ -1,6 +1,8 @@
 # ProfileCreator
 macOS application to create configuration profiles.
 
+![ProfileCreator](https://github.com/erikberglund/ProfileCreator/blob/master/resources/screenshots/ProfileCreator.png)
+
 # System Requirements
 ProfileCreator requires macOS 10.12 or newer.
 
@@ -9,17 +11,7 @@ UI Icons have been taken from the following sites:
 
 * [icons8.com](https://icons8.com)
 
-# License
-    Copyright 2016 Erik Berglund. All rights reserved.
-    
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-    
-      http://www.apache.org/licenses/LICENSE-2.0
-    
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+Open Source code included in this project:
+
+* [WFColorCode](https://github.com/1024jp/WFColorCode)
+* [Highlightr](https://github.com/raspu/Highlightr)
