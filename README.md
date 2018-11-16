@@ -1,3 +1,7 @@
+# Download
+
+Download the latest version from: [Releases](https://github.com/erikberglund/ProfileCreator/releases)
+
 # ProfileCreator
 macOS application to create configuration profiles.
 
