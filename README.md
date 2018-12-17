@@ -2,6 +2,16 @@
 
 Download the latest version from: [Releases](https://github.com/erikberglund/ProfileCreator/releases)
 
+# Contribute
+
+If you want to contribute to the payloads available in this project, please go to the ProfileManifests repo:
+
+[ProfileManifests](https://github.com/erikberglund/ProfileManifests)
+
+There is a getting started guite to describe the basics on how to create your own manifest for this application:
+
+[ProfileManifests - Getting Started](https://github.com/erikberglund/ProfileManifests/wiki/Getting-Started)
+
 # ProfileCreator
 macOS application to create configuration profiles.
 
