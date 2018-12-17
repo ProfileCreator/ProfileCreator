@@ -8,7 +8,7 @@ If you want to contribute to the payloads available in this project, please go t
 
 [ProfileManifests](https://github.com/erikberglund/ProfileManifests)
 
-There is a getting started guite to describe the basics on how to create your own manifest for this application:
+There is a getting started guite to describe the basics on how to create your own manifest:
 
 [ProfileManifests - Getting Started](https://github.com/erikberglund/ProfileManifests/wiki/Getting-Started)
 
