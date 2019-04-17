@@ -1,3 +1,5 @@
+![Latest pre-release version tag](https://img.shields.io/github/tag-date/erikberglund/ProfileCreator.svg)  ![Total pre-release Downloads](https://img.shields.io/github/downloads-pre/erikberglund/ProfileCreator/latest/total.svg)
+
 # Download
 
 Download the latest version from: [Releases](https://github.com/erikberglund/ProfileCreator/releases)
