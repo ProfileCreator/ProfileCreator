@@ -6,9 +6,9 @@
         <language>en</language>
         <item>
             <title>Version 0.2.5</title>
-            <sparkle:releaseNotesLink>https://raw.githubusercontent.com/erikberglund/ProfileCreator/master/README.md</sparkle:releaseNotesLink>
+            <sparkle:releaseNotesLink>https://profilecreator.github.io/releasenotes/v0.2.5-beta.10.html</sparkle:releaseNotesLink>
             <pubDate>Wed, 10 Apr 2019 22:38:11 +0200</pubDate>
-            <enclosure url="https://github.com/erikberglund/ProfileCreator/releases/download/v0.2.5-beta.10/ProfileCreator_v0.2.5-beta.10.dmg" sparkle:version="2.0" length="8260890" type="application/octet-stream" />
+            <enclosure url="https://github.com/erikberglund/ProfileCreator/releases/download/v0.2.5-beta.10/ProfileCreator_v0.2.5-beta.10.dmg" sparkle:version="0.2.5" length="8260890" type="application/octet-stream" />
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
         </item>
     </channel>
