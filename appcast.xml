@@ -9,7 +9,7 @@
             <pubDate>Wed, 10 Apr 2019 22:38:11 +0200</pubDate>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
             <sparkle:releaseNotesLink>https://profilecreator.github.io/releasenotes/v0.2.5-beta.10.html</sparkle:releaseNotesLink>
-            <sparkle:version="0.2.5"</sparkle:version>
+            <sparkle:version>0.2.5</sparkle:version>
             <enclosure url="https://github.com/erikberglund/ProfileCreator/releases/download/v0.2.5-beta.10/ProfileCreator_v0.2.5-beta.10-sparkle.dmg" length="8260890" type="application/octet-stream" />
         </item>
     </channel>
