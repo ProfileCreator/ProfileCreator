@@ -5,11 +5,11 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 0.2.5</title>
-            <pubDate>Wed, 10 Apr 2019 22:38:11 +0200</pubDate>
+            <title>Version 0.3.0</title>
+            <pubDate>Fri, 17 May 2019 14:27:26 +0200</pubDate>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
-            <sparkle:releaseNotesLink>https://profilecreator.github.io/releasenotes/v0.2.5-beta.10.html</sparkle:releaseNotesLink>
-            <enclosure url="https://github.com/erikberglund/ProfileCreator/releases/download/v0.2.5-beta.10/ProfileCreator_v0.2.5-beta.10-sparkle.dmg" sparkle:version="0.2.5" length="8260890" type="application/octet-stream" />
+            <sparkle:releaseNotesLink>https://profilecreator.github.io/releasenotes/v0.3.0.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/erikberglund/ProfileCreator/releases/download/v0.3.0-201905171401/ProfileCreator_v0.3.0-201905171401-beta.dmg" sparkle:version="201905171401" length="12231226" type="application/octet-stream"/>
         </item>
     </channel>
 </rss>
