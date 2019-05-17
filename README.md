@@ -32,7 +32,7 @@ ProfileCreator requires macOS 10.12 or newer.
 
 Icon is created by Katherine M. Ahern:
 
-* [kateahern.com](kateahern.com)
+* [kateahern.com](https://kateahern.com)
 
 UI Icons have been taken from the following sites:
 
