@@ -2,7 +2,9 @@
 
 # Download
 
-Download the latest version from: [Releases](https://github.com/erikberglund/ProfileCreator/releases)
+Download the latest version here: [ProfileCreator_v0.2.5-beta.10-HFS.dmg](https://github.com/erikberglund/ProfileCreator/releases/download/v0.2.5-beta.10/ProfileCreator_v0.2.5-beta.10-HFS.dmg)
+
+If you are having issues with the DMG, check out any of the other download options in: [Releases](https://github.com/erikberglund/ProfileCreator/releases)
 
 # Contribute
 
