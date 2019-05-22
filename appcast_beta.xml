@@ -9,14 +9,14 @@
             <pubDate>Wed, 22 May 2019 21:29:55 +0200</pubDate>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
             <sparkle:releaseNotesLink>https://profilecreator.github.io/releasenotes/v0.3.1.html</sparkle:releaseNotesLink>
-            <enclosure url="https://github.com/erikberglund/ProfileCreator/releases/download/v0.3.1/ProfileCreator_v0.3.1-201905222119-beta.dmg" sparkle:version="201905222119" length="12227804" type="application/octet-stream"/>
+            <enclosure url="https://github.com/erikberglund/ProfileCreator/releases/download/v0.3.1/ProfileCreator_v0.3.1-201905222119-beta.dmg" sparkle:shortVersionString="0.3.1" sparkle:version="201905222119" length="12227804" type="application/octet-stream"/>
         </item>
         <item>
             <title>Version 0.3.0</title>
             <pubDate>Fri, 17 May 2019 14:27:26 +0200</pubDate>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
             <sparkle:releaseNotesLink>https://profilecreator.github.io/releasenotes/v0.3.0.html</sparkle:releaseNotesLink>
-            <enclosure url="https://github.com/erikberglund/ProfileCreator/releases/download/v0.3.0/ProfileCreator_v0.3.0-201905171401-beta.dmg" sparkle:version="201905171401" length="12231226" type="application/octet-stream"/>
+            <enclosure url="https://github.com/erikberglund/ProfileCreator/releases/download/v0.3.0/ProfileCreator_v0.3.0-201905171401-beta.dmg" sparkle:shortVersionString="0.3.0" sparkle:version="201905171401" length="12231226" type="application/octet-stream"/>
         </item>
     </channel>
 </rss>
