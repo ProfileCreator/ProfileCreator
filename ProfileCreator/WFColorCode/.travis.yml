@@ -1,0 +1,11 @@
+language: objective-c
+osx_image: xcode10
+
+script:
+  - swiftlint
+  - swift test
+  - set -o pipefail
+  - xcodebuild -scheme ColorCode test | xcpretty
+  - pod lib lint --quick
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
