@@ -6,7 +6,7 @@
 
 # Download
 
-Download the latest version here: [ProfileCreator_v0.3.1-201905222119-beta.dmg](https://github.com/erikberglund/ProfileCreator/releases/download/v0.3.1/ProfileCreator_v0.3.1-201905222119-beta.dmg)
+Download the latest version here: [ProfileCreator_v0.3.2-201907171032-beta.dmg](https://github.com/ProfileCreator/ProfileCreator/releases/download/v0.3.2/ProfileCreator_v0.3.2-201907171032-beta.dmg)
 
 If you are having issues with the DMG, check out any of the other download options in: [Releases](https://github.com/erikberglund/ProfileCreator/releases)
 
