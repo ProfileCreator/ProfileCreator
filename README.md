@@ -1,32 +1,40 @@
 <p align="center">
-  <img width="256" height="256" src="https://github.com/erikberglund/ProfileCreator/blob/master/resources/wiki/256.png">
+  <img width="256" height="256" src="https://github.com/ProfileCreator/ProfileCreator/blob/master/resources/wiki/256.png">
 </p>
 
-[![Latest pre-release version tag](https://img.shields.io/github/tag-date/erikberglund/ProfileCreator.svg)](https://github.com/erikberglund/ProfileCreator/releases/latest)
+[![Latest pre-release version tag](https://img.shields.io/github/tag-date/ProfileCreator/ProfileCreator.svg)](https://github.com/ProfileCreator/ProfileCreator/releases/latest)
 
 # Download
 
 Download the latest version here: [ProfileCreator_v0.3.2-201907171032-beta.dmg](https://github.com/ProfileCreator/ProfileCreator/releases/download/v0.3.2/ProfileCreator_v0.3.2-201907171032-beta.dmg)
 
-If you are having issues with the DMG, check out any of the other download options in: [Releases](https://github.com/erikberglund/ProfileCreator/releases)
+If you are having issues with the DMG, check out any of the other download options in: [Releases](https://github.com/ProfileCreator/ProfileCreator/releases)
 
 # Contribute
 
 If you want to contribute to the payloads available in this project, please go to the ProfileManifests repo:
 
-[ProfileManifests](https://github.com/erikberglund/ProfileManifests)
+[ProfileManifests](https://github.com/ProfileCreator/ProfileManifests)
 
 There is a getting started guite to describe the basics on how to create your own manifest:
 
-[ProfileManifests - Getting Started](https://github.com/erikberglund/ProfileManifests/wiki/Getting-Started)
+[ProfileManifests - Getting Started](https://github.com/ProfileCreator/ProfileManifests/wiki/Getting-Started)
 
 # ProfileCreator
 macOS application to create configuration profiles.
 
-![ProfileCreator](https://github.com/erikberglund/ProfileCreator/blob/master/resources/screenshots/ProfileCreator.png)
+![ProfileCreator](https://github.com/ProfileCreator/ProfileCreator/blob/master/resources/screenshots/ProfileCreator.png)
 
 # System Requirements
 ProfileCreator requires macOS 10.12 or newer.
+
+# Development
+The ProfileCreator app is not currently under active development.  All are welcome to contribute to it, however the original developer has moved on from the project.  As such, any feature enhancements and/or bug fixes to the app itself are stalled. 
+
+However, the [ProfileManifests](https://github.com/ProfileCreator/ProfileManifests) project which supplies ProfileCreator with its payloads is very much active!
+
+# Have Questions?
+Consult [the wiki](https://github.com/ProfileCreator/ProfileCreator/wiki). Join the conversion over in the #profilecreator channel in the [MacAdmins Slack](https://www.macadmins.org/).
 
 # Acknowledgements
 
