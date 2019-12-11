@@ -2,7 +2,9 @@
   <img width="256" height="256" src="https://github.com/ProfileCreator/ProfileCreator/blob/master/resources/wiki/256.png">
 </p>
 
-[![Latest pre-release version tag](https://img.shields.io/github/tag-date/ProfileCreator/ProfileCreator.svg)](https://github.com/ProfileCreator/ProfileCreator/releases/latest)
+[![Latest pre-release version tag](https://img.shields.io/github/tag-date/ProfileCreator/ProfileCreator.svg)](https://github.com/ProfileCreator/ProfileCreator/releases/latest) ![Latest release download total](https://img.shields.io/github/downloads/ProfileCreator/ProfileCreator/v0.3.2/total)
+
+
 
 # Download
 
