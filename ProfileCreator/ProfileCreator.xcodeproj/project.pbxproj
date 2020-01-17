@@ -888,6 +888,7 @@
 				53E24C7620E8AC1600FB87F9 /* ReleaseNotes */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		5398320F1F0EE15400C4792D /* Products */ = {
 			isa = PBXGroup;
