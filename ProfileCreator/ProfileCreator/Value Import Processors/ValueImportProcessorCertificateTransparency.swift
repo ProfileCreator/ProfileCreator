@@ -25,18 +25,18 @@ class ValueImportProcessorCertificateTransparency: ValueImportProcessor {
         var asn1Header: Data? {
             switch self {
             case .rsa2048:
-                return Data(bytes: [ 0x30, 0x82, 0x01, 0x22, 0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86,
-                                     0xf7, 0x0d, 0x01, 0x01, 0x01, 0x05, 0x00, 0x03, 0x82, 0x01, 0x0f, 0x00 ])
+                return Data([ 0x30, 0x82, 0x01, 0x22, 0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86,
+                              0xf7, 0x0d, 0x01, 0x01, 0x01, 0x05, 0x00, 0x03, 0x82, 0x01, 0x0f, 0x00 ])
             case .rsa4096:
-                return Data(bytes: [ 0x30, 0x82, 0x02, 0x22, 0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86,
-                                     0xf7, 0x0d, 0x01, 0x01, 0x01, 0x05, 0x00, 0x03, 0x82, 0x02, 0x0f, 0x00 ])
+                return Data([ 0x30, 0x82, 0x02, 0x22, 0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86,
+                              0xf7, 0x0d, 0x01, 0x01, 0x01, 0x05, 0x00, 0x03, 0x82, 0x02, 0x0f, 0x00 ])
             case .ecDsaSecp256r1:
-                return Data(bytes: [ 0x30, 0x59, 0x30, 0x13, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02,
-                                     0x01, 0x06, 0x08, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x03, 0x01, 0x07, 0x03,
-                                     0x42, 0x00 ])
+                return Data([ 0x30, 0x59, 0x30, 0x13, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02,
+                              0x01, 0x06, 0x08, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x03, 0x01, 0x07, 0x03,
+                              0x42, 0x00 ])
             case .ecDsaSecp384r1:
-                return Data(bytes: [ 0x30, 0x76, 0x30, 0x10, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02,
-                                     0x01, 0x06, 0x05, 0x2b, 0x81, 0x04, 0x00, 0x22, 0x03, 0x62, 0x00 ])
+                return Data([ 0x30, 0x76, 0x30, 0x10, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02,
+                              0x01, 0x06, 0x05, 0x2b, 0x81, 0x04, 0x00, 0x22, 0x03, 0x62, 0x00 ])
             }
         }
     }
@@ -109,23 +109,23 @@ class ValueImportProcessorCertificateTransparency: ValueImportProcessor {
             let publicKey = publicKey(forCertificate: certificate),
             let publicKeyData = SecKeyCopyExternalRepresentation(publicKey, &error) as Data?,
             let publicKeyASN1HeaderData = publicKeyASN1Header(forKey: publicKey) else {
-                throw ValueImportError("The selected certificate did not have a valid publick key or ASN1 header.\n\nVerify that the certificate file only contains ONE certificate.")
+                throw ValueImportError("The selected certificate did not have a valid public key or ASN1 header.\n\nVerify that the certificate file only contains ONE certificate.")
         }
 
         let context = UnsafeMutablePointer<CC_SHA256_CTX>.allocate(capacity: 1)
         CC_SHA256_Init(context)
 
-        publicKeyASN1HeaderData.withUnsafeBytes { bytes in
-            _ = CC_SHA256_Update(context, bytes, CC_LONG(publicKeyASN1HeaderData.count))
+        _ = publicKeyASN1HeaderData.withUnsafeBytes { (bytes: UnsafeRawBufferPointer) in
+            return CC_SHA256_Update(context, bytes.baseAddress!, CC_LONG(publicKeyASN1HeaderData.count))
         }
 
-        publicKeyData.withUnsafeBytes { bytes in
-            _ = CC_SHA256_Update(context, bytes, CC_LONG(publicKeyData.count))
+        _ = publicKeyData.withUnsafeBytes { (bytes: UnsafeRawBufferPointer) in
+            return CC_SHA256_Update(context, bytes.baseAddress!, CC_LONG(publicKeyData.count))
         }
 
         var digest = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
         CC_SHA256_Final(&digest, context)
-        let publicKeyInfoData = Data(bytes: digest)
+        let publicKeyInfoData = Data(digest)
 
         return publicKeyInfoData.base64EncodedString()
     }

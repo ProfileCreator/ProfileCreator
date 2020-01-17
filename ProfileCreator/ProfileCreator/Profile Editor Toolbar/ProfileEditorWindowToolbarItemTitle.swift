@@ -113,7 +113,7 @@ class ProfileEditorWindowToolbarItemTitle: NSView {
     func centerTitle() {
         guard
             let items = self.toolbarItem.toolbar?.items,
-            let index = items.index(where: { $0.itemIdentifier == .adaptiveSpace }),
+            let index = items.firstIndex(where: { $0.itemIdentifier == .adaptiveSpace }),
             let adaptiveSpace = items[index] as? AdaptiveSpaceItem else { return }
         adaptiveSpace.updateWidth()
     }

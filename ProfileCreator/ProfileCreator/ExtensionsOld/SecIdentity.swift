@@ -47,7 +47,7 @@ extension SecIdentity {
         let query = [ kSecClass as String: kSecClassIdentity,
                       kSecValueRef as String: self,
                       kSecMatchLimit as String: kSecMatchLimitOne,
-                      kSecReturnPersistentRef as String: kCFBooleanTrue ] as [String: Any]
+                      kSecReturnPersistentRef as String: kCFBooleanTrue! ] as [String: Any]
 
         var persistentRef: CFTypeRef?
         if SecItemCopyMatching(query as CFDictionary, &persistentRef) != errSecSuccess {

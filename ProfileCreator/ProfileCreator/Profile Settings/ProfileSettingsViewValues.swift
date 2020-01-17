@@ -112,7 +112,7 @@ extension ProfileSettings {
     func viewValuePayloadIndex(forDomainIdentifier domainIdentifier: String, payloadType type: PayloadType) -> Int {
         guard
             let viewDomainSettings = self.viewSettings(forDomainIdentifier: domainIdentifier, payloadType: type),
-            let index = viewDomainSettings.index(where: { $0[SettingsKey.payloadIndexSelected] as? Bool == true }) else {
+            let index = viewDomainSettings.firstIndex(where: { $0[SettingsKey.payloadIndexSelected] as? Bool == true }) else {
                 return 0
         }
         return index < 0 ? 0 : index

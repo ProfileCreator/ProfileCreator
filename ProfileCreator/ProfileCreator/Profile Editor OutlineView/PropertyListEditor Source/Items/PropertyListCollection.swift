@@ -71,8 +71,8 @@ extension PropertyListCollection {
         return "[" + elementDescriptions.joined(separator: ", ") + "]"
     }
 
-    var hashValue: Int {
-        return count
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(count)
     }
 
     var count: Int {

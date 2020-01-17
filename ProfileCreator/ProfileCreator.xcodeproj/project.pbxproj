@@ -888,6 +888,7 @@
 				53E24C7620E8AC1600FB87F9 /* ReleaseNotes */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		5398320F1F0EE15400C4792D /* Products */ = {
 			isa = PBXGroup;
@@ -1355,7 +1356,7 @@
 				TargetAttributes = {
 					5398320D1F0EE15400C4792D = {
 						CreatedOnToolsVersion = 8.3.3;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -1365,7 +1366,7 @@
 					};
 					53CD513620D90B420088B22D = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1130;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5398320D1F0EE15400C4792D;
 					};
@@ -1971,7 +1972,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEBUGEXPORT DEBUGCONDITIONS";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1992,7 +1993,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.erikberglund.ProfileCreator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -2013,7 +2014,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.profileCreator.ProfileCreatorExportTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProfileCreator.app/Contents/MacOS/ProfileCreator";
 			};
 			name = Debug;
@@ -2035,7 +2036,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.profileCreator.ProfileCreatorExportTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProfileCreator.app/Contents/MacOS/ProfileCreator";
 			};
 			name = Release;

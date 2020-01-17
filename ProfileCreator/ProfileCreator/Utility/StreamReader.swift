@@ -79,8 +79,8 @@ class StreamReader {
             }
         } else if let fileData = self.fileData {
             var lineData: Data?
-            fileData.withUnsafeBytes { (u8Ptr: UnsafePointer<UInt8>) in
-                let mutRawPointer = UnsafeMutableRawPointer(mutating: u8Ptr)
+            _ = fileData.withUnsafeBytes { (rawPtr: UnsafeRawBufferPointer) in
+                let mutRawPointer = UnsafeMutableRawPointer(mutating: rawPtr.baseAddress!)
                 let totalSize = fileData.count
                 while !self.atEof {
                     if let range = buffer.range(of: delimData) {
@@ -102,6 +102,8 @@ class StreamReader {
                         }
                     }
                 }
+
+                return ()
             }
 
             if let data = lineData, let line = String(data: data, encoding: self.encoding) {

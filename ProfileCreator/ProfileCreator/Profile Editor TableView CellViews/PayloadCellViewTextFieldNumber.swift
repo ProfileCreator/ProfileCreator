@@ -278,7 +278,7 @@ extension PayloadCellViewTextFieldNumber {
         //  Add TextField to TableCellView
         // ---------------------------------------------------------------------
         if let textFieldMinMax = self.textFieldMinMax {
-            if let index = self.cellViewConstraints.index(where: {
+            if let index = self.cellViewConstraints.firstIndex(where: {
                 if let secondItem = $0.secondItem as? NSTextField, secondItem == textFieldMinMax, $0.secondAttribute == .trailing {
                     return true
                 }

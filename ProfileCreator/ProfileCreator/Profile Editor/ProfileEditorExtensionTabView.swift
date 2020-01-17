@@ -25,7 +25,7 @@ extension ProfileEditor {
         // Add default settings
         if addSettings {
             if self.profile.settings.settingsEmptyCount(forDomainIdentifier: payloadPlaceholder.domainIdentifier, type: payloadPlaceholder.payloadType) != 0 {
-                if let lastTab = self.tabView.views.last, let lastTabIndex = self.tabView.views.index(of: lastTab) {
+                if let lastTab = self.tabView.views.last, let lastTabIndex = self.tabView.views.firstIndex(of: lastTab) {
                     self.select(tab: lastTabIndex)
                 }
                 if let window = self.tableView.window {
@@ -48,7 +48,7 @@ extension ProfileEditor {
         // Add tab
         let newTab = ProfileEditorTab(editor: self)
         self.tabView.addView(newTab, in: .trailing)
-        if addSettings, let newTabIndex = self.tabView.views.index(of: newTab) {
+        if addSettings, let newTabIndex = self.tabView.views.firstIndex(of: newTab) {
             self.select(tab: newTabIndex)
 
             // FIXME: This is clunky and resource heavy for what it does, should use a notification maybe, or just upadte the specific cellview not BOTH table views

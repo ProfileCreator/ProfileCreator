@@ -61,6 +61,8 @@ struct FontInformation {
                 self.formatString = "Bitmap"
             case .unrecognized:
                 self.formatString = NSLocalizedString("Unknown", comment: "")
+            @unknown default:
+                self.formatString = NSLocalizedString("Unknown", comment: "")
             }
         } else {
             self.format = .unrecognized
@@ -140,7 +142,7 @@ struct FontInformation {
 
             var fontDescriptionIndex: Int?
             var fontDescription: FontDescription
-            if let index = self.descriptions.index(where: { $0.platformIdentifier == platformIdentifier && $0.platformSpecificID == platformSpecificIDRaw && $0.language == language }) {
+            if let index = self.descriptions.firstIndex(where: { $0.platformIdentifier == platformIdentifier && $0.platformSpecificID == platformSpecificIDRaw && $0.language == language }) {
                 fontDescriptionIndex = index
                 fontDescription = self.descriptions[index]
             } else {

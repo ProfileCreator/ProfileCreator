@@ -39,8 +39,9 @@ struct PropertyListKeyValuePair: CustomStringConvertible, Hashable {
         return "\"\(key)\": \(value)"
     }
 
-    var hashValue: Int {
-        return key.hashValue ^ value.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(key)
+        hasher.combine(value)
     }
 
     /// Returns a new key/value pair instance with the specified key and the value of the instance.

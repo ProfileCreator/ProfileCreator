@@ -86,7 +86,7 @@ extension ProfileEditorOutlineViewController: NSOutlineViewDataSource {
         if let treeNode = item as? PropertyListTreeNode {
             return treeNode.child(at: index)
         } else {
-            return tree.rootNode
+            return tree.rootNode!
         }
     }
 
@@ -209,7 +209,7 @@ extension ProfileEditorOutlineViewController {
             tableColumnIdentifier = treeNode.parent!.item.propertyListType == .dictionary ? .tableColumnPropertyListKey : .tableColumnPropertyListValue
         }
 
-        if let columnIndex = self.outlineView.tableColumns.index(where: { $0.identifier == tableColumnIdentifier }) {
+        if let columnIndex = self.outlineView.tableColumns.firstIndex(where: { $0.identifier == tableColumnIdentifier }) {
             self.outlineView.selectRowIndexes(IndexSet(integer: rowIndex), byExtendingSelection: false)
             self.outlineView.editColumn(columnIndex, row: rowIndex, with: nil, select: true)
         }

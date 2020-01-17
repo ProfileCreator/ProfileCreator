@@ -209,7 +209,7 @@ class MainWindowOutlineViewController: NSObject {
                     self.selectedItem = nil
                 }
 
-                if let index = parent.children.index(where: { $0.title == group.title }) {
+                if let index = parent.children.firstIndex(where: { $0.title == group.title }) {
                     parent.children.remove(at: index)
                 }
             }
