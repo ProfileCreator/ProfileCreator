@@ -29,14 +29,13 @@ class ProfileSigning {
         //  Get an unsafeRawPointer to the Data and sign it with CMSEncode
         // ---------------------------------------------------------------------
         var profileContentDataSigned: CFData?
-        try profileContentData.withUnsafeBytes { (ptr: UnsafePointer<UInt8>) in
-            let rawPtr = UnsafeRawPointer(ptr)
+        return try profileContentData.withUnsafeBytes { (ptr: UnsafeRawBufferPointer) in
             let osStatus = CMSEncodeContent(identity,
                                             nil,
                                             nil,
                                             false,
                                             CMSSignedAttributes.attrSigningTime,
-                                            rawPtr,
+                                            ptr.baseAddress!,
                                             profileContentData.count,
                                             &profileContentDataSigned)
 
@@ -56,18 +55,17 @@ class ProfileSigning {
 
                 throw ProfileExportError.signingErrorFailed(usingCertificate: identity.certificateName ?? "Unknown", withError: osStatusString)
             }
-        }
 
-        // ---------------------------------------------------------------------
-        //  Write the signed profile to the selected output path
-        // ---------------------------------------------------------------------
-        return profileContentDataSigned as Data?
+            // ---------------------------------------------------------------------
+            //  Write the signed profile to the selected output path
+            // ---------------------------------------------------------------------
+            return profileContentDataSigned as Data?
+        }
     }
 
     class func decode(data: Data) throws -> Data {
         var osStatus: OSStatus = noErr
         var cmsDecoder: CMSDecoder?
-        var cmsData: CFData?
         var cmsEncrypted: DarwinBoolean = false
 
         osStatus = CMSDecoderCreate(&cmsDecoder)
@@ -82,21 +80,22 @@ class ProfileSigning {
             return data
         }
 
-        try data.withUnsafeBytes { (ptr: UnsafePointer<UInt8>) in
-            let rawPtr = UnsafeRawPointer(ptr)
+        let decodedData: CFData? = try data.withUnsafeBytes { (ptr: UnsafeRawBufferPointer) in
+            let rawPtr = UnsafeRawPointer(ptr.baseAddress!)
+            var cmsData: CFData?
 
             osStatus = CMSDecoderUpdateMessage(decoder, rawPtr, data.count)
             if osStatus != noErr {
                 let osStatusString = String(SecCopyErrorMessageString(osStatus, nil) ?? "")
                 Log.shared.error(message: "CMSDecoderUpdateMessage failed with error: \(osStatus) - \(osStatusString)", category: String(describing: self))
-                return
+                return nil
             }
 
             osStatus = CMSDecoderFinalizeMessage(decoder)
             if osStatus != noErr {
                 let osStatusString = String(SecCopyErrorMessageString(osStatus, nil) ?? "")
                 Log.shared.error(message: "CMSDecoderFinalizeMessage failed with error: \(osStatus) - \(osStatusString)", category: String(describing: self))
-                return
+                return nil
             }
 
             CMSDecoderIsContentEncrypted(decoder, &cmsEncrypted)
@@ -108,11 +107,13 @@ class ProfileSigning {
             if osStatus != noErr {
                 let osStatusString = String(SecCopyErrorMessageString(osStatus, nil) ?? "")
                 Log.shared.error(message: "CMSDecoderCopyContent failed with error: \(osStatus) - \(osStatusString)", category: String(describing: self))
-                return
+                return nil
             }
+
+            return cmsData
         }
 
-        if let decodedData = cmsData as Data? {
+        if let decodedData = decodedData as Data? {
             return decodedData
         } else {
             return data

@@ -132,9 +132,9 @@ extension Data {
         let offset = (atOffset * 4)
         switch magic {
         case .cigam64:
-            return UInt32(littleEndian: subdata(in: offset..<(offset + 4)).withUnsafeBytes { $0.pointee })
+            return UInt32(littleEndian: subdata(in: offset..<(offset + 2)).withUnsafeBytes { $0.load(as: UInt32.self) })
         case .magic64:
-            return UInt32(bigEndian: subdata(in: offset..<(offset + 4)).withUnsafeBytes { $0.pointee })
+            return UInt32(bigEndian: subdata(in: offset..<(offset + 2)).withUnsafeBytes { $0.load(as: UInt32.self) })
         }
     }
 
@@ -142,9 +142,9 @@ extension Data {
         let offset = (atOffset * 2)
         switch magic {
         case .cigam64:
-            return UInt16(littleEndian: subdata(in: offset..<(offset + 2)).withUnsafeBytes { $0.pointee })
+            return UInt16(littleEndian: subdata(in: offset..<(offset + 2)).withUnsafeBytes { $0.load(as: UInt16.self) })
         case .magic64:
-            return UInt16(bigEndian: subdata(in: offset..<(offset + 2)).withUnsafeBytes { $0.pointee })
+            return UInt16(bigEndian: subdata(in: offset..<(offset + 2)).withUnsafeBytes { $0.load(as: UInt16.self) })
         }
     }
 }
