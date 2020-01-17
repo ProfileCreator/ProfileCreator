@@ -109,7 +109,7 @@ class ValueImportProcessorCertificateTransparency: ValueImportProcessor {
             let publicKey = publicKey(forCertificate: certificate),
             let publicKeyData = SecKeyCopyExternalRepresentation(publicKey, &error) as Data?,
             let publicKeyASN1HeaderData = publicKeyASN1Header(forKey: publicKey) else {
-                throw ValueImportError("The selected certificate did not have a valid publick key or ASN1 header.\n\nVerify that the certificate file only contains ONE certificate.")
+                throw ValueImportError("The selected certificate did not have a valid public key or ASN1 header.\n\nVerify that the certificate file only contains ONE certificate.")
         }
 
         let context = UnsafeMutablePointer<CC_SHA256_CTX>.allocate(capacity: 1)
