@@ -26,9 +26,9 @@ class Identities {
         var query = [kSecClass as String: kSecClassIdentity,
                      kSecMatchTrustedOnly as String: matchTrustedOnly,
                      kSecMatchLimit as String: kSecMatchLimitAll,
-                     kSecReturnAttributes as String: kCFBooleanTrue,
-                     kSecReturnPersistentRef as String: kCFBooleanTrue,
-                     kSecReturnRef as String: kCFBooleanTrue] as [String: Any]
+                     kSecReturnAttributes as String: kCFBooleanTrue!,
+                     kSecReturnPersistentRef as String: kCFBooleanTrue!,
+                     kSecReturnRef as String: kCFBooleanTrue!] as [String: Any]
 
         if !UserDefaults.standard.bool(forKey: PreferenceKey.signingCertificateShowExpired) {
             query[kSecMatchValidOnDate as String] = Date()
@@ -72,10 +72,10 @@ class Identities {
 
         let query = [ kSecClass as String: kSecClassIdentity,
                       kSecValuePersistentRef as String: persistentRefData,
-                      kSecReturnAttributes as String: kCFBooleanTrue,
+                      kSecReturnAttributes as String: kCFBooleanTrue!,
                       kSecMatchLimit as String: kSecMatchLimitAll,
-                      kSecReturnPersistentRef as String: kCFBooleanTrue,
-                      kSecReturnRef as String: kCFBooleanTrue] as [String: Any]
+                      kSecReturnPersistentRef as String: kCFBooleanTrue!,
+                      kSecReturnRef as String: kCFBooleanTrue!] as [String: Any]
 
         var osStatus: OSStatus = errSecSuccess
 
