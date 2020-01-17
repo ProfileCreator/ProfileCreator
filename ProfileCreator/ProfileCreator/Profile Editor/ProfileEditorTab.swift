@@ -31,7 +31,7 @@ class ProfileEditorTab: NSView {
 
     var index: Int {
         if let stackView = self.superview as? NSStackView {
-            return stackView.views.index(of: self) ?? -1
+            return stackView.views.firstIndex(of: self) ?? -1
         }
         return -1
     }

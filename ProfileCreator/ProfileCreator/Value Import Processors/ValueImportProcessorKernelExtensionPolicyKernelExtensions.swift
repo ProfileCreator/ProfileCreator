@@ -61,7 +61,7 @@ class ValueImportProcessorKernelExtensionPolicyKernelExtensions: ValueImportProc
         value[ManifestKeyPlaceholder.value] = bundleIdentifiers
 
         if var currentValue = toCurrentValue as? [[String: Any]] {
-            if let index = currentValue.index(where: { $0[ManifestKeyPlaceholder.key] as? String == value[ManifestKeyPlaceholder.key] as? String }) {
+            if let index = currentValue.firstIndex(where: { $0[ManifestKeyPlaceholder.key] as? String == value[ManifestKeyPlaceholder.key] as? String }) {
                 currentValue[index] = value
             } else {
                 currentValue.append(value)

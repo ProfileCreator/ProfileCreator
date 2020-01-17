@@ -299,7 +299,7 @@ class PayloadLibraryTableViews: NSObject, PayloadLibrarySelectionDelegate {
         //  Verify that the "General" payload always is at the top of the profile payloads list
         // ---------------------------------------------------------------------
         if let generalPayloadPlaceholder = self.generalPayloadPlaceholder {
-            if let generalIndex = self.profilePayloads.index(of: generalPayloadPlaceholder) {
+            if let generalIndex = self.profilePayloads.firstIndex(of: generalPayloadPlaceholder) {
                 self.profilePayloads.remove(at: generalIndex)
             }
             self.profilePayloads.insert(generalPayloadPlaceholder, at: 0)
@@ -316,9 +316,9 @@ class PayloadLibraryTableViews: NSObject, PayloadLibrarySelectionDelegate {
         //  This is different from - (void)selectPlaceholder which also updates editor etc.
         // ---------------------------------------------------------------------
         if let selectedPayloadPlaceholder = self.selectedPayloadPlaceholder {
-            if let index = self.profilePayloads.index(of: selectedPayloadPlaceholder) {
+            if let index = self.profilePayloads.firstIndex(of: selectedPayloadPlaceholder) {
                 self.profilePayloadsTableView.selectRowIndexes(IndexSet(integer: index), byExtendingSelection: false)
-            } else if let index = self.libraryPayloadsCellViews.index(where: { $0.placeholder == selectedPayloadPlaceholder }) {
+            } else if let index = self.libraryPayloadsCellViews.firstIndex(where: { $0.placeholder == selectedPayloadPlaceholder }) {
                 self.libraryPayloadsTableView.selectRowIndexes(IndexSet(integer: index), byExtendingSelection: false)
             }
         }

@@ -28,7 +28,7 @@ public class AdaptiveSpaceItem: NSToolbarItem {
 
     var calculatedMinSize: NSSize {
         guard let items = toolbar?.items else { return super.minSize }
-        guard let index = items.index(of: self) else { return super.minSize }
+        guard let index = items.firstIndex(of: self) else { return super.minSize }
         guard let thisFrame = view?.superview?.frame else { return super.minSize }
 
         if thisFrame.origin.x > 0 {

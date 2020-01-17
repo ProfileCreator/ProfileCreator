@@ -323,7 +323,7 @@ class EditorTableViewCellViewArrayView: NSView, TableViewCellView, NSComboBoxDel
 
     func indexOfEmptyRow() -> Int? {
         guard let tableViewColumn = self.tableViewColumns.first else { return nil }
-        return self.tableViewContent.index {
+        return self.tableViewContent.firstIndex {
             switch tableViewColumn.type {
             case .bool:
                 return $0 as? Bool == self.newRowValue() as? Bool

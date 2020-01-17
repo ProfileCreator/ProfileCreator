@@ -140,7 +140,7 @@ class PayloadCellViews {
                         }
                     }
 
-                    if childCellViews.contains(where: { $0.isEnabled }) && childCellViews.contains(where: { !$0.isEnabled }), let index = payloadCellViews.index(of: dictionaryCellView) {
+                    if childCellViews.contains(where: { $0.isEnabled }) && childCellViews.contains(where: { !$0.isEnabled }), let index = payloadCellViews.firstIndex(of: dictionaryCellView) {
                         if let duplicateCellView = dictionaryCellView.copy() as? PayloadCellViewDictionary {
                             duplicateCellView.enable(!dictionaryCellView.isEnabled)
                             payloadCellViews.insert(duplicateCellView, at: index)
@@ -177,7 +177,7 @@ class PayloadCellViews {
                 // ---------------------------------------------------------------------
                 Log.shared.debug(message: "Getting index of first disabled CellView", category: String(describing: self))
 
-                if let indexDisabled = sortedCellViews.index(where: { !$0.isEnabled }) {
+                if let indexDisabled = sortedCellViews.firstIndex(where: { !$0.isEnabled }) {
 
                     Log.shared.debug(message: "First disabled CellView index is: \(indexDisabled)", category: String(describing: self))
 
