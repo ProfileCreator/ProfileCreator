@@ -118,7 +118,8 @@ class MainWindowAllProfilesGroup: NSObject, OutlineViewChildItem {
             // -----------------------------------------------------------------
             //  Post notification that a grop removed profiles
             // -----------------------------------------------------------------
-            NotificationCenter.default.post(name: .didRemoveProfilesFromGroup, object: self, userInfo: [NotificationKey.identifiers: identifiers, NotificationKey.indexSet: indexes ?? IndexSet()])
+            let nonnullIndexes = indexes ?? IndexSet()
+            NotificationCenter.default.post(name: .didRemoveProfilesFromGroup, object: self, userInfo: [NotificationKey.identifiers: identifiers, NotificationKey.indexSet: nonnullIndexes])
 
             // -----------------------------------------------------------------
             //  If profileIdentifiers are empyty, post notification that no profiles are configured
