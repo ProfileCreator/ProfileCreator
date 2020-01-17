@@ -61,6 +61,8 @@ struct FontInformation {
                 self.formatString = "Bitmap"
             case .unrecognized:
                 self.formatString = NSLocalizedString("Unknown", comment: "")
+            @unknown default:
+                self.formatString = NSLocalizedString("Unknown", comment: "")
             }
         } else {
             self.format = .unrecognized
