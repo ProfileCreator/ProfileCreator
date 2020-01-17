@@ -86,7 +86,7 @@ extension ProfileEditorOutlineViewController: NSOutlineViewDataSource {
         if let treeNode = item as? PropertyListTreeNode {
             return treeNode.child(at: index)
         } else {
-            return tree.rootNode
+            return tree.rootNode!
         }
     }
 
