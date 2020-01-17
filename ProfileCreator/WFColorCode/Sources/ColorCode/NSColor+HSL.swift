@@ -46,7 +46,7 @@ public extension NSColor {
      - parameter alpha:      The opacity value of the color object.
      - returns:              The color object.
      */
-    public convenience init(deviceHue hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat) {
+    convenience init(deviceHue hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat) {
         
         self.init(deviceHue: hue,
                   saturation: hsbSaturation(saturation: saturation, lightness: lightness),
@@ -65,7 +65,7 @@ public extension NSColor {
      - parameter alpha:      The opacity value of the color object.
      - returns:              The color object.
      */
-    public convenience init(calibratedHue hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat) {
+    convenience init(calibratedHue hue: CGFloat, saturation: CGFloat, lightness: CGFloat, alpha: CGFloat) {
         
         self.init(calibratedHue: hue,
                   saturation: hsbSaturation(saturation: saturation, lightness: lightness),
@@ -86,7 +86,7 @@ public extension NSColor {
      - parameter lightness:  Upon return, contains the saturation lightness of the color object.
      - parameter alpha:      Upon return, contains the alpha component of the color object.
      */
-    public func getHue(hue: UnsafeMutablePointer<CGFloat>?, saturation: UnsafeMutablePointer<CGFloat>?, lightness: UnsafeMutablePointer<CGFloat>?, alpha: UnsafeMutablePointer<CGFloat>?) {
+    func getHue(hue: UnsafeMutablePointer<CGFloat>?, saturation: UnsafeMutablePointer<CGFloat>?, lightness: UnsafeMutablePointer<CGFloat>?, alpha: UnsafeMutablePointer<CGFloat>?) {
         
         hue?.pointee = self.hueComponent
         saturation?.pointee = self.hslSaturationComponent
@@ -100,7 +100,7 @@ public extension NSColor {
      
      Access this property only for colors in the `NSColorSpaceName.calibratedRGB` or `NSColorSpaceName.deviceRGB` color space. Sending it to other objects raises an exception.
      */
-    public var hslSaturationComponent: CGFloat {
+    var hslSaturationComponent: CGFloat {
         
         let maxValue = max(self.redComponent, self.greenComponent, self.blueComponent)
         let minValue = min(self.redComponent, self.greenComponent, self.blueComponent)
@@ -121,7 +121,7 @@ public extension NSColor {
      
      Access this property only for colors in the `NSColorSpaceName.calibratedRGB` or `NSColorSpaceName.deviceRGB` color space. Sending it to other objects raises an exception.
      */
-    public var lightnessComponent: CGFloat {
+    var lightnessComponent: CGFloat {
         
         let maxValue = max(self.redComponent, self.greenComponent, self.blueComponent)
         let minValue = min(self.redComponent, self.greenComponent, self.blueComponent)
