@@ -506,13 +506,31 @@ class ProfileController: NSDocumentController {
         savePanel.beginSheetModal(for: window) { response in
             if response != .OK { return }
             if let profileURL = savePanel.url {
-                do {
-                    try ProfileExport(exportSettings: exportSettings).export(profile: profile, profileURL: profileURL)
-                } catch {
-                    Log.shared.error(message: "Failed to export profile with identifier: \(profile.identifier) to path: \(profileURL.path) with error: \(error.localizedDescription)", category: String(describing: self))
-                    self.showAlertExport(error: error, window: window)
-                }
+                let settings: [String: Any] = [
+                    "profile": profile,
+                    "settings": exportSettings,
+                    "profileURL": profileURL,
+                    "window": window
+                ]
+
+                // Run the export proccess asynchronously, to give the sheet time
+                // to be dismissed before we show the modal password dialog.
+                self.perform(#selector(self.performExport(settings:)), on: Thread.main, with: settings, waitUntilDone: false)
             } else { Log.shared.error(message: "Failed to get the selected save path from the save panel for profile with identifier: \(profile.identifier)", category: String(describing: self)) }
+        }
+    }
+
+    @objc private func performExport(settings: [String: Any]) {
+        let profile = settings["profile"] as! Profile
+        let exportSettings = settings["settings"] as! ProfileSettings
+        let profileURL = settings["profileURL"] as! URL
+        let window = settings["window"] as! NSWindow
+
+        do {
+            try ProfileExport(exportSettings: exportSettings).export(profile: profile, profileURL: profileURL)
+        } catch {
+            Log.shared.error(message: "Failed to export profile with identifier: \(profile.identifier) to path: \(profileURL.path) with error: \(error.localizedDescription)", category: String(describing: self))
+            self.showAlertExport(error: error, window: window)
         }
     }
 
