@@ -513,6 +513,8 @@ class ProfileController: NSDocumentController {
                     "window": window
                 ]
 
+                // Run the export proccess asynchronously, to give the sheet time
+                // to be dismissed before we show the modal password dialog.
                 self.perform(#selector(self.performExport(settings:)), on: Thread.main, with: settings, waitUntilDone: false)
             } else { Log.shared.error(message: "Failed to get the selected save path from the save panel for profile with identifier: \(profile.identifier)", category: String(describing: self)) }
         }
