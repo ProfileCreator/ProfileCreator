@@ -206,6 +206,6 @@ cat << EOF
     <pubDate>${current_date}</pubDate>
     <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
     <sparkle:releaseNotesLink>https://profilecreator.github.io/releasenotes/${pfc_git_tag}.html</sparkle:releaseNotesLink>
-    <enclosure url="https://github.com/erikberglund/ProfileCreator/releases/download/${pfc_git_tag}/${pfc_dmg_basename}" sparkle:shortVersionString="${pfc_version}" sparkle:version="${pfc_build}" length="${pfc_dmg_bytes}" type="application/octet-stream"/>
+    <enclosure url="https://github.com/ProfileCreator/ProfileCreator/releases/download/${pfc_git_tag}/${pfc_dmg_basename}" sparkle:shortVersionString="${pfc_version}" sparkle:version="${pfc_build}" length="${pfc_dmg_bytes}" type="application/octet-stream"/>
 </item>
 EOF
