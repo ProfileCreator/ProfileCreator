@@ -492,7 +492,7 @@ extension MainWindowOutlineViewController: NSOutlineViewDelegate {
             // ------------------------------------------------------------------
             //  Ugly fix to hide the AllProfiles parent view, setting it's height to 0
             // -----------------------------------------------------------------
-            return 0
+            //return 0
         } else if item is OutlineViewParentItem {
             return 18
         }
