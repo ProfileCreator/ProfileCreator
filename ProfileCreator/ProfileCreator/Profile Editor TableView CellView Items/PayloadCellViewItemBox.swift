@@ -11,6 +11,7 @@ import ProfilePayloads
 
 class BoxView: NSView {
     var color = NSColor.lightGray.withAlphaComponent(0.1)
+
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 

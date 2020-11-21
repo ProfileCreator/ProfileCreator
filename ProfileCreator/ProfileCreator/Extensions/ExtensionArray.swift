@@ -2,7 +2,7 @@
 //  ExtensionArray.swift
 //  ProfileCreator
 //
-//  Created by Erik Berglund on 2019-04-26.
+//  Created by Erik Berglund.
 //  Copyright © 2019 Erik Berglund. All rights reserved.
 //
 

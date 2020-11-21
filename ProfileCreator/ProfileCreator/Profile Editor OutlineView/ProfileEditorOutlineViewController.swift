@@ -267,7 +267,7 @@ extension ProfileEditorOutlineViewController {
     /// Returns the index corresponding to the tree node’s type in the type pop-up menu.
     /// - parameter treeNode: The tree node whose type pop-up menu index is being returned.
     private func typePopUpMenuItemIndex(of treeNode: PropertyListTreeNode) -> Int {
-        return treeNode.item.propertyListType.typePopUpMenuItemIndex
+        treeNode.item.propertyListType.typePopUpMenuItemIndex
     }
 
     /// Sets the type for the specified tree node.
@@ -447,7 +447,7 @@ extension ProfileEditorOutlineViewController {
     /// Returns the default item to add to our backing property list when a new row is added to
     /// the outline view.
     private func itemForAdding() -> PropertyListItem {
-        return PropertyListItem(propertyListType: .string)
+        PropertyListItem(propertyListType: .string)
     }
 
     private func valueCell(for treeNode: PropertyListTreeNode) -> NSCell {

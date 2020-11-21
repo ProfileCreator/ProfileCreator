@@ -55,7 +55,7 @@ extension ProfileSettings {
     // MARK: Payload Settings
 
     class func payloadSettingsDefault() -> [String: [String: [[String: Any]]]] {
-        return [String: [String: [[String: Any]]]]()
+        [String: [String: [[String: Any]]]]()
     }
 
     class func payloadSettings(forMobileconfig mobileconfig: [String: Any], importErrors: inout [String: Any]) throws -> [String: [String: [[String: Any]]]] {
@@ -302,7 +302,7 @@ extension ProfileSettings {
     // MARK: Editor Settings
 
     class func editorSettingsDefault() -> [String: Any] {
-        var editorSettings =  [ PreferenceKey.signProfile: UserDefaults.standard.bool(forKey: PreferenceKey.signProfile),
+        var editorSettings = [ PreferenceKey.signProfile: UserDefaults.standard.bool(forKey: PreferenceKey.signProfile),
                                 PreferenceKey.distributionMethod: UserDefaults.standard.string(forKey: PreferenceKey.distributionMethod) ?? DistributionString.any,
                                 PreferenceKey.disableOptionalKeys: UserDefaults.standard.bool(forKey: PreferenceKey.disableOptionalKeys),
                                 PreferenceKey.showUserApprovedKeys: UserDefaults.standard.bool(forKey: PreferenceKey.showUserApprovedKeys),
@@ -324,7 +324,7 @@ extension ProfileSettings {
     }
 
     class func editorSettings(forMobileconfig mobileconfig: [String: Any]) throws -> [String: Any] {
-        return self.editorSettingsDefault()
+        self.editorSettingsDefault()
     }
 
     class func editorSettings(forSettings settings: [String: Any]) throws -> [String: Any] {
@@ -336,7 +336,7 @@ extension ProfileSettings {
     // MARK: View Settings
 
     class func viewSettingsDefault() -> [String: [String: [[String: Any]]]] {
-        return [String: [String: [[String: Any]]]]()
+        [String: [String: [[String: Any]]]]()
     }
 
     class func initialize(settings: inout [String: [String: [[String: Any]]]],
@@ -540,7 +540,7 @@ extension ProfileSettings {
     }
 
     class func viewSettings(forSettings settings: [String: Any]) throws -> [String: [String: [[String: Any]]]] {
-        return settings[SettingsKey.viewSettings] as? [String: [String: [[String: Any]]]] ?? self.viewSettingsDefault()
+        settings[SettingsKey.viewSettings] as? [String: [String: [[String: Any]]]] ?? self.viewSettingsDefault()
     }
 
     // MARK: -

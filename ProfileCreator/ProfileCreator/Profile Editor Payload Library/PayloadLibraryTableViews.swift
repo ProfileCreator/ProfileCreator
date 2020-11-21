@@ -182,7 +182,7 @@ class PayloadLibraryTableViews: NSObject, PayloadLibrarySelectionDelegate {
     }
 
     func searchString(forLibrary library: PayloadType) -> String {
-        return self.librarySearch[library.rawValue] ?? ""
+        self.librarySearch[library.rawValue] ?? ""
     }
 
     func filterLibraryPayloads() {
@@ -745,7 +745,7 @@ extension PayloadLibraryTableViews: NSTableViewDelegate {
     }
 
     func tableView(_ tableView: NSTableView, isGroupRow row: Int) -> Bool {
-        return tableView == self.libraryPayloadsTableView && self.libraryPayloadsCellViews[row] is PayloadLibraryCellViewGroup
+        tableView == self.libraryPayloadsTableView && self.libraryPayloadsCellViews[row] is PayloadLibraryCellViewGroup
     }
 
     func tableView(_ tableView: NSTableView, selectionIndexesForProposedSelection proposedSelectionIndexes: IndexSet) -> IndexSet {
@@ -783,7 +783,7 @@ extension PayloadLibraryTableViews: NSTableViewDelegate {
 
 extension PayloadLibraryTableViews: NSDraggingSource {
     func draggingSession(_ session: NSDraggingSession, sourceOperationMaskFor context: NSDraggingContext) -> NSDragOperation {
-        return NSDragOperation.copy
+        NSDragOperation.copy
     }
 }
 
@@ -797,7 +797,7 @@ extension PayloadLibraryTableViews: NSDraggingDestination {
     }
 
     func prepareForDragOperation(_ sender: NSDraggingInfo) -> Bool {
-        return true
+        true
     }
 
     func performDragOperation(_ sender: NSDraggingInfo) -> Bool {

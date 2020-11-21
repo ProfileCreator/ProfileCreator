@@ -38,7 +38,7 @@ class LenientDateFormatter: Formatter {
     }
 
     override func string(for obj: Any?) -> String? {
-        return DateFormatter.propertyListOutput.string(for: obj)
+        DateFormatter.propertyListOutput.string(for: obj)
     }
 
     override func getObjectValue(_ obj: AutoreleasingUnsafeMutablePointer<AnyObject?>?,

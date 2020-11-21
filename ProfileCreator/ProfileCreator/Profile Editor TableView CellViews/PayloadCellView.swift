@@ -240,7 +240,7 @@ class PayloadCellView: NSTableCellView, NSCopying {
     }
 
     func indentValue() -> CGFloat {
-        return 8.0 + (16.0 * CGFloat(self.indent))
+        8.0 + (16.0 * CGFloat(self.indent))
     }
 
     @objc func clickedDocumentation(_ button: NSButton) {

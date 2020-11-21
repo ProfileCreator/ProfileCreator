@@ -9,10 +9,10 @@
 import Foundation
 
 struct ValueImportError: LocalizedError {
-        var errorDescription: String? { return mMsg }
-        var failureReason: String? { return mMsg }
-        var recoverySuggestion: String? { return "" }
-        var helpAnchor: String? { return "" }
+        var errorDescription: String? { mMsg }
+        var failureReason: String? { mMsg }
+        var recoverySuggestion: String? { "" }
+        var helpAnchor: String? { "" }
 
         private var mMsg: String
 

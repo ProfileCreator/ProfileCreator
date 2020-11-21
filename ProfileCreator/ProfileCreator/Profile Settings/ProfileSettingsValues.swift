@@ -50,7 +50,7 @@ extension ProfileSettings {
     }
 
     private func profileValue(forKey key: String) -> Any? {
-        return self.settingsProfile[key]
+        self.settingsProfile[key]
     }
 
     // MARK: -

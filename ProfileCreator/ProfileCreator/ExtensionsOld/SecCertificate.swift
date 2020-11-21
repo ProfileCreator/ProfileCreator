@@ -19,7 +19,7 @@ extension SecCertificate {
     }
 
     func values(forKeys keys: [CFString]?) -> [String: Any]? {
-        return SecCertificateCopyValues(self, keys as CFArray?, nil) as? [String: Any]
+        SecCertificateCopyValues(self, keys as CFArray?, nil) as? [String: Any]
     }
 
     var commonName: String? {

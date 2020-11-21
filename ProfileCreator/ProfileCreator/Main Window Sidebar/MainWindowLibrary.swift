@@ -129,7 +129,7 @@ class MainWindowLibrary: NSObject, OutlineViewParentItem, NSTextFieldDelegate {
     }
 
     func newGroup(title: String, identifier: UUID) -> MainWindowLibraryGroup {
-        return MainWindowLibraryGroup(title: title, identifier: identifier, parent: self, outlineViewController: self.outlineViewController)
+        MainWindowLibraryGroup(title: title, identifier: identifier, parent: self, outlineViewController: self.outlineViewController)
     }
 
     func addGroup(title: String, identifier: UUID, profileIdentifiers: [UUID], dict: [String: Any], writeToDisk: Bool) {

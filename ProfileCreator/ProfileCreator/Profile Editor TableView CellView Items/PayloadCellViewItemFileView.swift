@@ -137,7 +137,7 @@ class FileView: NSView {
     // MARK: Private Functions
 
     private func containsAcceptedURL(pasteboard: NSPasteboard) -> Bool {
-        return pasteboard.canReadObject(forClasses: [NSURL.self], options: pasteboardReadingOptions())
+        pasteboard.canReadObject(forClasses: [NSURL.self], options: pasteboardReadingOptions())
     }
 
     private func pasteboardReadingOptions() -> [NSPasteboard.ReadingOptionKey: Any]? {

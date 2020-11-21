@@ -12,11 +12,11 @@ import ProfilePayloads
 extension ProfileSettings {
 
     func payloadSettingsEnabledCount() -> Int {
-        return self.payloadSettingsEnabled().count
+        self.payloadSettingsEnabled().count
     }
 
     func isEnabled(_ payload: Payload) -> Bool {
-        return self.payloadsEnabled().contains { $0.domain == payload.domain }
+        self.payloadsEnabled().contains { $0.domain == payload.domain }
     }
 
     // MARK: -

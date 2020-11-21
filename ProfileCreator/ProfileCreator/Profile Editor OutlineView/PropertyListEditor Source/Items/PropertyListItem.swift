@@ -81,7 +81,7 @@ enum PropertyListItem: CustomStringConvertible, Hashable {
 
     /// Returns if the instance is an array or dictionary.
     var isCollection: Bool {
-        return propertyListType == .array || propertyListType == .dictionary
+        propertyListType == .array || propertyListType == .dictionary
     }
 }
 
@@ -187,7 +187,7 @@ extension PropertyListItem {
     /// - parameter indexPath: The index path. Raises an assertion if any element of the index path
     ///       indexes into a scalar.
     func setting(_ newItem: PropertyListItem, at indexPath: IndexPath) -> PropertyListItem {
-        return (indexPath as NSIndexPath).length > 0 ? setting(newItem, at: indexPath, indexPosition: 0) : newItem
+        (indexPath as NSIndexPath).length > 0 ? setting(newItem, at: indexPath, indexPosition: 0) : newItem
     }
 
     /// A private method that actually implements `setting(_:at:)` by setting the

@@ -76,12 +76,12 @@ extension PropertyListCollection {
     }
 
     var count: Int {
-        return elements.count
+        elements.count
     }
 
     subscript(index: Int) -> ElementType {
         get {
-            return elements[index]
+            elements[index]
         }
 
         set {
@@ -102,5 +102,5 @@ extension PropertyListCollection {
 }
 
 func ==<CollectionType: PropertyListCollection>(lhs: CollectionType, rhs: CollectionType) -> Bool {
-    return lhs.elements == rhs.elements
+    lhs.elements == rhs.elements
 }

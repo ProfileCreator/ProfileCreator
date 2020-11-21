@@ -84,7 +84,7 @@ class PayloadCellViews {
                         && subkey.hidden == .no
                         && !kPayloadSubkeys.contains(subkey.key)
                         && subkey.segments == nil
-                        && !cellViewsRequired.contains { $0.subkey.keyPath == subkey.keyPath } {
+                        && !cellViewsRequired.contains(where: { $0.subkey.keyPath == subkey.keyPath }) {
                         if let cellView = self.cellView(profile: profileEditor.profile, subkey: subkey, payloadIndex: payloadIndex, profileEditor: profileEditor) {
                             cellViewsRequired.append(cellView)
                         }
@@ -93,7 +93,7 @@ class PayloadCellViews {
                         && subkey.hidden == .no
                         && !kPayloadSubkeys.contains(subkey.key)
                         && subkey.segments == nil
-                        && !cellViewsRequired.contains { $0.subkey.keyPath == subkey.keyPath } {
+                                && !cellViewsRequired.contains(where: { $0.subkey.keyPath == subkey.keyPath }) {
                         if let cellView = self.cellView(profile: profileEditor.profile, subkey: subkey, payloadIndex: payloadIndex, profileEditor: profileEditor) {
                             if cellView.isRequired {
                                 cellViewsRequired.append(cellView)

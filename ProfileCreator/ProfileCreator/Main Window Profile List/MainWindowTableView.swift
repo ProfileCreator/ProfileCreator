@@ -368,7 +368,7 @@ extension MainWindowTableViewController: NSTableViewDataSource {
 extension MainWindowTableViewController: NSTableViewDelegate {
 
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 36
+        36
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {

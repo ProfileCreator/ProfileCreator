@@ -81,7 +81,7 @@ class OverlayScrollView: NSScrollView {
         }
 
         // Move scroller to front
-        self.sortSubviews({ view1, view2, context -> ComparisonResult in
+        self.sortSubviews({ view1, view2, _ -> ComparisonResult in
             if view1 is OverlayScroller {
                 return .orderedDescending
             } else if view2 is OverlayScroller {

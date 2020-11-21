@@ -77,7 +77,7 @@ class ViewWhite: NSView {
 extension ViewWhite {
 
     override var acceptsFirstResponder: Bool {
-        return self.acceptFirstResponder
+        self.acceptFirstResponder
     }
 
     override func drawFocusRingMask() {
@@ -85,7 +85,7 @@ extension ViewWhite {
     }
 
     override var focusRingMaskBounds: NSRect {
-        return self.bounds
+        self.bounds
     }
 
 }

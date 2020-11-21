@@ -26,11 +26,11 @@ struct FontInformation {
     }
 
     func descriptions(forLanguage language: FontTableName.LanguageID) -> [FontDescription] {
-        return self.descriptions.filter { $0.language == language }
+        self.descriptions.filter { $0.language == language }
     }
 
     func descriptions(forLanguage language: FontTableName.LanguageID, platform: FontTableName.PlatformIdentifier) -> [FontDescription] {
-        return self.descriptions.filter { $0.platformIdentifier == platform && $0.language == language }
+        self.descriptions.filter { $0.platformIdentifier == platform && $0.language == language }
     }
 
     init?(data: Data) throws {

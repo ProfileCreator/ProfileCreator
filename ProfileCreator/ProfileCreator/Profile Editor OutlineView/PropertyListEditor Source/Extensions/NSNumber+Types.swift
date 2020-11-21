@@ -29,7 +29,7 @@ import Foundation
 extension NSNumber {
     /// Returns whether the instance was initialized using a boolean.
     var isBoolean: Bool {
-        return NSNumber(value: true).objCType == objCType
+        NSNumber(value: true).objCType == objCType
     }
 
     /// Returns whether the instance is an integer, i.e., it has no fractional part.

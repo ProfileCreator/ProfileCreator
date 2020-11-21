@@ -308,15 +308,15 @@ class ProfileController: NSDocumentController {
     // MARK: Get Profiles
 
     public func profile(withIdentifier identifier: UUID) -> Profile? {
-        return self.profiles.first { $0.identifier == identifier }
+        self.profiles.first { $0.identifier == identifier }
     }
 
     public func profiles(withIdentifiers identifiers: [UUID]) -> [Profile]? {
-        return self.profiles.filter { identifiers.contains($0.identifier) }
+        self.profiles.filter { identifiers.contains($0.identifier) }
     }
 
     public func profileIdentifiers() -> [UUID]? {
-        return self.profiles.map { $0.identifier }
+        self.profiles.map { $0.identifier }
     }
 
     public func titleOfProfile(withIdentifier identifier: UUID) -> String? {
@@ -521,11 +521,12 @@ class ProfileController: NSDocumentController {
     }
 
     @objc private func performExport(settings: [String: Any]) {
+        // swiftlint:disable force_cast
         let profile = settings["profile"] as! Profile
         let exportSettings = settings["settings"] as! ProfileSettings
         let profileURL = settings["profileURL"] as! URL
         let window = settings["window"] as! NSWindow
-
+        // swiftlint:enable force_cast
         do {
             try ProfileExport(exportSettings: exportSettings).export(profile: profile, profileURL: profileURL)
         } catch {

@@ -162,11 +162,11 @@ extension ProfileEditorWindowController: NSWindowDelegate {
 extension ProfileEditorWindowController: NSToolbarDelegate {
 
     public func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return self.toolbarItemIdentifiers
+        self.toolbarItemIdentifiers
     }
 
     public func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return self.toolbarItemIdentifiers
+        self.toolbarItemIdentifiers
     }
 
     public func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {

@@ -24,7 +24,7 @@ extension Data {
     }
 
     func fontTableNameValue(atOffset offset: Int) -> UInt16 {
-        return UInt16(bigEndian: subdata(in: offset..<(offset + 8)).withUnsafeBytes { $0.load(as: UInt16.self) })
+        UInt16(bigEndian: subdata(in: offset..<(offset + 8)).withUnsafeBytes { $0.load(as: UInt16.self) })
     }
 
     func fontTableString(atOffset offset: Int, length: Int, encoding: String.Encoding) -> String? {

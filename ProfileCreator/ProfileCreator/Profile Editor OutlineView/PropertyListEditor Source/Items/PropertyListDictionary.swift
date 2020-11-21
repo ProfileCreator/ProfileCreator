@@ -36,7 +36,7 @@ struct PropertyListKeyValuePair: CustomStringConvertible, Hashable {
     let value: PropertyListItem
 
     var description: String {
-        return "\"\(key)\": \(value)"
+        "\"\(key)\": \(value)"
     }
 
     public func hash(into hasher: inout Hasher) {
@@ -48,19 +48,19 @@ struct PropertyListKeyValuePair: CustomStringConvertible, Hashable {
     /// - parameter key: The key of the new instance.
     /// - returns: A copy of the instance with the specified key and the value of the instance.
     func settingKey(_ key: String) -> PropertyListKeyValuePair {
-        return PropertyListKeyValuePair(key: key, value: value)
+        PropertyListKeyValuePair(key: key, value: value)
     }
 
     /// Returns a new key/value pair instance with the key of the instance and the specified value.
     /// - parameter value: The value of the new instance.
     /// - returns: A copy of the instance with the key of the instance and the specified value.
     func settingValue(_ value: PropertyListItem) -> PropertyListKeyValuePair {
-        return PropertyListKeyValuePair(key: key, value: value)
+        PropertyListKeyValuePair(key: key, value: value)
     }
 }
 
 func == (lhs: PropertyListKeyValuePair, rhs: PropertyListKeyValuePair) -> Bool {
-    return lhs.key == rhs.key && lhs.value == rhs.value
+    lhs.key == rhs.key && lhs.value == rhs.value
 }
 
 /// `PropertyListDictionaries` represent dictionaries of property list items. Each element in a
@@ -80,7 +80,7 @@ struct PropertyListDictionary: PropertyListCollection {
     /// - parameter key: The key whose membership in the instance’s key set is being checked.
     /// - returns: Whether the key is in the instance’s key set.
     func containsKey(_ key: String) -> Bool {
-        return keySet.contains(key)
+        keySet.contains(key)
     }
 
     mutating func insert(_ element: ElementType, at index: Int) {

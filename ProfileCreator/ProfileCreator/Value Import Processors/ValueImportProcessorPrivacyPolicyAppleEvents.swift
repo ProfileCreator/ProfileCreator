@@ -216,7 +216,7 @@ class ValueImportProcessorPrivacyPolicyAppleEvents: ValueImportProcessor {
 
 class PolicyWindow: NSWindow {
 
-    override var canBecomeKey: Bool { return true }
+    override var canBecomeKey: Bool { true }
 
     init(withCellView cellView: PayloadCellViewTableView, accessoryView: ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView, url: URL) {
         super.init(contentRect: NSRect.zero, styleMask: .docModalWindow, backing: .buffered, defer: false)
@@ -594,7 +594,7 @@ class ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView: NSView {
     }
 
     func messageString(sending: String, recieving: String) -> String {
-        return "\(self.radioButtonAllow?.state == .on ? "Allow" : "Deny") \(sending) to send AppleEvents to \(recieving)"
+        "\(self.radioButtonAllow?.state == .on ? "Allow" : "Deny") \(sending) to send AppleEvents to \(recieving)"
     }
 
     @objc func clicked(_ button: NSButton) {

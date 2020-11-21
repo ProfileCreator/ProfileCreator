@@ -349,7 +349,7 @@ class ProfileExportAccessoryView: NSView {
     }
 
     func containsManagedPreferences(exportSettings: ProfileSettings) -> Bool {
-        return self.enabledPayloads.contains { $0.type == .managedPreferencesApple || $0.type == .managedPreferencesApplications || $0.type == .managedPreferencesApplicationsLocal }
+        self.enabledPayloads.contains { $0.type == .managedPreferencesApple || $0.type == .managedPreferencesApplications || $0.type == .managedPreferencesApplicationsLocal }
     }
 }
 

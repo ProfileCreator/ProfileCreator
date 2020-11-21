@@ -363,7 +363,7 @@ extension MainWindowOutlineViewController: NSOutlineViewDataSource {
     }
 
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
-        return item is OutlineViewParentItem ? true : false
+        item is OutlineViewParentItem ? true : false
     }
 
     func outlineView(_ outlineView: NSOutlineView, objectValueFor tableColumn: NSTableColumn?, byItem item: Any?) -> Any? {

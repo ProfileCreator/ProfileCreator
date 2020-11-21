@@ -79,7 +79,7 @@ class StreamReader {
             }
         } else if let fileData = self.fileData {
             var lineData: Data?
-            _ = fileData.withUnsafeBytes { (rawPtr: UnsafeRawBufferPointer) in
+            fileData.withUnsafeBytes { (rawPtr: UnsafeRawBufferPointer) in
                 let mutRawPointer = UnsafeMutableRawPointer(mutating: rawPtr.baseAddress!)
                 let totalSize = fileData.count
                 while !self.atEof {
@@ -132,7 +132,7 @@ class StreamReader {
 
 extension StreamReader: Sequence {
     func makeIterator() -> AnyIterator<String> {
-        return AnyIterator {
+        AnyIterator {
             self.nextLine()
         }
     }

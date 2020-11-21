@@ -22,13 +22,13 @@ class HexColorTransformer: ValueTransformer {
     /// Class of transformed value
     override class func transformedValueClass() -> AnyClass {
 
-        return NSString.self
+        NSString.self
     }
 
     /// Can reverse transformeation?
     override class func allowsReverseTransformation() -> Bool {
 
-        return true
+        true
     }
 
     /// From color code hex to NSColor (String -> NSColor)

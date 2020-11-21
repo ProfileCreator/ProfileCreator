@@ -60,7 +60,7 @@ extension PropertyListItem: PropertyListObjectConvertible {
 
 extension PropertyListArray: PropertyListObjectConvertible {
     var propertyListObjectValue: Any {
-        return elements.map { $0.propertyListObjectValue } as NSArray
+        elements.map { $0.propertyListObjectValue } as NSArray
     }
 }
 

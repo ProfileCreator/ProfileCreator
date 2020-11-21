@@ -116,11 +116,11 @@ class ValueImportProcessorCertificateTransparency: ValueImportProcessor {
         CC_SHA256_Init(context)
 
         _ = publicKeyASN1HeaderData.withUnsafeBytes { (bytes: UnsafeRawBufferPointer) in
-            return CC_SHA256_Update(context, bytes.baseAddress!, CC_LONG(publicKeyASN1HeaderData.count))
+            CC_SHA256_Update(context, bytes.baseAddress!, CC_LONG(publicKeyASN1HeaderData.count))
         }
 
         _ = publicKeyData.withUnsafeBytes { (bytes: UnsafeRawBufferPointer) in
-            return CC_SHA256_Update(context, bytes.baseAddress!, CC_LONG(publicKeyData.count))
+            CC_SHA256_Update(context, bytes.baseAddress!, CC_LONG(publicKeyData.count))
         }
 
         var digest = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))

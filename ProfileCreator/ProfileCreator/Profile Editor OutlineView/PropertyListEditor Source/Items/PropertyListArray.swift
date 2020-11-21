@@ -38,6 +38,6 @@ struct PropertyListArray: PropertyListCollection {
     }
 
     @discardableResult mutating func remove(at index: Int) -> ElementType {
-        return elements.remove(at: index)
+        elements.remove(at: index)
     }
 }

@@ -61,10 +61,10 @@ extension Bundle {
     }
 
     var designatedCodeRequirementData: Data? {
-        return SecRequirementCopyData(forURL: self.bundleURL)
+        SecRequirementCopyData(forURL: self.bundleURL)
     }
 
     var designatedCodeRequirementString: String? {
-        return SecRequirementCopyString(forURL: self.bundleURL)
+        SecRequirementCopyString(forURL: self.bundleURL)
     }
 }

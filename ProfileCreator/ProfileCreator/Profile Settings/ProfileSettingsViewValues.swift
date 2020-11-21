@@ -15,7 +15,7 @@ extension ProfileSettings {
     // MARK: Get
 
     func viewValue(forSubkey subkey: PayloadSubkey, payloadIndex: Int) -> Any? {
-        return self.viewValue(forKeyPath: subkey.keyPath, domainIdentifier: subkey.domainIdentifier, payloadType: subkey.payloadType, payloadIndex: payloadIndex)
+        self.viewValue(forKeyPath: subkey.keyPath, domainIdentifier: subkey.domainIdentifier, payloadType: subkey.payloadType, payloadIndex: payloadIndex)
     }
 
     func viewValue(forKeyPath keyPath: String, domainIdentifier: String, payloadType type: PayloadType, payloadIndex: Int) -> Any? {
@@ -24,7 +24,7 @@ extension ProfileSettings {
     }
 
     func viewValue(forKey key: String, subkey: PayloadSubkey, payloadIndex: Int) -> Any? {
-        return self.viewValue(forKey: key, keyPath: subkey.keyPath, domainIdentifier: subkey.domainIdentifier, payloadType: subkey.payloadType, payloadIndex: payloadIndex)
+        self.viewValue(forKey: key, keyPath: subkey.keyPath, domainIdentifier: subkey.domainIdentifier, payloadType: subkey.payloadType, payloadIndex: payloadIndex)
     }
 
     func viewValue(forKey key: String, keyPath: String, domainIdentifier: String, payloadType type: PayloadType, payloadIndex: Int) -> Any? {
@@ -60,12 +60,12 @@ extension ProfileSettings {
 
     // swiftlint:disable:next discouraged_optional_boolean
     func viewValueEnabled(forSubkey subkey: PayloadSubkey, payloadIndex: Int) -> Bool? {
-        return self.viewValueEnabled(forKeyPath: subkey.keyPath, domainIdentifier: subkey.domainIdentifier, payloadType: subkey.payloadType, payloadIndex: payloadIndex)
+        self.viewValueEnabled(forKeyPath: subkey.keyPath, domainIdentifier: subkey.domainIdentifier, payloadType: subkey.payloadType, payloadIndex: payloadIndex)
     }
 
     // swiftlint:disable:next discouraged_optional_boolean
     func viewValueEnabled(forKeyPath keyPath: String, domainIdentifier: String, payloadType: PayloadType, payloadIndex: Int) -> Bool? {
-        return self.viewValue(forKey: SettingsKey.enabled, keyPath: keyPath, domainIdentifier: domainIdentifier, payloadType: payloadType, payloadIndex: payloadIndex) as? Bool
+        self.viewValue(forKey: SettingsKey.enabled, keyPath: keyPath, domainIdentifier: domainIdentifier, payloadType: payloadType, payloadIndex: payloadIndex) as? Bool
     }
 
     func setViewValue(enabled: Bool, forSubkey subkey: PayloadSubkey, payloadIndex: Int) {
@@ -80,7 +80,7 @@ extension ProfileSettings {
     // MARK: Hash
 
     func viewValueHash(forDomainIdentifier domainIdentifier: String, payloadType: PayloadType, payloadIndex: Int) -> Int? {
-        return self.viewValue(forKeyPath: SettingsKey.hash, domainIdentifier: domainIdentifier, payloadType: payloadType, payloadIndex: payloadIndex) as? Int
+        self.viewValue(forKeyPath: SettingsKey.hash, domainIdentifier: domainIdentifier, payloadType: payloadType, payloadIndex: payloadIndex) as? Int
     }
 
     func setViewValue(hash: Int, forDomainIdentifier domainIdentifier: String, payloadType: PayloadType, payloadIndex: Int) {

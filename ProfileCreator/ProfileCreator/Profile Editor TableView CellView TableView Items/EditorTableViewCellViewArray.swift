@@ -667,7 +667,7 @@ extension EditorTableViewCellViewArrayView {
 
 extension EditorTableViewCellViewArrayView: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.tableViewContent.count
+        self.tableViewContent.count
     }
 }
 

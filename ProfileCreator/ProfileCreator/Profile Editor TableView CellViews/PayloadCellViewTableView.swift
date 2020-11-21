@@ -697,7 +697,7 @@ extension PayloadCellViewTableView: NSComboBoxDelegate {
 
 extension PayloadCellViewTableView: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.tableViewContent.count
+        self.tableViewContent.count
     }
 
     func allowedUTIs() -> [String]? {
@@ -842,7 +842,7 @@ extension PayloadCellViewTableView: NSTableViewDataSource {
 extension PayloadCellViewTableView: NSTableViewDelegate {
 
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 21.0
+        21.0
     }
 
     func tableView(_ tableView: NSTableView, viewFor column: NSTableColumn?, row: Int) -> NSView? {

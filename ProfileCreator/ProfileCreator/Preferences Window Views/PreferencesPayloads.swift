@@ -307,7 +307,7 @@ class PreferencesPayloadManifestsView: NSView, PreferencesView {
         Log.shared.debug(message: "Downloading manifest repository items...", category: String(describing: self))
         ManifestRepositories.shared.downloadUpdates { result in
             buttonDownload.isEnabled = true
-            if case .success(_) = result {
+            if case .success = result {
                 UserDefaults.standard.setValue(false, forKey: PreferenceKey.payloadManifestsUpdatesAvailable)
                 NotificationCenter.default.post(name: .payloadUpdatesDownloaded, object: self, userInfo: nil)
                 self.checkUpdates(downloadUpdates: false)

@@ -396,7 +396,7 @@ class ProfileEditor: NSObject {
 
 extension ProfileEditor: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return self.cellViews.count
+        self.cellViews.count
     }
 }
 
@@ -477,23 +477,23 @@ extension ProfileEditor: NSTableViewDelegate {
 // MARK: Subclasses to enable FirstResponder and KeyView
 
 class PayloadButton: NSButton {
-    override var acceptsFirstResponder: Bool { return self.isEnabled }
-    override var canBecomeKeyView: Bool { return self.isEnabled }
+    override var acceptsFirstResponder: Bool { self.isEnabled }
+    override var canBecomeKeyView: Bool { self.isEnabled }
 }
 
 class PayloadPopUpButton: NSPopUpButton {
-    override var acceptsFirstResponder: Bool { return self.isEnabled }
-    override var canBecomeKeyView: Bool { return self.isEnabled }
+    override var acceptsFirstResponder: Bool { self.isEnabled }
+    override var canBecomeKeyView: Bool { self.isEnabled }
 }
 
 class PayloadSegmentedControl: NSSegmentedControl {
-    override var acceptsFirstResponder: Bool { return self.isEnabled }
-    override var canBecomeKeyView: Bool { return self.isEnabled }
+    override var acceptsFirstResponder: Bool { self.isEnabled }
+    override var canBecomeKeyView: Bool { self.isEnabled }
 }
 
 class PayloadTextField: NSTextField {
-    override var acceptsFirstResponder: Bool { return self.isEditable }
-    override var canBecomeKeyView: Bool { return self.isEditable }
+    override var acceptsFirstResponder: Bool { self.isEditable }
+    override var canBecomeKeyView: Bool { self.isEditable }
 
     let trackingOptions = NSTrackingArea.Options(rawValue: (NSTrackingArea.Options.mouseEnteredAndExited.rawValue | NSTrackingArea.Options.activeAlways.rawValue))
 
@@ -564,8 +564,8 @@ class PayloadTextField: NSTextField {
 }
 
 class PayloadTextView: NSTextView {
-    override var acceptsFirstResponder: Bool { return self.isEditable }
-    override var canBecomeKeyView: Bool { return self.isEditable }
+    override var acceptsFirstResponder: Bool { self.isEditable }
+    override var canBecomeKeyView: Bool { self.isEditable }
 
     // swiftlint:disable:next prohibited_super_call
     override func doCommand(by selector: Selector) {
@@ -580,6 +580,6 @@ class PayloadTextView: NSTextView {
 }
 
 class ProfileEditorTableView: NSTableView {
-    override var acceptsFirstResponder: Bool { return false }
-    override var canBecomeKeyView: Bool { return false }
+    override var acceptsFirstResponder: Bool { false }
+    override var canBecomeKeyView: Bool { false }
 }

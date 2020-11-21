@@ -25,15 +25,15 @@ public class Profile: NSDocument, NSCopying {
     // MARK: Computer Variables
 
     public var enabledPayloadsCount: Int {
-        return self.settings.payloadSettingsEnabledCount()
+        self.settings.payloadSettingsEnabledCount()
     }
 
     public var identifier: UUID {
-        return self.settings.identifier
+        self.settings.identifier
     }
 
     public var versionFormatSupported: Bool {
-        return kSaveFormatVersionMin <= self.settings.formatVersion
+        kSaveFormatVersionMin <= self.settings.formatVersion
     }
 
     // MARK: -

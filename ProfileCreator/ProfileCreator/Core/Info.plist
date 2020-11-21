@@ -62,7 +62,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.3.2</string>
 	<key>CFBundleVersion</key>
-	<string>201907171032</string>
+	<string>202011211610</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>

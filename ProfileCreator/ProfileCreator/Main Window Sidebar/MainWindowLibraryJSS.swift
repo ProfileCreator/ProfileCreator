@@ -24,7 +24,7 @@ class MainWindowLibraryJSS: MainWindowLibrary {
     // MARK: Instance Functions
 
     override func newGroup(title: String, identifier: UUID) -> MainWindowLibraryGroup {
-        return MainWindowLibraryGroupJSS(title: title, identifier: identifier, parent: self, outlineViewController: self.outlineViewController)
+        MainWindowLibraryGroupJSS(title: title, identifier: identifier, parent: self, outlineViewController: self.outlineViewController)
     }
 
     // MARK: -

@@ -10,7 +10,7 @@ import Cocoa
 
 class ProfileEditorEditKeyWindow: NSWindow {
 
-    override var canBecomeKey: Bool { return true }
+    override var canBecomeKey: Bool { true }
 
     init(contentView: ProfileEditorEditKeyView) {
         super.init(contentRect: NSRect.zero, styleMask: .docModalWindow, backing: .buffered, defer: false)

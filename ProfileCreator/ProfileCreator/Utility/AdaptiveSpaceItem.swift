@@ -14,12 +14,12 @@ public class AdaptiveSpaceItem: NSToolbarItem {
     // MARK: NSToolbarItem Variables
 
     override public var label: String {
-        get { return "" }
+        get { "" }
         set { }
     }
 
     override public var paletteLabel: String {
-        get { return "Adaptive Space" }
+        get { "Adaptive Space" }
         set { }
     }
 
@@ -105,7 +105,7 @@ class AdaptiveSpaceItemView: NSView {
     // MARK: NSView Methods
 
     override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
-        return true
+        true
     }
 
     override func viewDidMoveToWindow() {

@@ -27,7 +27,7 @@ class ValueInfoProcessors {
     }
 
     public func processor(forFileAtURL url: URL) -> ValueInfoProcessor? {
-        return self.processor(forUTI: url.typeIdentifier)
+        self.processor(forUTI: url.typeIdentifier)
     }
 
     public func processor(withIdentifier identifier: String) -> ValueInfoProcessor? {

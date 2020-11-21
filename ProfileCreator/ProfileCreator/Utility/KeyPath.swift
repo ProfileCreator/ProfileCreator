@@ -14,13 +14,13 @@ struct KeyPath {
     var segments: [String]
     var subkey: PayloadSubkey?
 
-    var isEmpty: Bool { return segments.isEmpty }
+    var isEmpty: Bool { segments.isEmpty }
     var path: String {
-        return segments.joined(separator: ".")
+        segments.joined(separator: ".")
     }
 
     var next: String? {
-        return 0 < segments.count ? segments[0] : nil
+        0 < segments.count ? segments[0] : nil
     }
 
     /// Strips off the first segment and returns a pair

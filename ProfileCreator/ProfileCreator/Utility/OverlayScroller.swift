@@ -15,7 +15,7 @@ class OverlayScroller: NSScroller {
 
     override var floatValue: Float {
         get {
-            return super.floatValue
+            super.floatValue
         }
         set {
             super.floatValue = newValue
@@ -62,7 +62,7 @@ class OverlayScroller: NSScroller {
     }
 
     @objc class func zeroWidth() -> CGFloat {
-        return 0.0
+        0.0
     }
 
     // MARK: -

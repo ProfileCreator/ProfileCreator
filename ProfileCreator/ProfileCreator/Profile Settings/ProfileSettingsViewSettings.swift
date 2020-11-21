@@ -15,7 +15,7 @@ extension ProfileSettings {
     // MARK: Get
 
     func viewSettings(forPayloadType type: PayloadType) -> [String: [[String: Any]]]? {
-        return self.settingsView[type.rawValue]
+        self.settingsView[type.rawValue]
     }
 
     func viewSettings(forDomainIdentifier domainIdentifier: String, payloadType type: PayloadType) -> [[String: Any]]? {

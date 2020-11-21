@@ -15,7 +15,7 @@ extension ProfileSettings {
     // MARK: - Count
 
     func settingsCount(forDomainIdentifier domainIdentifier: String, type: PayloadType) -> Int {
-        return self.settings(forDomainIdentifier: domainIdentifier, type: type)?.count ?? 0
+        self.settings(forDomainIdentifier: domainIdentifier, type: type)?.count ?? 0
     }
 
     func settingsEmptyCount(forDomainIdentifier domainIdentifier: String, type: PayloadType) -> Int {
@@ -37,11 +37,11 @@ extension ProfileSettings {
     // MARK: Get
 
     func settings(forType type: PayloadType) -> [String: [[String: Any]]]? {
-        return self.settingsPayload[type.rawValue]
+        self.settingsPayload[type.rawValue]
     }
 
     func settings(forPayload payload: Payload) -> [[String: Any]]? {
-        return self.settings(forDomainIdentifier: payload.domainIdentifier, type: payload.type)
+        self.settings(forDomainIdentifier: payload.domainIdentifier, type: payload.type)
     }
 
     func settings(forDomain domain: String, type: PayloadType) -> [[[String: Any]]]? {

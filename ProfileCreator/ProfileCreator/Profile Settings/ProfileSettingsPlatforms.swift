@@ -12,7 +12,7 @@ import ProfilePayloads
 extension ProfileSettings {
 
     func isAvailableForSelectedPlatform(subkey: PayloadSubkey) -> Bool {
-        return !subkey.platforms.isDisjoint(with: self.platforms)
+        !subkey.platforms.isDisjoint(with: self.platforms)
     }
 
     func updateDistributionMethod() {

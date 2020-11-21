@@ -192,11 +192,11 @@ class PreferencesWindowController: NSWindowController {
 extension PreferencesWindowController: NSToolbarDelegate {
 
     func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return self.toolbarItemIdentifiers
+        self.toolbarItemIdentifiers
     }
 
     func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return self.toolbarItemIdentifiers
+        self.toolbarItemIdentifiers
     }
 
     func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {

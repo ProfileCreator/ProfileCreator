@@ -88,7 +88,7 @@ extension Dictionary {
 
 extension Array where Element: Equatable {
     func indexes(ofItems items: [Element]) -> IndexSet? {
-        return IndexSet(self.enumerated().compactMap { items.contains($0.element) ? $0.offset : nil })
+        IndexSet(self.enumerated().compactMap { items.contains($0.element) ? $0.offset : nil })
     }
 }
 
@@ -131,20 +131,20 @@ extension Date {
 
 // Compare Dictionaries
 public func == (lhs: [AnyHashable: Any], rhs: [AnyHashable: Any] ) -> Bool {
-    return NSDictionary(dictionary: lhs).isEqual(to: rhs)
+    NSDictionary(dictionary: lhs).isEqual(to: rhs)
 }
 
 public func != (lhs: [AnyHashable: Any], rhs: [AnyHashable: Any] ) -> Bool {
-    return !NSDictionary(dictionary: lhs).isEqual(to: rhs)
+    !NSDictionary(dictionary: lhs).isEqual(to: rhs)
 }
 
 // Compare Dictionaries - This SHOULD be covered by the above AnyHashable but apparently not
 public func == (lhs: [String: Any], rhs: [String: Any] ) -> Bool {
-    return NSDictionary(dictionary: lhs).isEqual(to: rhs)
+    NSDictionary(dictionary: lhs).isEqual(to: rhs)
 }
 
 public func != (lhs: [String: Any], rhs: [String: Any] ) -> Bool {
-    return !NSDictionary(dictionary: lhs).isEqual(to: rhs)
+    !NSDictionary(dictionary: lhs).isEqual(to: rhs)
 }
 
 // MARK: -
@@ -152,7 +152,7 @@ public func != (lhs: [String: Any], rhs: [String: Any] ) -> Bool {
 
 extension String {
     func matches(_ regex: String) -> Bool {
-        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) == range(of: self)
+        self.range(of: regex, options: .regularExpression, range: nil, locale: nil) == range(of: self)
     }
 }
 
@@ -200,6 +200,6 @@ extension NSPasteboard.PasteboardType {
             return NSPasteboard.PasteboardType(kUTTypeFileURL as String)
         }
 
-    } ()
+    }()
 
 }

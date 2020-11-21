@@ -85,7 +85,7 @@ class PropertyListTree: NSObject {
     /// - parameter indexPath: The index path. Raises an assertion if any element of the index path
     ///       indexes into a scalar.
     func item(at indexPath: IndexPath) -> PropertyListItem {
-        return rootItem.item(at: indexPath)
+        rootItem.item(at: indexPath)
     }
 
     /// Sets the item at the specified index path relative to the instance’s root item.
@@ -231,7 +231,7 @@ class PropertyListTreeNode: NSObject {
     /// item via the instance’s tree.
     var item: PropertyListItem {
         get {
-            return tree.item(at: indexPath)
+            tree.item(at: indexPath)
         }
 
         set(item) {
@@ -242,7 +242,7 @@ class PropertyListTreeNode: NSObject {
     /// Whether the instance is the root node of its tree. This returns true if the instance has no
     /// parent.
     var isRootNode: Bool {
-        return parent == nil
+        parent == nil
     }
 
     override var description: String {
@@ -252,25 +252,25 @@ class PropertyListTreeNode: NSObject {
     }
 
     override var hash: Int {
-        return indexPath.hashValue
+        indexPath.hashValue
     }
 
     // MARK: - 
 
     /// Whether the instance is expandable, i.e., whether it can have children.
     var isExpandable: Bool {
-        return item.isCollection
+        item.isCollection
     }
 
     /// The number of child nodes the instance has.
     var numberOfChildren: Int {
-        return children.count
+        children.count
     }
 
     /// Returns the instance’s child node with the specified index.
     /// - parameter index: The index of the child.
     func child(at index: Int) -> PropertyListTreeNode {
-        return children[index]
+        children[index]
     }
 
     // MARK: - 
@@ -293,7 +293,7 @@ class PropertyListTreeNode: NSObject {
 
     /// Returns the instance’s last child or `nil` if the instance has no children.
     var lastChild: PropertyListTreeNode? {
-        return children.last
+        children.last
     }
 
     /// Inserts a new child node at the specified index.

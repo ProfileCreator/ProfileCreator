@@ -77,13 +77,13 @@ extension NSArray: PropertyListItemConvertible {
 
 extension NSData: PropertyListItemConvertible {
     func propertyListItem() throws -> PropertyListItem {
-        return .data(self)
+        .data(self)
     }
 }
 
 extension NSDate: PropertyListItemConvertible {
     func propertyListItem() throws -> PropertyListItem {
-        return .date(self)
+        .date(self)
     }
 }
 
@@ -108,12 +108,12 @@ extension NSDictionary: PropertyListItemConvertible {
 
 extension NSNumber: PropertyListItemConvertible {
     func propertyListItem() throws -> PropertyListItem {
-        return isBoolean ? .boolean(self) : .number(self)
+        isBoolean ? .boolean(self) : .number(self)
     }
 }
 
 extension NSString: PropertyListItemConvertible {
     func propertyListItem() throws -> PropertyListItem {
-        return .string(self)
+        .string(self)
     }
 }

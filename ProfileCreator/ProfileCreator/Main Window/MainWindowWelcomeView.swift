@@ -117,7 +117,7 @@ class MainWindowWelcomeViewController: NSObject, NSDraggingDestination {
     }
 
     func prepareForDragOperation(_ sender: NSDraggingInfo) -> Bool {
-        return true
+        true
     }
 
     func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
