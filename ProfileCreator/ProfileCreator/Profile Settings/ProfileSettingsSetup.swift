@@ -84,10 +84,12 @@ extension ProfileSettings {
 
             if domain == kManifestDomainConfiguration {
                 continue
-            } else if domain == kManifestDomainAppleRoot || domain == kManifestDomainApplePEM {
+            }
+            /*
+            else if domain == kManifestDomainAppleRoot || domain == kManifestDomainApplePEM {
                 domain = kManifestDomainApplePKCS1
             }
-
+            */
             var typeSettings = settings[type.rawValue] ?? [String: [[String: Any]]]()
             var domainSettings = typeSettings[domain] ?? [[String: Any]]()
 
@@ -365,11 +367,13 @@ extension ProfileSettings {
 
             for (var domain, domainValue) in typeValue {
                 for payloadSetting in domainValue {
-
+                    
+                    /*
                     if domain == kManifestDomainAppleRoot || domain == kManifestDomainApplePEM {
                         domain = kManifestDomainApplePKCS1
                     }
-
+                    */
+                    
                     var newDomainSettings = [String: [String: Any]]()
                     var newViewDomainSettings = [String: [String: Any]]()
                     self.initializeSettings(forDomain: domain,
