@@ -44,9 +44,13 @@ extension ProfileSettings {
         self.settings(forDomainIdentifier: payload.domainIdentifier, type: payload.type)
     }
 
-    func settings(forDomain domain: String, type: PayloadType) -> [[[String: Any]]]? {
+    func settings(forDomain domain: String, type: PayloadType, exact: Bool = false) -> [[[String: Any]]]? {
         guard let typeSettings = self.settings(forType: type) else { return nil }
-        return Array(typeSettings.filter { $0.key.hasPrefix(domain) }.values)
+        if exact {
+            return Array(typeSettings.filter { $0.key == domain }.values)
+        } else {
+            return Array(typeSettings.filter { $0.key.hasPrefix(domain) }.values)
+        }
     }
 
     func settings(forDomainIdentifier domainIdentifier: String, type: PayloadType) -> [[String: Any]]? {

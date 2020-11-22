@@ -217,7 +217,7 @@ extension ProfileSettings {
         if domainSettings[PayloadKey.payloadUUID] == nil {
             if
                 payload.subdomain != nil,
-                let existingDomainSettingsArray = self.settings(forDomain: payload.domain, type: payload.type),
+                let existingDomainSettingsArray = self.settings(forDomain: payload.domain, type: payload.type, exact: true),
                 let existingDomainSettings = existingDomainSettingsArray.first(where: { $0.contains(where: { $0.keys.contains(PayloadKey.payloadUUID) }) })?.first,
                 let existingPayloadUUID = existingDomainSettings[PayloadKey.payloadUUID] as? String {
                 domainSettings[PayloadKey.payloadUUID] = existingPayloadUUID
@@ -367,13 +367,13 @@ extension ProfileSettings {
 
             for (var domain, domainValue) in typeValue {
                 for payloadSetting in domainValue {
-                    
+
                     /*
                     if domain == kManifestDomainAppleRoot || domain == kManifestDomainApplePEM {
                         domain = kManifestDomainApplePKCS1
                     }
                     */
-                    
+
                     var newDomainSettings = [String: [String: Any]]()
                     var newViewDomainSettings = [String: [String: Any]]()
                     self.initializeSettings(forDomain: domain,
