@@ -6,6 +6,11 @@
 
 
 
+# Big Sur
+
+An experimental, unsigned, version of ProfileCreator 0.3.3 with support for Big Sur is availble on the MacAdmins Slack: [profilecreator-v0.3.3-unsigned.zip](https://macadmins.slack.com/files/U0EG5CN7J/F01AFNXRLG7/profilecreator-v0.3.3-unsigned.zip)
+
+
 # Download
 
 Download the latest version here: [ProfileCreator_v0.3.2-201907171032-beta.dmg](https://github.com/ProfileCreator/ProfileCreator/releases/download/v0.3.2/ProfileCreator_v0.3.2-201907171032-beta.dmg)
