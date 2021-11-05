@@ -13,9 +13,7 @@ An experimental, unsigned, version of ProfileCreator 0.3.3 with support for Big 
 
 # Download
 
-Download the latest version here: [ProfileCreator_v0.3.2-201907171032-beta.dmg](https://github.com/ProfileCreator/ProfileCreator/releases/download/v0.3.2/ProfileCreator_v0.3.2-201907171032-beta.dmg)
-
-If you are having issues with the DMG, check out any of the other download options in: [Releases](https://github.com/ProfileCreator/ProfileCreator/releases)
+See the latest download in [Releases](https://github.com/ProfileCreator/ProfileCreator/releases)
 
 # Contribute
 
