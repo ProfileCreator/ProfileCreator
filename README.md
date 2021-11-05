@@ -5,12 +5,6 @@
 [![Latest pre-release version tag](https://img.shields.io/github/tag-date/ProfileCreator/ProfileCreator.svg)](https://github.com/ProfileCreator/ProfileCreator/releases/latest) ![macOS version support](https://img.shields.io/badge/macOS-10.12%2B-success) ![Latest release download total](https://img.shields.io/github/downloads/ProfileCreator/ProfileCreator/v0.3.3/total)
 
 
-
-# Big Sur
-
-An experimental, unsigned, version of ProfileCreator 0.3.3 with support for Big Sur is availble on the MacAdmins Slack: [profilecreator-v0.3.3-unsigned.zip](https://macadmins.slack.com/files/U0EG5CN7J/F01AFNXRLG7/profilecreator-v0.3.3-unsigned.zip)
-
-
 # Download
 
 See the latest download in [Releases](https://github.com/ProfileCreator/ProfileCreator/releases)
