@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17DB10BD28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB10BC28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift */; };
+		17DB10CC28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB10CB28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift */; };
 		53017302212A6C3D00771AC4 /* FontInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53017301212A6C3D00771AC4 /* FontInfo.swift */; };
 		530570702210206800F68A15 /* ProfileEditorEditKeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5305706F2210206800F68A15 /* ProfileEditorEditKeyWindow.swift */; };
 		5308AEFE2154D116004730EB /* ExtensionFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5308AEFD2154D116004730EB /* ExtensionFileManager.swift */; };
@@ -377,6 +379,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17DB10BC28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift; sourceTree = "<group>"; };
+		17DB10CB28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift; sourceTree = "<group>"; };
 		53017301212A6C3D00771AC4 /* FontInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontInfo.swift; sourceTree = "<group>"; };
 		5305706F2210206800F68A15 /* ProfileEditorEditKeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorEditKeyWindow.swift; sourceTree = "<group>"; };
 		5308AEFD2154D116004730EB /* ExtensionFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionFileManager.swift; sourceTree = "<group>"; };
@@ -788,6 +792,8 @@
 				53F74B8A217F059C00139B04 /* ValueImportProcessorDockStaticApps.swift */,
 				5353CA852180A5B1002EB650 /* ValueImportProcessorDockStaticOthers.swift */,
 				53656C3F21942A4900AF84A5 /* ValueImportProcessorCertificateTransparency.swift */,
+				17DB10BC28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift */,
+				17DB10CB28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift */,
 				536A00EA2108FEDA0088F255 /* ValueImportError.swift */,
 			);
 			path = "Value Import Processors";
@@ -1598,6 +1604,7 @@
 				534732DD1F10C3BB00770446 /* MainWindowOutlineViewController.swift in Sources */,
 				53285ABF214ADC8600365B3E /* ProfileEditorOutlineView.swift in Sources */,
 				53C32297213081C100216679 /* Certificate.swift in Sources */,
+				17DB10BD28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift in Sources */,
 				53A9A60721214C76006F2048 /* ValueInfoProcessors.swift in Sources */,
 				E3036614202F3A930051040D /* PreferencesLibrary.swift in Sources */,
 				538A675821CF8B92005A6410 /* MainWindowToolbarItemExport.swift in Sources */,
@@ -1786,6 +1793,7 @@
 				E3D7646620AA99C2005E9E79 /* EditorTableViewCellViewArray.swift in Sources */,
 				E3204F152066359D002DEACC /* PayloadLibraryNoProfilePayloadsView.swift in Sources */,
 				5367E26C1F13ED440027D0D0 /* Alert.swift in Sources */,
+				17DB10CC28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift in Sources */,
 				536A00E7210897C10088F255 /* ValueImportProcessorKernelExtensionPolicyKernelExtensions.swift in Sources */,
 				E300AB6420A16B6E00129D7C /* PayloadCellViewItemRadioButton.swift in Sources */,
 				53285AE3214AE08300365B3E /* DateFormatter+PropertyLists.swift in Sources */,
