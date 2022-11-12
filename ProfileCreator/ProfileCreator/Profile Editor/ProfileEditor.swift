@@ -492,8 +492,8 @@ class PayloadSegmentedControl: NSSegmentedControl {
 }
 
 class PayloadTextField: NSTextField {
-    override var acceptsFirstResponder: Bool { self.isSelectable }
-    override var canBecomeKeyView: Bool { self.isSelectable }
+    override var acceptsFirstResponder: Bool { self.isEditable }
+    override var canBecomeKeyView: Bool { self.isEditable }
 
     let trackingOptions = NSTrackingArea.Options(rawValue: (NSTrackingArea.Options.mouseEnteredAndExited.rawValue | NSTrackingArea.Options.activeAlways.rawValue))
 
