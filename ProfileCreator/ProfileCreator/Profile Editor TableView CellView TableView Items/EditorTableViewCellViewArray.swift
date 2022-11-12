@@ -142,7 +142,7 @@ extension EditorTableViewCellViewArray {
         //  Setup GestureRecognizer
         // ---------------------------------------------------------------------
         let gesture = NSClickGestureRecognizer()
-        gesture.buttonMask = 0x2
+        gesture.buttonMask = 0x2 // Right click to show array input
         gesture.target = self
         gesture.action = #selector(self.showArrayInput(_:))
         textField.addGestureRecognizer(gesture)
