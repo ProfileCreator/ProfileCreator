@@ -142,7 +142,7 @@ extension EditorTableViewCellViewArray {
         //  Setup GestureRecognizer
         // ---------------------------------------------------------------------
         let gesture = NSClickGestureRecognizer()
-        gesture.numberOfClicksRequired = 1
+        gesture.buttonMask = 0x2
         gesture.target = self
         gesture.action = #selector(self.showArrayInput(_:))
         textField.addGestureRecognizer(gesture)
@@ -746,7 +746,7 @@ extension EditorTableViewCellViewArrayView: NSTableViewDelegate {
 // MARK: -
 // MARK: NSPopUpButton Functions
 
-@objc protocol EditorTableViewProtocol: class {
+@objc protocol EditorTableViewProtocol: AnyObject {
     @objc func selected(_ popUpButton: NSPopUpButton)
     @objc func select(_ menuItem: NSMenuItem)
     func validateMenuItem(_ menuItem: NSMenuItem) -> Bool

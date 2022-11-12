@@ -36,6 +36,8 @@ class ValueImportProcessors {
             return ValueImportProcessorSystemExtensionPolicyBundleIdentifier()
         case "com.apple.syspolicy.system-extension-policy.SystemExtensionsTypes":
             return ValueImportProcessorSystemExtensionPolicyAllowedTypes()
+        case "com.apple.syspolicy.system-extension-policy.RemovableSystemExtensions":
+            return ValueImportProcessorSystemExtensionPolicyRemovable()
         case "com.apple.applicationaccess.new.whiteList":
             return ValueImportProcessorApplicationAccessWhiteList()
         case "public.folder":

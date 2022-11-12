@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17A81750291FA7AD0050A2F6 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8174F291FA7AD0050A2F6 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift */; };
 		17DB10BD28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB10BC28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift */; };
 		17DB10CC28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB10CB28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift */; };
 		53017302212A6C3D00771AC4 /* FontInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53017301212A6C3D00771AC4 /* FontInfo.swift */; };
@@ -379,6 +380,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17A8174F291FA7AD0050A2F6 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueImportProcessorSystemExtensionPolicyRemovable.swift; sourceTree = "<group>"; };
 		17DB10BC28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift; sourceTree = "<group>"; };
 		17DB10CB28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift; sourceTree = "<group>"; };
 		53017301212A6C3D00771AC4 /* FontInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontInfo.swift; sourceTree = "<group>"; };
@@ -794,6 +796,7 @@
 				53656C3F21942A4900AF84A5 /* ValueImportProcessorCertificateTransparency.swift */,
 				17DB10BC28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift */,
 				17DB10CB28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift */,
+				17A8174F291FA7AD0050A2F6 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift */,
 				536A00EA2108FEDA0088F255 /* ValueImportError.swift */,
 			);
 			path = "Value Import Processors";
@@ -1716,6 +1719,7 @@
 				532488A6212366FB00DE7169 /* ValueImportProcessorPrivacyPolicy.swift in Sources */,
 				E3D7646420AA9994005E9E79 /* EditorTableViewCellViewPopUpButton.swift in Sources */,
 				5390A067213E82F5004F6551 /* ExtensionNSTextField.swift in Sources */,
+				17A81750291FA7AD0050A2F6 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift in Sources */,
 				535CB45B1F2B8BAD00A746F6 /* PayloadLibraryFilter.swift in Sources */,
 				E3D7645E20AA98EB005E9E79 /* EditorTableViewCellViewTextField.swift in Sources */,
 				531852061F22907C00529E6B /* ProfileEditorWindowController.swift in Sources */,
