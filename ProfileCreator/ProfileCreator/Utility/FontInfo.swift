@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreText
 
 struct FontInformation {
 
@@ -116,7 +117,8 @@ struct FontInformation {
             // Platform ID is Unicode OR Platform specific ID is Unicode 2.0 or above
             // OR
             // Platform ID is Microsoft AND Platform specific ID is Unicode
-            if (platformIDRaw == FontTableName.PlatformIdentifier.unicode.rawValue || FontTableName.PlatformSpecificID.Unicode.unicode2_0_bmp_only.rawValue <= platformSpecificIDRaw) || (platformIDRaw == FontTableName.PlatformIdentifier.microsoft.rawValue && platformSpecificIDRaw == FontTableName.PlatformSpecificID.Microsoft.unicodeBMP.rawValue) {
+            if (platformIDRaw == FontTableName.PlatformIdentifier.unicode.rawValue || FontTableName.PlatformSpecificID.Unicode.unicode2_0_bmp_only.rawValue <= platformSpecificIDRaw) ||
+                (platformIDRaw == FontTableName.PlatformIdentifier.microsoft.rawValue && platformSpecificIDRaw == FontTableName.PlatformSpecificID.Microsoft.unicodeBMP.rawValue) {
                 encoding = .utf16
             } else {
                 encoding = .utf8
