@@ -37,11 +37,11 @@ In order to develop for ProfileCreator, the following pieces of software are req
 In addition to those pieces of software you will also need to clone [ProfilePayloads](https://github.com/ProfileCreator/ProfilePayloads) alongside the ProfileCreator repository (The repositories must be adjacent to each other).
 
 ## Compiling
-In order to compile ProfileCreator, please navigate to where the XCode Project file is located and run the following command
+In order to compile ProfileCreator, please navigate to where the Xcode Project file is located and run the following command
 
 `xcodebuild -project ProfileCreator.xcodeproj -scheme ProfileCreator -configuration Debug`
 
-This will compile the application and output the result in the DerivedData path as set by your XCode preferences.
+This will compile the application and output the result in the DerivedData path as set by your Xcode preferences.
 
 In addition, please take a look at the [ProfileManifests](https://github.com/ProfileCreator/ProfileManifests) project which supplies ProfileCreator with its payloads is very much active!
 
