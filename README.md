@@ -28,9 +28,22 @@ macOS application to create configuration profiles.
 ProfileCreator requires macOS 10.12 or newer.
 
 # Development
-The ProfileCreator app is not currently under active development.  All are welcome to contribute to it, however the original developer has moved on from the project.  As such, any feature enhancements and/or bug fixes to the app itself are stalled. 
 
-However, the [ProfileManifests](https://github.com/ProfileCreator/ProfileManifests) project which supplies ProfileCreator with its payloads is very much active!
+## Getting started
+In order to develop for ProfileCreator, the following pieces of software are required
+- Xcode 14
+- macOS 12.0 or higher
+
+In addition to those pieces of software you will also need to clone [ProfilePayloads](https://github.com/ProfileCreator/ProfilePayloads) alongside the ProfileCreator repository (The repositories must be adjacent to each other).
+
+## Compiling
+In order to compile ProfileCreator, please navigate to where the XCode Project file is located and run the following command
+
+`xcodebuild -project ProfileCreator.xcodeproj -scheme ProfileCreator -configuration Debug`
+
+This will compile the application and output the result in the DerivedData path as set by your XCode preferences.
+
+In addition, please take a look at the [ProfileManifests](https://github.com/ProfileCreator/ProfileManifests) project which supplies ProfileCreator with its payloads is very much active!
 
 # Have Questions?
 Consult [the wiki](https://github.com/ProfileCreator/ProfileCreator/wiki). Join the conversion over in the #profilecreator channel in the [MacAdmins Slack](https://www.macadmins.org/).
