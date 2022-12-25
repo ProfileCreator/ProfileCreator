@@ -41,7 +41,7 @@ In order to compile ProfileCreator, please navigate to where the Xcode Project f
 
 `xcodebuild -project ProfileCreator.xcodeproj -scheme ProfileCreator -configuration Debug`
 
-This will compile the application and output the result in the DerivedData path as set by your Xcode preferences.
+This will compile the application and output the result in the DerivedData path as set by your Xcode preferences. The default DerivedData location will be `~/Library/Developer/Xcode/DerivedData/`.
 
 In addition, please take a look at the [ProfileManifests](https://github.com/ProfileCreator/ProfileManifests) project which supplies ProfileCreator with its payloads is very much active!
 
