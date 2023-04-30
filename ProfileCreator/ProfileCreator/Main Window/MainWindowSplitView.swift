@@ -102,8 +102,8 @@ class MainWindowSplitView: NSSplitView {
         // ---------------------------------------------------------------------
         // TODO: Fix the restore. It seems it has to be done from the SplitViewController
         // But to use that this whole implementation has to change. This need to be tested later
-        //self.setPosition(150.0, ofDividerAt: 0)
-        //self.setPosition(150.0, ofDividerAt: 0)
+        // self.setPosition(150.0, ofDividerAt: 0)
+        // self.setPosition(150.0, ofDividerAt: 0)
         //
 
     }
@@ -326,13 +326,13 @@ extension MainWindowSplitView {
                 // Manage the 'hidden state' per view
                 // let hidden = NSString(string:components[4].lowercased()).boolValue
                 // let subView = self.subviews[i]
-                //subView.isHidden = hidden
+                // subView.isHidden = hidden
 
                 // Set height (horizontal) or width (vertical)
                 if self.isVertical {
                     if let width = Float(components[2]) {
                         position += CGFloat(width)
-                        //subView.setFrameSize(NSSize.init(width: position, height: subView.frame.size.height))
+                        // subView.setFrameSize(NSSize.init(width: position, height: subView.frame.size.height))
                     }
                 }
 

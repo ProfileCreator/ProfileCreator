@@ -49,9 +49,9 @@ class EditorTableViewCellViewArray: NSTableCellView {
         if let lastSubkey = subkey.subkeys.last, let placeholderValue = lastSubkey.valuePlaceholder {
             self.textField?.placeholderString = String(describing: placeholderValue)
         }
-        //if let tableViewContent = cellView.tableViewContent as? [[String: Any]], let value = tableViewContent[row][subkey.keyPath] as? [Any] {
+        // if let tableViewContent = cellView.tableViewContent as? [[String: Any]], let value = tableViewContent[row][subkey.keyPath] as? [Any] {
         self.textField?.stringValue = value.compactMap { String(describing: $0) }.joined(separator: ", ")
-        //}
+        // }
         self.textField?.delegate = cellView
         self.textField?.tag = row
         self.textField?.identifier = NSUserInterfaceItemIdentifier(rawValue: keyPath)

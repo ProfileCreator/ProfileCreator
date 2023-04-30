@@ -2,7 +2,7 @@
 //  ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift
 //  ProfileCreator
 //
-//  Created by Will Yu on 10/10/22.
+//  Created by Will Yu.
 //  Copyright © 2022 Will Yu. All rights reserved.
 //
 
@@ -34,7 +34,7 @@ class ValueImportProcessorSystemExtensionPolicyBundleIdentifier: ValueImportProc
 
         var value = [String: Any]()
         var bundleIdentifiers = [String]()
-        
+
         guard let teamIdentifier = systemExtensionBundle.teamIdentifier else {
             throw ValueImportError("The system extension: \"\(systemExtensionBundle.bundleDisplayName ?? systemExtensionBundle.bundleURL.lastPathComponent)\" does not seem to be signed. No team identifier could be found.")
         }

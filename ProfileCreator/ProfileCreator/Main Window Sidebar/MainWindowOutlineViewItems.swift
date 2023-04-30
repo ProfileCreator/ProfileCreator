@@ -12,7 +12,7 @@ import Cocoa
 // MARK: Protocols
 // MARK: -
 
-protocol OutlineViewItem: class {
+protocol OutlineViewItem: AnyObject {
     var title: String { get }
     var isEditable: Bool { get }
     var identifier: UUID { get }

@@ -292,7 +292,7 @@ class PayloadCellViewTableView: PayloadCellView, ProfileCreatorCellView, TableVi
     }
 
     private func removeRow(indexes: IndexSet) {
-        guard 0 <= indexes.count, let indexMax = indexes.max(), indexMax < self.tableViewContent.count else {
+        guard !indexes.isEmpty, let indexMax = indexes.max(), indexMax < self.tableViewContent.count else {
             Log.shared.error(message: "Index too large: \(String(describing: indexes.max())). self.tableViewContent.count: \(self.tableViewContent.count)", category: String(describing: self))
             return
         }

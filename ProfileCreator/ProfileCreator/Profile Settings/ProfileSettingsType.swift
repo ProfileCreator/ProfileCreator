@@ -35,8 +35,8 @@ extension ProfileSettings {
         } else {
 
             // FIXME: Need to compare the actual keys to see which one it most likely is...
-            //let domainKeys = Set(payloadSettings.keys)
-            //let keys = Array(domainKeys.subtracting(kPayloadSubkeys))
+            // let domainKeys = Set(payloadSettings.keys)
+            // let keys = Array(domainKeys.subtracting(kPayloadSubkeys))
             // FIXME: Just return manifestApple until this is implemented.
             return .manifestsApple
         }

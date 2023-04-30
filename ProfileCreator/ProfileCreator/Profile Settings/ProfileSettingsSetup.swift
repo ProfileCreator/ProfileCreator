@@ -70,7 +70,7 @@ extension ProfileSettings {
 
             let type = ProfileSettings.payloadType(forPayloadSettings: payloadSetting)
 
-            guard var domain = payloadSetting[PayloadKey.payloadType] as? String else {
+            guard let domain = payloadSetting[PayloadKey.payloadType] as? String else {
                 var payloadTypeMissing = importErrors[ImportErrorKey.payloadTypeMissing] as? [String] ?? [String]()
                 payloadTypeMissing.append(payloadSetting[PayloadKey.payloadDisplayName] as? String ?? "<No PayloadDisplayName>")
                 importErrors[ImportErrorKey.payloadTypeMissing] = payloadTypeMissing
@@ -365,7 +365,7 @@ extension ProfileSettings {
             var typeSettings = [String: [[String: Any]]]()
             var viewTypeSettings = [String: [[String: Any]]]()
 
-            for (var domain, domainValue) in typeValue {
+            for (domain, domainValue) in typeValue {
                 for payloadSetting in domainValue {
 
                     /*

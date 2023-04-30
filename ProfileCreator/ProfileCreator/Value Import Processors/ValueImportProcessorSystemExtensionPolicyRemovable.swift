@@ -34,7 +34,7 @@ class ValueImportProcessorSystemExtensionPolicyRemovable: ValueImportProcessor {
 
         var value = [String: Any]()
         var bundleIdentifiers = [String]()
-        
+
         guard let teamIdentifier = systemExtensionBundle.teamIdentifier else {
             throw ValueImportError("The system extension: \"\(systemExtensionBundle.bundleDisplayName ?? systemExtensionBundle.bundleURL.lastPathComponent)\" does not seem to be signed. No team identifier could be found.")
         }
