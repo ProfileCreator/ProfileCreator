@@ -128,7 +128,7 @@ class ProfileEditor: NSObject {
         // ---------------------------------------------------------------------
         //  Reload the TableView
         // ---------------------------------------------------------------------
-        //self.reloadTableView(updateCellViews: true)
+        // self.reloadTableView(updateCellViews: true)
     }
 
     @objc func didSaveProfile(_ notification: Notification) {
@@ -234,7 +234,7 @@ class ProfileEditor: NSObject {
                 self.showTabView(payloadPlaceholder: selectedPayloadPlaceholder)
             }
 
-            //self.select(tab: self.selectedPayloadIndex)
+            // self.select(tab: self.selectedPayloadIndex)
             self.reloadTableView(updateCellViews: true)
             self.scrollView.documentView = self.tableView
         case EditorViewTag.source.rawValue:
@@ -247,7 +247,7 @@ class ProfileEditor: NSObject {
                 self.updateSourceView(payloadPlaceholder: selectedPayloadPlaceholder)
             }
 
-            //self.select(tab: self.selectedPayloadIndex)
+            // self.select(tab: self.selectedPayloadIndex)
             self.scrollView.documentView = self.textView
         case EditorViewTag.outlineView.rawValue:
             self.selectedPayloadView = .outlineView

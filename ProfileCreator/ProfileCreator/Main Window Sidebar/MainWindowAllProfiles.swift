@@ -155,5 +155,5 @@ class MainWindowAllProfilesGroup: NSObject, OutlineViewChildItem {
 
     // MARK: -
     // MARK: MainWindowOutlineViewDelegate Functions
-    //TODO: Implement
+    // TODO: Implement
 }

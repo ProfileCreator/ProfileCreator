@@ -304,7 +304,7 @@ extension ProfileEditor {
         self.tabView.alignment = .centerY
         self.tabView.detachesHiddenViews = true
 
-        constraints.append(NSLayoutConstraint(item: self.tabView, //self.tabView,
+        constraints.append(NSLayoutConstraint(item: self.tabView, // self.tabView,
             attribute: .width,
             relatedBy: .greaterThanOrEqual,
             toItem: self.scrollViewTabView,
@@ -319,7 +319,7 @@ extension ProfileEditor {
         //  Add constraints
         // ---------------------------------------------------------------------
         // Top
-        self.constraintsTabView.append(NSLayoutConstraint(item: self.scrollViewTabView, //self.tabView,
+        self.constraintsTabView.append(NSLayoutConstraint(item: self.scrollViewTabView, // self.tabView,
                                                           attribute: .top,
                                                           relatedBy: .equal,
                                                           toItem: self.separator,
@@ -328,7 +328,7 @@ extension ProfileEditor {
                                                           constant: 0.0))
 
         // Height
-        self.constraintsTabView.append(NSLayoutConstraint(item: self.scrollViewTabView, //self.tabView,
+        self.constraintsTabView.append(NSLayoutConstraint(item: self.scrollViewTabView, // self.tabView,
                                                           attribute: .height,
                                                           relatedBy: .equal,
                                                           toItem: nil,
@@ -337,7 +337,7 @@ extension ProfileEditor {
                                                           constant: 22.0))
 
         // Leading
-        self.constraintsTabView.append(NSLayoutConstraint(item: self.scrollViewTabView, //self.tabView,
+        self.constraintsTabView.append(NSLayoutConstraint(item: self.scrollViewTabView, // self.tabView,
                                                           attribute: .leading,
                                                           relatedBy: .equal,
                                                           toItem: self.editorView,
@@ -349,7 +349,7 @@ extension ProfileEditor {
         self.constraintsTabView.append(NSLayoutConstraint(item: self.buttonAddTab,
                                                           attribute: .leading,
                                                           relatedBy: .equal,
-                                                          toItem: self.scrollViewTabView, //self.tabView,
+                                                          toItem: self.scrollViewTabView, // self.tabView,
                                                           attribute: .trailing,
                                                           multiplier: 1.0,
                                                           constant: 2.0))

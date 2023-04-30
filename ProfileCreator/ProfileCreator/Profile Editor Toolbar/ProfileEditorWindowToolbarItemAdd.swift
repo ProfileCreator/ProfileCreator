@@ -221,7 +221,7 @@ class ProfileEditorWindowToolbarItemAddButton: NSButton {
         menuItemAddPayload.identifier = .editorMenuItemAddPayload
         menuItemAddPayload.isEnabled = true
         // menuItemAddPayload.target = self
-        //menuItemAddPayload.action = #selector(self.addPayload(menuItem:))
+        // menuItemAddPayload.action = #selector(self.addPayload(menuItem:))
         self.buttonMenu.addItem(menuItemAddPayload)
 
         // ---------------------------------------------------------------------
@@ -232,7 +232,7 @@ class ProfileEditorWindowToolbarItemAddButton: NSButton {
         menuItemAddPayloadKey.identifier = .editorMenuItemAddPayloadKey
         menuItemAddPayloadKey.isEnabled = true
         // menuItemAddPayloadKey.target = self
-        //menuItemAddPayloadKey.action = #selector(self.addPayloadKey(menuItem:))
+        // menuItemAddPayloadKey.action = #selector(self.addPayloadKey(menuItem:))
         self.buttonMenu.addItem(menuItemAddPayloadKey)
     }
 

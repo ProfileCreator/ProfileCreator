@@ -731,7 +731,7 @@ class SigningCertificatePopUpButton: NSPopUpButton, NSMenuDelegate {
 
 public func addButton(label: String?,
                       title: String?,
-                      controlSize: NSControl.ControlSize  = .regular,
+                      controlSize: NSControl.ControlSize = .regular,
                       bindToEnabled: Any?,
                       bindKeyPathEnabled: String?,
                       target: Any?,

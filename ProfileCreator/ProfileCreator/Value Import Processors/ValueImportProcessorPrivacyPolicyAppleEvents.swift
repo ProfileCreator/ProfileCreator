@@ -617,7 +617,7 @@ class ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView: NSView {
         let menuItem = NSMenuItem()
         menuItem.title = information["Title"] as? String ?? "Unknown"
         menuItem.representedObject = information
-        //menuItem.image = information["Icon"] as? NSImage
+        // menuItem.image = information["Icon"] as? NSImage
         return menuItem
     }
 
@@ -746,7 +746,7 @@ class ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView: NSView {
 
     func setupImageViewSendingApp(constraints: inout [NSLayoutConstraint]) {
         self.imageViewSendingApp.translatesAutoresizingMaskIntoConstraints = false
-        //self.imageViewSendingApp.imageFrameStyle = .grayBezel
+        // self.imageViewSendingApp.imageFrameStyle = .grayBezel
         self.imageViewSendingApp.imageScaling = .scaleProportionallyUpOrDown
         self.imageViewSendingApp.setContentHuggingPriority(.required, for: .horizontal)
         if let itemURL = self.url {
@@ -832,7 +832,7 @@ class ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView: NSView {
 
     func setupImageViewRecievingApp(constraints: inout [NSLayoutConstraint]) {
         self.imageViewRecievingApp.translatesAutoresizingMaskIntoConstraints = false
-        //self.imageViewRecievingApp.imageFrameStyle = .grayBezel
+        // self.imageViewRecievingApp.imageFrameStyle = .grayBezel
         self.imageViewRecievingApp.imageScaling = .scaleProportionallyUpOrDown
         if let itemURL = self.url {
             self.imageViewRecievingApp.image = NSWorkspace.shared.icon(forFile: itemURL.path)

@@ -29,7 +29,7 @@ class ProfileEditorOutlineView: NSOutlineView {
         //  Setup OutlineView
         // ---------------------------------------------------------------------
         self.translatesAutoresizingMaskIntoConstraints = true
-        //self.selectionHighlightStyle = .sourceList
+        // self.selectionHighlightStyle = .sourceList
         self.floatsGroupRows = false
         self.rowSizeStyle = .default
         self.autoresizesOutlineColumn = true

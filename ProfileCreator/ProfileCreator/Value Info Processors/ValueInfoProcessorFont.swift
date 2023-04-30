@@ -43,7 +43,7 @@ class ValueInfoProcessorFont: ValueInfoProcessor {
             fontDescription = unicode
         } else if let macintosh = fontDescriptions.first(where: { $0.platformIdentifier == .macintosh }) {
             fontDescription = macintosh
-        } else if let microsoft = fontDescriptions.first(where: {$0.platformIdentifier == .microsoft }) {
+        } else if let microsoft = fontDescriptions.first(where: { $0.platformIdentifier == .microsoft }) {
             fontDescription = microsoft
         } else {
             return nil

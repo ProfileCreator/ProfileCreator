@@ -81,7 +81,7 @@ class MainWindowController: NSWindowController {
         if  #available(macOS 11.0, *) {
             self.window?.toolbarStyle = .unified
         }
-        
+
         self.window?.toolbar = self.toolbar
     }
 }
