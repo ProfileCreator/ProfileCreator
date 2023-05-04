@@ -9,6 +9,6 @@
 import Cocoa
 
 extension NSPasteboard.PasteboardType {
-    static let profile = NSPasteboard.PasteboardType(rawValue: "com.github.erikberglund.ProfileCreator.profile")
-    static let payload = NSPasteboard.PasteboardType(rawValue: "com.github.erikberglund.ProfileCreator.payload")
+    static let profile = NSPasteboard.PasteboardType(rawValue: "com.willyu.ProfileCreator.profile")
+    static let payload = NSPasteboard.PasteboardType(rawValue: "com.willyu.ProfileCreator.payload")
 }

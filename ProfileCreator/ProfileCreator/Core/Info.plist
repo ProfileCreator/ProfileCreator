@@ -21,6 +21,8 @@
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array/>
 			<key>LSTypeIsPackage</key>
@@ -37,6 +39,8 @@
 			<string>Configuration Profile</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.apple.mobileconfig</string>
@@ -60,31 +64,31 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.3.2</string>
+	<string>0.3.3</string>
 	<key>CFBundleVersion</key>
-	<string>202304301435</string>
+	<string>202304301758</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.productivity</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2018 Erik Berglund. All rights reserved.</string>
+	<string>Copyright © 2023 Will Yu. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>SUFeedURL</key>
-	<string>https://raw.githubusercontent.com/erikberglund/ProfileCreator/master/appcast.xml</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
 			<key>UTTypeDescription</key>
 			<string>Profile</string>
 			<key>UTTypeIdentifier</key>
-			<string>com.github.erikberglund.ProfileCreator</string>
+			<string>com.willyu.ProfileCreator</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>com.apple.nspboard-type</key>
 				<array>
-					<string>com.github.erikberglund.ProfileCreator.profile</string>
+					<string>com.willyu.ProfileCreator.profile</string>
 				</array>
 				<key>public.filename-extension</key>
 				<array>

@@ -7,6 +7,236 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1726C9FA29FF3854004902B3 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53DB961922606106000FF033 /* Sparkle.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1726CA0729FF3EB3004902B3 /* PayloadCellViewSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFED81022417663000985DE /* PayloadCellViewSlider.swift */; };
+		1726CA0829FF3EB3004902B3 /* ProfileSettingsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1D92112CF5500FA48E0 /* ProfileSettingsSettings.swift */; };
+		1726CA0929FF3EB3004902B3 /* ValueImportProcessorASAMApplications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A00DE210854AB0088F255 /* ValueImportProcessorASAMApplications.swift */; };
+		1726CA0A29FF3EB3004902B3 /* ProfileSettingsPayloadKeysExcluded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1F321170C3400FA48E0 /* ProfileSettingsPayloadKeysExcluded.swift */; };
+		1726CA0B29FF3EB3004902B3 /* PayloadLibrarySplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535CB4561F2B1CD300A746F6 /* PayloadLibrarySplitView.swift */; };
+		1726CA0C29FF3EB3004902B3 /* LenientDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285ADB214AE06100365B3E /* LenientDateFormatter.swift */; };
+		1726CA0D29FF3EB3004902B3 /* ExtensionURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536CACAB213D55CE00F8B702 /* ExtensionURL.swift */; };
+		1726CA0E29FF3EB3004902B3 /* PayloadCellViewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32767E51F3F71B700B4670C /* PayloadCellViewFile.swift */; };
+		1726CA0F29FF3EB3004902B3 /* ExtensionPayloadSubkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8B7F521771C93003F36ED /* ExtensionPayloadSubkey.swift */; };
+		1726CA1029FF3EB3004902B3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37397F0205CFA410018180E /* Log.swift */; };
+		1726CA1129FF3EB3004902B3 /* PayloadLibraryCellViewProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383C1971F2C919A004EBE9B /* PayloadLibraryCellViewProfile.swift */; };
+		1726CA1229FF3EB3004902B3 /* ValueInfoProcessorFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532488A32123175A00DE7169 /* ValueInfoProcessorFont.swift */; };
+		1726CA1329FF3EB3004902B3 /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A91BA2272EE60000BC244 /* ExtensionArray.swift */; };
+		1726CA1429FF3EB3004902B3 /* MainWindowOutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534732DC1F10C3BB00770446 /* MainWindowOutlineViewController.swift */; };
+		1726CA1529FF3EB3004902B3 /* ProfileEditorOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285ABE214ADC8600365B3E /* ProfileEditorOutlineView.swift */; };
+		1726CA1629FF3EB3004902B3 /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C32296213081C100216679 /* Certificate.swift */; };
+		1726CA1729FF3EB3004902B3 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB10BC28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift */; };
+		1726CA1829FF3EB3004902B3 /* ValueInfoProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A9A60621214C76006F2048 /* ValueInfoProcessors.swift */; };
+		1726CA1929FF3EB3004902B3 /* PreferencesLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3036613202F3A930051040D /* PreferencesLibrary.swift */; };
+		1726CA1A29FF3EB3004902B3 /* MainWindowToolbarItemExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A675621CF8B92005A6410 /* MainWindowToolbarItemExport.swift */; };
+		1726CA1B29FF3EB3004902B3 /* ProfileEditorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C696B1FA2FFC4008BE451 /* ProfileEditorHeaderView.swift */; };
+		1726CA1C29FF3EB3004902B3 /* PropertyListArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285ACA214AE03000365B3E /* PropertyListArray.swift */; };
+		1726CA1D29FF3EB3004902B3 /* ValueImportProcessorPrivacyPolicyAppleEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532488A7212373A000DE7169 /* ValueImportProcessorPrivacyPolicyAppleEvents.swift */; };
+		1726CA1E29FF3EB3004902B3 /* PayloadCellViewTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C8D5471F3F31850083DA5F /* PayloadCellViewTextView.swift */; };
+		1726CA1F29FF3EB3004902B3 /* PropertyListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AC7214AE02F00365B3E /* PropertyListItem.swift */; };
+		1726CA2029FF3EB3004902B3 /* PayloadCellViewCheckboxArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F1C6FE20D39457001BD714 /* PayloadCellViewCheckboxArray.swift */; };
+		1726CA2129FF3EB3004902B3 /* PropertyListItemConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AD3214AE04500365B3E /* PropertyListItemConvertible.swift */; };
+		1726CA2229FF3EB3004902B3 /* PropertyListTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AC3214ADF7300365B3E /* PropertyListTree.swift */; };
+		1726CA2329FF3EB3004902B3 /* NSNumber+Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285ADE214AE08300365B3E /* NSNumber+Types.swift */; };
+		1726CA2429FF3EB3004902B3 /* PayloadCellViewItemFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32767E71F3F736B00B4670C /* PayloadCellViewItemFileView.swift */; };
+		1726CA2529FF3EB3004902B3 /* PreferencesMDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B64B15228FDBEB000CF964 /* PreferencesMDM.swift */; };
+		1726CA2629FF3EB3004902B3 /* ConstantsOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531540091F1233080060011B /* ConstantsOld.swift */; };
+		1726CA2729FF3EB3004902B3 /* ProfileExportAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BC4F97208737CD00D3B509 /* ProfileExportAccessoryView.swift */; };
+		1726CA2829FF3EB3004902B3 /* PayloadCellViewDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37C67AA1F415CDD00B3D4CB /* PayloadCellViewDatePicker.swift */; };
+		1726CA2929FF3EB3004902B3 /* NumberFormatter+PropertyLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285ADF214AE08300365B3E /* NumberFormatter+PropertyLists.swift */; };
+		1726CA2A29FF3EB3004902B3 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309D3091F1AB287002133A0 /* Preferences.swift */; };
+		1726CA2B29FF3EB3004902B3 /* NSUserInterfaceItemIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECB2CD21007730009E734A /* NSUserInterfaceItemIdentifier.swift */; };
+		1726CA2C29FF3EB3004902B3 /* PayloadCellViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E393D1E6203984A900F8076D /* PayloadCellViewFooter.swift */; };
+		1726CA2D29FF3EB3004902B3 /* ExtensionBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5381221721C31D56005FB29D /* ExtensionBool.swift */; };
+		1726CA2E29FF3EB3004902B3 /* ValueInfoProcessorCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A9A60D21215185006F2048 /* ValueInfoProcessorCertificate.swift */; };
+		1726CA2F29FF3EB3004902B3 /* PayloadCellViewItemPopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C8D53F1F3EEA3A0083DA5F /* PayloadCellViewItemPopUpButton.swift */; };
+		1726CA3029FF3EB3004902B3 /* ValueInfoProcessorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FF415D21248B65000D18B2 /* ValueInfoProcessorImage.swift */; };
+		1726CA3129FF3EB3004902B3 /* MainWindowOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53383FED214D914800A02DEB /* MainWindowOutlineView.swift */; };
+		1726CA3229FF3EB3004902B3 /* PayloadCellViewPopUpButtonSegments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535435BA224A590000DE6EB3 /* PayloadCellViewPopUpButtonSegments.swift */; };
+		1726CA3329FF3EB3004902B3 /* PayloadCellViewTextFieldNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31FA8D11F4D59DE00F6B6BD /* PayloadCellViewTextFieldNumber.swift */; };
+		1726CA3429FF3EB3004902B3 /* PayloadCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4B3601F27D0B300457CB5 /* PayloadCellView.swift */; };
+		1726CA3529FF3EB3004902B3 /* PayloadCellViewNoKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34DC51C2068DC5400D7A87E /* PayloadCellViewNoKeys.swift */; };
+		1726CA3629FF3EB3004902B3 /* SecCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C3C852080A37F000575FD /* SecCertificate.swift */; };
+		1726CA3729FF3EB3004902B3 /* PayloadCellViewSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C867D020A1E0AF007082D6 /* PayloadCellViewSegmentedControl.swift */; };
+		1726CA3829FF3EB3004902B3 /* PayloadLibraryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535CB45C1F2B97A600A746F6 /* PayloadLibraryMenu.swift */; };
+		1726CA3929FF3EB3004902B3 /* PropertyListType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AE4214AE56F00365B3E /* PropertyListType.swift */; };
+		1726CA3A29FF3EB3004902B3 /* FileInfoProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3577C1B204A7536007D9FE9 /* FileInfoProcessor.swift */; };
+		1726CA3B29FF3EB3004902B3 /* ProfileSettingsIncluded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1D72112C97A00FA48E0 /* ProfileSettingsIncluded.swift */; };
+		1726CA3C29FF3EB3004902B3 /* ProfileEditorSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531852211F2295B000529E6B /* ProfileEditorSplitView.swift */; };
+		1726CA3D29FF3EB3004902B3 /* LibraryCellViewItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383C19C1F2C9592004EBE9B /* LibraryCellViewItemImageView.swift */; };
+		1726CA3E29FF3EB3004902B3 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309D3041F1A430F002133A0 /* ProfileController.swift */; };
+		1726CA3F29FF3EB3004902B3 /* ValueImportProcessorDockStaticApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F74B8A217F059C00139B04 /* ValueImportProcessorDockStaticApps.swift */; };
+		1726CA4029FF3EB3004902B3 /* PropertyListCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AC9214AE02F00365B3E /* PropertyListCollection.swift */; };
+		1726CA4129FF3EB3004902B3 /* FileInfoProcessorCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E31FFE62205BAE8A0027D40A /* FileInfoProcessorCertificate.swift */; };
+		1726CA4229FF3EB3004902B3 /* PayloadCellViewWarning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AEF798215CDFAC009F62B4 /* PayloadCellViewWarning.swift */; };
+		1726CA4329FF3EB3004902B3 /* AppResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DADB4F1F13ACF90045CB3F /* AppResources.swift */; };
+		1726CA4429FF3EB3004902B3 /* ProfileEditorEditKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD2A6219ACBCF00B64AA5 /* ProfileEditorEditKeyView.swift */; };
+		1726CA4529FF3EB3004902B3 /* ProfileEditorEditKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FFD28A219A28E900B64AA5 /* ProfileEditorEditKey.swift */; };
+		1726CA4629FF3EB3004902B3 /* ValueImportProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A00DA2107015C0088F255 /* ValueImportProcessor.swift */; };
+		1726CA4729FF3EB3004902B3 /* KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1D121118C0B00FA48E0 /* KeyPath.swift */; };
+		1726CA4829FF3EB3004902B3 /* ProfileSettingsValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1CF211189A200FA48E0 /* ProfileSettingsValues.swift */; };
+		1726CA4929FF3EB3004902B3 /* PropertyListObjectConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AD1214AE04500365B3E /* PropertyListObjectConvertible.swift */; };
+		1726CA4A29FF3EB3004902B3 /* ValueImportProcessorDockStaticOthers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5353CA852180A5B1002EB650 /* ValueImportProcessorDockStaticOthers.swift */; };
+		1726CA4B29FF3EB3004902B3 /* ProfileImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E336A04120892F5C002C11CB /* ProfileImport.swift */; };
+		1726CA4C29FF3EB3004902B3 /* ExtensionBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A00E2210855420088F255 /* ExtensionBundle.swift */; };
+		1726CA4D29FF3EB3004902B3 /* PayloadCellViewPopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C8D5411F3EED1E0083DA5F /* PayloadCellViewPopUpButton.swift */; };
+		1726CA4E29FF3EB3004902B3 /* FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3577C19204A74E9007D9FE9 /* FileInfo.swift */; };
+		1726CA4F29FF3EB3004902B3 /* PropertyListDataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AD9214AE05C00365B3E /* PropertyListDataFormatter.swift */; };
+		1726CA5029FF3EB3004902B3 /* ProfileEditorEditKeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5305706F2210206800F68A15 /* ProfileEditorEditKeyWindow.swift */; };
+		1726CA5129FF3EB3004902B3 /* PayloadLibraryNoPayloadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D2281F2DD2AC00D93C67 /* PayloadLibraryNoPayloadsView.swift */; };
+		1726CA5229FF3EB3004902B3 /* MainWindowLibraryJSS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B77A4A2062E11C002779CF /* MainWindowLibraryJSS.swift */; };
+		1726CA5329FF3EB3004902B3 /* PreferencesProfileDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D2C481F1BCB2500FF6051 /* PreferencesProfileDefaults.swift */; };
+		1726CA5429FF3EB3004902B3 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536554DB1F248CA4000543A3 /* Error.swift */; };
+		1726CA5529FF3EB3004902B3 /* DesignatedRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315612B210DBBDE002117FE /* DesignatedRequirement.swift */; };
+		1726CA5629FF3EB3004902B3 /* EditorTableViewCellViewTextFieldNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7645F20AA9944005E9E79 /* EditorTableViewCellViewTextFieldNumber.swift */; };
+		1726CA5729FF3EB3004902B3 /* PayloadCellViewTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383C1A31F2D0B7C004EBE9B /* PayloadCellViewTitle.swift */; };
+		1726CA5829FF3EB3004902B3 /* DictionaryKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECB2D321007825009E734A /* DictionaryKeys.swift */; };
+		1726CA5929FF3EB3004902B3 /* ProfileSettingsPayloadKeysRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1EF2116B37400FA48E0 /* ProfileSettingsPayloadKeysRequired.swift */; };
+		1726CA5A29FF3EB3004902B3 /* PreferencesPayloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539D0D6820F3E654009697BB /* PreferencesPayloads.swift */; };
+		1726CA5B29FF3EB3004902B3 /* ProfileSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1CA211172AE00FA48E0 /* ProfileSettings.swift */; };
+		1726CA5C29FF3EB3004902B3 /* PayloadCellViewPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30667971F4B2457000C6424 /* PayloadCellViewPadding.swift */; };
+		1726CA5D29FF3EB3004902B3 /* PreferencesAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC797C20F92DE100B14B2D /* PreferencesAdvanced.swift */; };
+		1726CA5E29FF3EB3004902B3 /* HexColorTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53246CAD20E5670800C3D1B3 /* HexColorTransformer.swift */; };
+		1726CA5F29FF3EB3004902B3 /* MainWindowLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DADB4B1F137A110045CB3F /* MainWindowLibrary.swift */; };
+		1726CA6029FF3EB3004902B3 /* ProfileEditorSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A527C2036E39E00A9508F /* ProfileEditorSettings.swift */; };
+		1726CA6129FF3EB3004902B3 /* PayloadCellViewItemTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30B64041F4DCB3800240427 /* PayloadCellViewItemTableView.swift */; };
+		1726CA6229FF3EB3004902B3 /* PayloadLibraryCellViewLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383C1991F2C91AF004EBE9B /* PayloadLibraryCellViewLibrary.swift */; };
+		1726CA6329FF3EB3004902B3 /* ProfileSettingsPayloadEnabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1D32111A23D00FA48E0 /* ProfileSettingsPayloadEnabled.swift */; };
+		1726CA6429FF3EB3004902B3 /* OverlayScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E3BC4207E4B780093B879 /* OverlayScrollView.swift */; };
+		1726CA6529FF3EB3004902B3 /* PayloadCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39287101F49BB01005383CC /* PayloadCellViews.swift */; };
+		1726CA6629FF3EB3004902B3 /* ProfileEditorSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A527E2036E3B600A9508F /* ProfileEditorSettingsViewController.swift */; };
+		1726CA6729FF3EB3004902B3 /* EditorTableViewCellViewCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7646120AA9975005E9E79 /* EditorTableViewCellViewCheckbox.swift */; };
+		1726CA6829FF3EB3004902B3 /* AdaptiveSpaceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E308D4E12095036C005A6450 /* AdaptiveSpaceItem.swift */; };
+		1726CA6929FF3EB3004902B3 /* MainWindowWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DA4901F1213AE00FB325E /* MainWindowWelcomeView.swift */; };
+		1726CA6A29FF3EB3004902B3 /* MainWindowProfilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DA48D1F11FD9D00FB325E /* MainWindowProfilePreview.swift */; };
+		1726CA6B29FF3EB3004902B3 /* PayloadCellViewItemComboBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A9951622569035006ADBA2 /* PayloadCellViewItemComboBox.swift */; };
+		1726CA6C29FF3EB3004902B3 /* PayloadCellViewHostPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C8D5431F3EF82D0083DA5F /* PayloadCellViewHostPort.swift */; };
+		1726CA6D29FF3EB3004902B3 /* ProfileEditorOutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285ABB214ADC1C00365B3E /* ProfileEditorOutlineViewController.swift */; };
+		1726CA6E29FF3EB3004902B3 /* MainWindowAllProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315400C1F127B340060011B /* MainWindowAllProfiles.swift */; };
+		1726CA6F29FF3EB3004902B3 /* NSColor+ColorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53246CB020E569E400C3D1B3 /* NSColor+ColorCode.swift */; };
+		1726CA7029FF3EB3004902B3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309D3021F19E537002133A0 /* Profile.swift */; };
+		1726CA7129FF3EB3004902B3 /* ValueImportProcessorLineValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A91AB22722BE2000BC244 /* ValueImportProcessorLineValue.swift */; };
+		1726CA7229FF3EB3004902B3 /* PayloadCellViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539A61F22139079900255567 /* PayloadCellViewProtocols.swift */; };
+		1726CA7329FF3EB3004902B3 /* ProfileSettingsConditionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1F12116DDBE00FA48E0 /* ProfileSettingsConditionals.swift */; };
+		1726CA7429FF3EB3004902B3 /* PayloadCellViewComboBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BD6FD022564CA100EB418B /* PayloadCellViewComboBox.swift */; };
+		1726CA7529FF3EB3004902B3 /* ProfileSigning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5319D946211D55D4006CD748 /* ProfileSigning.swift */; };
+		1726CA7629FF3EB3004902B3 /* FileInfoProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C7FBF2045EA8A009971F5 /* FileInfoProcessors.swift */; };
+		1726CA7729FF3EB3004902B3 /* ProfileEditorWindowToolbarItemAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E2BDED20765CF200CBDC08 /* ProfileEditorWindowToolbarItemAdd.swift */; };
+		1726CA7829FF3EB3004902B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539832111F0EE15400C4792D /* AppDelegate.swift */; };
+		1726CA7929FF3EB3004902B3 /* PayloadLibraryCellViewLibraryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD35BC20CA8C61000F9D50 /* PayloadLibraryCellViewLibraryGroup.swift */; };
+		1726CA7A29FF3EB3004902B3 /* PayloadCellViewEnable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C69701FA31CEA008BE451 /* PayloadCellViewEnable.swift */; };
+		1726CA7B29FF3EB3004902B3 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5365F4841F0F4D430064C02A /* MainWindow.swift */; };
+		1726CA7C29FF3EB3004902B3 /* ValueInfoProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A9A60921214CA9006F2048 /* ValueInfoProcessor.swift */; };
+		1726CA7D29FF3EB3004902B3 /* MainWindowSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534732DA1F10C35500770446 /* MainWindowSplitView.swift */; };
+		1726CA7E29FF3EB3004902B3 /* NSPasteboard.PasteboardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECB2D1210077B2009E734A /* NSPasteboard.PasteboardType.swift */; };
+		1726CA7F29FF3EB3004902B3 /* ProfileSettingsCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1ED211640EC00FA48E0 /* ProfileSettingsCache.swift */; };
+		1726CA8029FF3EB3004902B3 /* LibraryCellViewItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383C19E1F2C9AC3004EBE9B /* LibraryCellViewItemButton.swift */; };
+		1726CA8129FF3EB3004902B3 /* ProfileEditorTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BA8541207129940014D010 /* ProfileEditorTab.swift */; };
+		1726CA8229FF3EB3004902B3 /* PayloadCellViewCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532917841F3257D100CD7175 /* PayloadCellViewCheckbox.swift */; };
+		1726CA8329FF3EB3004902B3 /* EditorTableViewCellViewComboBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A9951922569F23006ADBA2 /* EditorTableViewCellViewComboBox.swift */; };
+		1726CA8429FF3EB3004902B3 /* ValueImportProcessorPrivacyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532488A5212366FB00DE7169 /* ValueImportProcessorPrivacyPolicy.swift */; };
+		1726CA8529FF3EB3004902B3 /* EditorTableViewCellViewPopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7646320AA9994005E9E79 /* EditorTableViewCellViewPopUpButton.swift */; };
+		1726CA8629FF3EB3004902B3 /* ExtensionNSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5390A066213E82F5004F6551 /* ExtensionNSTextField.swift */; };
+		1726CA8729FF3EB3004902B3 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8174F291FA7AD0050A2F6 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift */; };
+		1726CA8829FF3EB3004902B3 /* PayloadLibraryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535CB45A1F2B8BAD00A746F6 /* PayloadLibraryFilter.swift */; };
+		1726CA8929FF3EB3004902B3 /* EditorTableViewCellViewTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7645D20AA98EB005E9E79 /* EditorTableViewCellViewTextField.swift */; };
+		1726CA8A29FF3EB3004902B3 /* ProfileEditorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531852051F22907C00529E6B /* ProfileEditorWindowController.swift */; };
+		1726CA8B29FF3EB3004902B3 /* ValueImportError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A00EA2108FEDA0088F255 /* ValueImportError.swift */; };
+		1726CA8C29FF3EB3004902B3 /* ValueImportProcessorKernelExtensionPolicyTeamIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A00E4210897740088F255 /* ValueImportProcessorKernelExtensionPolicyTeamIdentifiers.swift */; };
+		1726CA8D29FF3EB3004902B3 /* MainWindowToolbarItemTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5332530D20E172D000FD6CDF /* MainWindowToolbarItemTitle.swift */; };
+		1726CA8E29FF3EB3004902B3 /* ProfileSettingsViewValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1E9211429DF00FA48E0 /* ProfileSettingsViewValues.swift */; };
+		1726CA8F29FF3EB3004902B3 /* PropertyListEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AE6214AE6F700365B3E /* PropertyListEnums.swift */; };
+		1726CA9029FF3EB3004902B3 /* ProfileEditorWindowToolbarItemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CBFE0C20343874006037D4 /* ProfileEditorWindowToolbarItemSettings.swift */; };
+		1726CA9129FF3EB3004902B3 /* SecIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C3C832080A362000575FD /* SecIdentity.swift */; };
+		1726CA9229FF3EB3004902B3 /* LibraryCellViewItemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383C1A01F2C9EE1004EBE9B /* LibraryCellViewItemTextField.swift */; };
+		1726CA9329FF3EB3004902B3 /* ViewWhite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536DA4931F12143F00FB325E /* ViewWhite.swift */; };
+		1726CA9429FF3EB3004902B3 /* PropertyListXMLWritable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AD0214AE04400365B3E /* PropertyListXMLWritable.swift */; };
+		1726CA9529FF3EB3004902B3 /* NSColor+HSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53246CAF20E569E400C3D1B3 /* NSColor+HSL.swift */; };
+		1726CA9629FF3EB3004902B3 /* PayloadCellViewRadioButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300AB5F20A15F2600129D7C /* PayloadCellViewRadioButtons.swift */; };
+		1726CA9729FF3EB3004902B3 /* FontInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53017301212A6C3D00771AC4 /* FontInfo.swift */; };
+		1726CA9829FF3EB3004902B3 /* PayloadLibraryTableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535CB4581F2B1E4100A746F6 /* PayloadLibraryTableViews.swift */; };
+		1726CA9929FF3EB3004902B3 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECB2D521007DBF009E734A /* Enums.swift */; };
+		1726CA9A29FF3EB3004902B3 /* ValueImportProcessorCertificateTransparency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53656C3F21942A4900AF84A5 /* ValueImportProcessorCertificateTransparency.swift */; };
+		1726CA9B29FF3EB3004902B3 /* ColorKeywordMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53246CB320E56AE400C3D1B3 /* ColorKeywordMap.swift */; };
+		1726CA9C29FF3EB3004902B3 /* PreferencesEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383C1921F2C8B5C004EBE9B /* PreferencesEditor.swift */; };
+		1726CA9D29FF3EB3004902B3 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539A164C1F26787A009CA7B6 /* ProfileEditor.swift */; };
+		1726CA9E29FF3EB3004902B3 /* PreferencesViewElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D2C4C1F1C970C00FF6051 /* PreferencesViewElements.swift */; };
+		1726CA9F29FF3EB3004902B3 /* PropertyListXMLReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AD2214AE04500365B3E /* PropertyListXMLReader.swift */; };
+		1726CAA029FF3EB3004902B3 /* ProfileSettingsViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1E7211426FB00FA48E0 /* ProfileSettingsViewSettings.swift */; };
+		1726CAA129FF3EB3004902B3 /* ValueImportProcessorFirewallApplications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A00DC21076A4D0088F255 /* ValueImportProcessorFirewallApplications.swift */; };
+		1726CAA229FF3EB3004902B3 /* PayloadCellViewItemTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C8D5491F3F31CE0083DA5F /* PayloadCellViewItemTextView.swift */; };
+		1726CAA329FF3EB3004902B3 /* MainWindowOutlineViewItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315400E1F127F280060011B /* MainWindowOutlineViewItems.swift */; };
+		1726CAA429FF3EB3004902B3 /* CoreExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5326D22A1F2DECED00D93C67 /* CoreExtensions.swift */; };
+		1726CAA529FF3EB3004902B3 /* ValueInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A9A60B21214D30006F2048 /* ValueInfo.swift */; };
+		1726CAA629FF3EB3004902B3 /* ProfileEditorExtensionTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5378AE9D2179B9EF00559089 /* ProfileEditorExtensionTabView.swift */; };
+		1726CAA729FF3EB3004902B3 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D8AD9C2119825200AA0AA0 /* ExtensionString.swift */; };
+		1726CAA829FF3EB3004902B3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B64B13228FDA18000CF964 /* Keychain.swift */; };
+		1726CAA929FF3EB3004902B3 /* PayloadCellViewTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C4B35E1F27D06000457CB5 /* PayloadCellViewTextField.swift */; };
+		1726CAAA29FF3EB3004902B3 /* PayloadCellViewItemSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C867D320A1E3B6007082D6 /* PayloadCellViewItemSegmentedControl.swift */; };
+		1726CAAB29FF3EB3004902B3 /* ExtensionFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5308AEFD2154D116004730EB /* ExtensionFileManager.swift */; };
+		1726CAAC29FF3EB3004902B3 /* ProfileSettingsSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1CD211177F700FA48E0 /* ProfileSettingsSetup.swift */; };
+		1726CAAD29FF3EB3004902B3 /* OverlayScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E3BC2207E4B520093B879 /* OverlayScroller.swift */; };
+		1726CAAE29FF3EB3004902B3 /* FileInfoProcessorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D35CB320A0765E00983E51 /* FileInfoProcessorImage.swift */; };
+		1726CAAF29FF3EB3004902B3 /* ProfileSettingsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1DB2112E0C300FA48E0 /* ProfileSettingsType.swift */; };
+		1726CAB029FF3EB3004902B3 /* MainWindowTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DF38761F11675F006DE5BE /* MainWindowTableView.swift */; };
+		1726CAB129FF3EB3004902B3 /* ValueInfoProcessorShellScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533381342150260E00113C25 /* ValueInfoProcessorShellScript.swift */; };
+		1726CAB229FF3EB3004902B3 /* ProfileSettingsPlatforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1E521141A9700FA48E0 /* ProfileSettingsPlatforms.swift */; };
+		1726CAB329FF3EB3004902B3 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECB2CF2100776A009E734A /* Notification.Name.swift */; };
+		1726CAB429FF3EB3004902B3 /* ExtensionDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EBFA9B2248148400092F7A /* ExtensionDouble.swift */; };
+		1726CAB529FF3EB3004902B3 /* ValueImportProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A00D82107010B0088F255 /* ValueImportProcessors.swift */; };
+		1726CAB629FF3EB3004902B3 /* PayloadCellViewItemSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFED813224176EE000985DE /* PayloadCellViewItemSlider.swift */; };
+		1726CAB729FF3EB3004902B3 /* PreferencesGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538D2C461F1BC73800FF6051 /* PreferencesGeneral.swift */; };
+		1726CAB829FF3EB3004902B3 /* PayloadCellViewTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3BFD66F1F4DC8E9001120DB /* PayloadCellViewTableView.swift */; };
+		1726CAB929FF3EB3004902B3 /* PropertyListDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AC8214AE02F00365B3E /* PropertyListDictionary.swift */; };
+		1726CABA29FF3EB3004902B3 /* ValueImportProcessorApplicationAccessWhiteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DDC281210B7E240011E45D /* ValueImportProcessorApplicationAccessWhiteList.swift */; };
+		1726CABB29FF3EB3004902B3 /* ProfileExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5319D943211D537C006CD748 /* ProfileExport.swift */; };
+		1726CABC29FF3EB3004902B3 /* ProfileSettingsStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1DD2113541F00FA48E0 /* ProfileSettingsStrings.swift */; };
+		1726CABD29FF3EB3004902B3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECB2CB210076D9009E734A /* Constants.swift */; };
+		1726CABE29FF3EB3004902B3 /* Identities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C3C812080A1A2000575FD /* Identities.swift */; };
+		1726CABF29FF3EB3004902B3 /* ProfileEditorUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E391A21720316C3800CCE71C /* ProfileEditorUI.swift */; };
+		1726CAC029FF3EB3004902B3 /* ProfileEditorWindowToolbarItemEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E347E4BE2057C51A008F5137 /* ProfileEditorWindowToolbarItemEditorView.swift */; };
+		1726CAC129FF3EB3004902B3 /* ProfileEditorExtensionSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5378AE992179B84600559089 /* ProfileEditorExtensionSourceView.swift */; };
+		1726CAC229FF3EB3004902B3 /* ProfileSettingsPayloadKeysEnabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1EB21142B2200FA48E0 /* ProfileSettingsPayloadKeysEnabled.swift */; };
+		1726CAC329FF3EB3004902B3 /* ProfileSettingsCurrent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1E321140EF200FA48E0 /* ProfileSettingsCurrent.swift */; };
+		1726CAC429FF3EB3004902B3 /* MainWindowTableViewItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530CD3D91F17793B0071E866 /* MainWindowTableViewItems.swift */; };
+		1726CAC529FF3EB3004902B3 /* PayloadCellViewItemCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532917881F32593800CD7175 /* PayloadCellViewItemCheckbox.swift */; };
+		1726CAC629FF3EB3004902B3 /* PayloadCellViewItemBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53BEAFFC226751F9003836B6 /* PayloadCellViewItemBox.swift */; };
+		1726CAC729FF3EB3004902B3 /* ProfileEditorWindowToolbarItemTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370780C1F232DAA00570090 /* ProfileEditorWindowToolbarItemTitle.swift */; };
+		1726CAC829FF3EB3004902B3 /* MainWindowToolbarItemAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5365F4871F0F71850064C02A /* MainWindowToolbarItemAdd.swift */; };
+		1726CAC929FF3EB3004902B3 /* ValueImportProcessorDashboardWhiteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5319D949211DCC64006CD748 /* ValueImportProcessorDashboardWhiteList.swift */; };
+		1726CACA29FF3EB3004902B3 /* PayloadCellViewDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30CC5DF205273F0006F113D /* PayloadCellViewDictionary.swift */; };
+		1726CACB29FF3EB3004902B3 /* ValueImportProcessorDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5315615D210F2F81002117FE /* ValueImportProcessorDirectory.swift */; };
+		1726CACC29FF3EB3004902B3 /* ProfileEditorExtensionOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5378AE9B2179B94300559089 /* ProfileEditorExtensionOutlineView.swift */; };
+		1726CACD29FF3EB3004902B3 /* ExtensionInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5381221421C31AE4005FB29D /* ExtensionInt.swift */; };
+		1726CACE29FF3EB3004902B3 /* PayloadCellViewPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CEA71E227DB0B8006B59D6 /* PayloadCellViewPopOver.swift */; };
+		1726CACF29FF3EB3004902B3 /* ProfileExportPlistAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF5C91224360BF00773E1A /* ProfileExportPlistAccessoryView.swift */; };
+		1726CAD029FF3EB3004902B3 /* NSToolbarItem.Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ECB2C92100769E009E734A /* NSToolbarItem.Identifier.swift */; };
+		1726CAD129FF3EB3004902B3 /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333813721503F5F00113C25 /* StreamReader.swift */; };
+		1726CAD229FF3EB3004902B3 /* EditorTableViewCellViewArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D7646520AA99C2005E9E79 /* EditorTableViewCellViewArray.swift */; };
+		1726CAD329FF3EB3004902B3 /* PayloadLibraryNoProfilePayloadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3204F142066359D002DEACC /* PayloadLibraryNoProfilePayloadsView.swift */; };
+		1726CAD429FF3EB3004902B3 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E26B1F13ED440027D0D0 /* Alert.swift */; };
+		1726CAD529FF3EB3004902B3 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB10CB28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift */; };
+		1726CAD629FF3EB3004902B3 /* ValueImportProcessorKernelExtensionPolicyKernelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A00E6210897C10088F255 /* ValueImportProcessorKernelExtensionPolicyKernelExtensions.swift */; };
+		1726CAD729FF3EB3004902B3 /* PayloadCellViewItemRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E300AB6320A16B6E00129D7C /* PayloadCellViewItemRadioButton.swift */; };
+		1726CAD829FF3EB3004902B3 /* DateFormatter+PropertyLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53285AE0214AE08300365B3E /* DateFormatter+PropertyLists.swift */; };
+		1726CAD929FF3EB3004902B3 /* PayloadCellViewItemDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37C67AC1F415D5D00B3D4CB /* PayloadCellViewItemDatePicker.swift */; };
+		1726CADA29FF3EB3004902B3 /* ExtensionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532488872122940C00DE7169 /* ExtensionData.swift */; };
+		1726CADB29FF3EB3004902B3 /* PayloadLibraryCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383C1951F2C9127004EBE9B /* PayloadLibraryCellView.swift */; };
+		1726CADC29FF3EB3004902B3 /* ProfileSettingsCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1D52111F8B100FA48E0 /* ProfileSettingsCopy.swift */; };
+		1726CADD29FF3EB3004902B3 /* PayloadCellViewItemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309D1301F29BB1E007C9D01 /* PayloadCellViewItemTextField.swift */; };
+		1726CADE29FF3EB3004902B3 /* FileInfoProcessorFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE1ACB205C019A00B3B012 /* FileInfoProcessorFont.swift */; };
+		1726CADF29FF3EB3004902B3 /* ProfileEditorWindowToolbarItemExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5395925E1F1012F3005090B3 /* ProfileEditorWindowToolbarItemExport.swift */; };
+		1726CAE229FF3EB3004902B3 /* ProfilePayloads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5370410F2169E14D005DAD87 /* ProfilePayloads.framework */; };
+		1726CAE329FF3EB3004902B3 /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5382DA4C20E604E4000A8353 /* Highlightr.framework */; };
+		1726CAE529FF3EB3004902B3 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 539592611F102DEE005090B3 /* DefaultPreferences.plist */; };
+		1726CAE629FF3EB3004902B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 539832151F0EE15400C4792D /* Assets.xcassets */; };
+		1726CAE729FF3EB3004902B3 /* donatePayPal_Small.gif in Resources */ = {isa = PBXBuildFile; fileRef = 531805C1225AA2630021FEBE /* donatePayPal_Small.gif */; };
+		1726CAE829FF3EB3004902B3 /* unavailable.png in Resources */ = {isa = PBXBuildFile; fileRef = 531CA814215B8D7A0029E7E3 /* unavailable.png */; };
+		1726CAE929FF3EB3004902B3 /* donatePayPal_Large.gif in Resources */ = {isa = PBXBuildFile; fileRef = 531805BF225A9E6A0021FEBE /* donatePayPal_Large.gif */; };
+		1726CAEA29FF3EB3004902B3 /* donatePayPal_CardInfo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 534CBBF3225B14FD00D9D12E /* donatePayPal_CardInfo.gif */; };
+		1726CAEB29FF3EB3004902B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539832171F0EE15400C4792D /* Main.storyboard */; };
+		1726CAEC29FF3EB3004902B3 /* SidebarFolder.icns in Resources */ = {isa = PBXBuildFile; fileRef = 53DADB4D1F1382B40045CB3F /* SidebarFolder.icns */; };
+		1726CAEF29FF3EB3004902B3 /* ProfilePayloads.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5370410F2169E14D005DAD87 /* ProfilePayloads.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1726CAF029FF3EB3004902B3 /* Highlightr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5382DA4C20E604E4000A8353 /* Highlightr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		17A81750291FA7AD0050A2F6 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A8174F291FA7AD0050A2F6 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift */; };
 		17DB10BD28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB10BC28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift */; };
 		17DB10CC28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB10CB28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift */; };
@@ -164,7 +394,6 @@
 		53DADB4E1F1382B40045CB3F /* SidebarFolder.icns in Resources */ = {isa = PBXBuildFile; fileRef = 53DADB4D1F1382B40045CB3F /* SidebarFolder.icns */; };
 		53DADB501F13ACF90045CB3F /* AppResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DADB4F1F13ACF90045CB3F /* AppResources.swift */; };
 		53DB962C22606130000FF033 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DB961922606106000FF033 /* Sparkle.framework */; };
-		53DB962F226061CC000FF033 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53DB961922606106000FF033 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53DD35BD20CA8C61000F9D50 /* PayloadLibraryCellViewLibraryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD35BC20CA8C61000F9D50 /* PayloadLibraryCellViewLibraryGroup.swift */; };
 		53DDC282210B7E240011E45D /* ValueImportProcessorApplicationAccessWhiteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DDC281210B7E240011E45D /* ValueImportProcessorApplicationAccessWhiteList.swift */; };
 		53DF38771F11675F006DE5BE /* MainWindowTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DF38761F11675F006DE5BE /* MainWindowTableView.swift */; };
@@ -242,6 +471,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1726CA0029FF3EB3004902B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53DB960722606106000FF033 /* Sparkle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
+		1726CA0229FF3EB3004902B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5370410A2169E14D005DAD87 /* ProfilePayloads.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E314EBFE1F461A9B00AB18C5;
+			remoteInfo = ProfilePayloads;
+		};
+		1726CA0429FF3EB3004902B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5382DA4420E604E4000A8353 /* Highlightr.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CD1AE151F391713000FDA02;
+			remoteInfo = "Highlightr-macOS";
+		};
 		5370410E2169E14D005DAD87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5370410A2169E14D005DAD87 /* ProfilePayloads.xcodeproj */;
@@ -364,13 +614,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E3505C971F4AB82B00FC39AD /* Embed Frameworks */ = {
+		1726CAED29FF3EB3004902B3 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				53DB962F226061CC000FF033 /* Sparkle.framework in Embed Frameworks */,
+				1726CAEF29FF3EB3004902B3 /* ProfilePayloads.framework in Embed Frameworks */,
+				1726CAF029FF3EB3004902B3 /* Highlightr.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3505C971F4AB82B00FC39AD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1726C9FA29FF3854004902B3 /* Sparkle.framework in Embed Frameworks */,
 				537041132169E15F005DAD87 /* ProfilePayloads.framework in Embed Frameworks */,
 				53E24C7520E7BE1100FB87F9 /* Highlightr.framework in Embed Frameworks */,
 			);
@@ -380,6 +642,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1726CAF529FF3EB3004902B3 /* ProfileCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		177B876329FF217500AF23CA /* ProfileCreatorRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProfileCreatorRelease.entitlements; sourceTree = "<group>"; };
 		17A8174F291FA7AD0050A2F6 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueImportProcessorSystemExtensionPolicyRemovable.swift; sourceTree = "<group>"; };
 		17DB10BC28F4DA5200647F39 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift; sourceTree = "<group>"; };
 		17DB10CB28F4EA6B00647F39 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift; sourceTree = "<group>"; };
@@ -631,6 +895,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1726CAE029FF3EB3004902B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1726CAE229FF3EB3004902B3 /* ProfilePayloads.framework in Frameworks */,
+				1726CAE329FF3EB3004902B3 /* Highlightr.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5398320B1F0EE15400C4792D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -904,6 +1177,7 @@
 			children = (
 				5398320E1F0EE15400C4792D /* ProfileCreator.app */,
 				53CD513720D90B420088B22D /* ProfileCreatorExportTests.xctest */,
+				1726CAF529FF3EB3004902B3 /* ProfileCreator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -911,6 +1185,7 @@
 		539832101F0EE15400C4792D /* ProfileCreator */ = {
 			isa = PBXGroup;
 			children = (
+				177B876329FF217500AF23CA /* ProfileCreatorRelease.entitlements */,
 				53EDF12E2100914E006C319B /* Core */,
 				538B12C121008C5B001027E5 /* Resources */,
 				53ECB2C821007658009E734A /* Constants */,
@@ -1311,6 +1586,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1726C9FE29FF3EB3004902B3 /* ProfileCreator-AppStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1726CAF229FF3EB3004902B3 /* Build configuration list for PBXNativeTarget "ProfileCreator-AppStore" */;
+			buildPhases = (
+				1726CA0529FF3EB3004902B3 /* Run Increment Build Number */,
+				1726CA0629FF3EB3004902B3 /* Sources */,
+				1726CAE029FF3EB3004902B3 /* Frameworks */,
+				1726CAE429FF3EB3004902B3 /* Resources */,
+				1726CAED29FF3EB3004902B3 /* Embed Frameworks */,
+				1726CAF129FF3EB3004902B3 /* Run Script SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1726C9FF29FF3EB3004902B3 /* PBXTargetDependency */,
+				1726CA0129FF3EB3004902B3 /* PBXTargetDependency */,
+				1726CA0329FF3EB3004902B3 /* PBXTargetDependency */,
+			);
+			name = "ProfileCreator-AppStore";
+			productName = ProfileCreator;
+			productReference = 1726CAF529FF3EB3004902B3 /* ProfileCreator.app */;
+			productType = "com.apple.product-type.application";
+		};
 		5398320D1F0EE15400C4792D /* ProfileCreator */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5398321D1F0EE15400C4792D /* Build configuration list for PBXNativeTarget "ProfileCreator" */;
@@ -1321,7 +1619,6 @@
 				5398320C1F0EE15400C4792D /* Resources */,
 				E3505C971F4AB82B00FC39AD /* Embed Frameworks */,
 				531F478920C3BFE100C66378 /* Run Script SwiftLint */,
-				530E18802281F2BD00C7C8F0 /* Run Enable Hardened Runtime Sparkle */,
 			);
 			buildRules = (
 			);
@@ -1410,6 +1707,7 @@
 			targets = (
 				5398320D1F0EE15400C4792D /* ProfileCreator */,
 				53CD513620D90B420088B22D /* ProfileCreatorExportTests */,
+				1726C9FE29FF3EB3004902B3 /* ProfileCreator-AppStore */,
 			);
 		};
 /* End PBXProject section */
@@ -1509,6 +1807,21 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1726CAE429FF3EB3004902B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1726CAE529FF3EB3004902B3 /* DefaultPreferences.plist in Resources */,
+				1726CAE629FF3EB3004902B3 /* Assets.xcassets in Resources */,
+				1726CAE729FF3EB3004902B3 /* donatePayPal_Small.gif in Resources */,
+				1726CAE829FF3EB3004902B3 /* unavailable.png in Resources */,
+				1726CAE929FF3EB3004902B3 /* donatePayPal_Large.gif in Resources */,
+				1726CAEA29FF3EB3004902B3 /* donatePayPal_CardInfo.gif in Resources */,
+				1726CAEB29FF3EB3004902B3 /* Main.storyboard in Resources */,
+				1726CAEC29FF3EB3004902B3 /* SidebarFolder.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5398320C1F0EE15400C4792D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1534,9 +1847,8 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		530E18802281F2BD00C7C8F0 /* Run Enable Hardened Runtime Sparkle */ = {
+		1726CA0529FF3EB3004902B3 /* Run Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1544,14 +1856,29 @@
 			);
 			inputPaths = (
 			);
-			name = "Run Enable Hardened Runtime Sparkle";
+			name = "Run Increment Build Number";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\n\n# By default, use the configured code signing identity for the project/target\nIDENTITY=\"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\"\nif [ \"$IDENTITY\" == \"\" ]\nthen\n# If a code signing identity is not specified, use ad hoc signing\nIDENTITY=\"-\"\nfi\ncodesign --verbose --force --deep -o runtime --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A/Resources/AutoUpdate.app\"\ncodesign --verbose --force -o runtime --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"\n";
+			shellScript = "#!/bin/bash\n\npath_infoPlist=\"${PROJECT_DIR}/ProfileCreator/Core/Info.plist\"\n\nif ! [[ -f ${path_infoPlist} ]]; then\n    printf \"%s\\n\" \"Expected Info.plist at path: ${path_infoPlist}\"\n    exit 1\nfi\n\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $( date +%Y%m%d%H%M )\" \"${path_infoPlist}\"\n";
+		};
+		1726CAF129FF3EB3004902B3 /* Run Script SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint autocorrect\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		531F478920C3BFE100C66378 /* Run Script SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1589,6 +1916,230 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1726CA0629FF3EB3004902B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1726CA0729FF3EB3004902B3 /* PayloadCellViewSlider.swift in Sources */,
+				1726CA0829FF3EB3004902B3 /* ProfileSettingsSettings.swift in Sources */,
+				1726CA0929FF3EB3004902B3 /* ValueImportProcessorASAMApplications.swift in Sources */,
+				1726CA0A29FF3EB3004902B3 /* ProfileSettingsPayloadKeysExcluded.swift in Sources */,
+				1726CA0B29FF3EB3004902B3 /* PayloadLibrarySplitView.swift in Sources */,
+				1726CA0C29FF3EB3004902B3 /* LenientDateFormatter.swift in Sources */,
+				1726CA0D29FF3EB3004902B3 /* ExtensionURL.swift in Sources */,
+				1726CA0E29FF3EB3004902B3 /* PayloadCellViewFile.swift in Sources */,
+				1726CA0F29FF3EB3004902B3 /* ExtensionPayloadSubkey.swift in Sources */,
+				1726CA1029FF3EB3004902B3 /* Log.swift in Sources */,
+				1726CA1129FF3EB3004902B3 /* PayloadLibraryCellViewProfile.swift in Sources */,
+				1726CA1229FF3EB3004902B3 /* ValueInfoProcessorFont.swift in Sources */,
+				1726CA1329FF3EB3004902B3 /* ExtensionArray.swift in Sources */,
+				1726CA1429FF3EB3004902B3 /* MainWindowOutlineViewController.swift in Sources */,
+				1726CA1529FF3EB3004902B3 /* ProfileEditorOutlineView.swift in Sources */,
+				1726CA1629FF3EB3004902B3 /* Certificate.swift in Sources */,
+				1726CA1729FF3EB3004902B3 /* ValueImportProcessorSystemExtensionPolicyBundleIdentifier.swift in Sources */,
+				1726CA1829FF3EB3004902B3 /* ValueInfoProcessors.swift in Sources */,
+				1726CA1929FF3EB3004902B3 /* PreferencesLibrary.swift in Sources */,
+				1726CA1A29FF3EB3004902B3 /* MainWindowToolbarItemExport.swift in Sources */,
+				1726CA1B29FF3EB3004902B3 /* ProfileEditorHeaderView.swift in Sources */,
+				1726CA1C29FF3EB3004902B3 /* PropertyListArray.swift in Sources */,
+				1726CA1D29FF3EB3004902B3 /* ValueImportProcessorPrivacyPolicyAppleEvents.swift in Sources */,
+				1726CA1E29FF3EB3004902B3 /* PayloadCellViewTextView.swift in Sources */,
+				1726CA1F29FF3EB3004902B3 /* PropertyListItem.swift in Sources */,
+				1726CA2029FF3EB3004902B3 /* PayloadCellViewCheckboxArray.swift in Sources */,
+				1726CA2129FF3EB3004902B3 /* PropertyListItemConvertible.swift in Sources */,
+				1726CA2229FF3EB3004902B3 /* PropertyListTree.swift in Sources */,
+				1726CA2329FF3EB3004902B3 /* NSNumber+Types.swift in Sources */,
+				1726CA2429FF3EB3004902B3 /* PayloadCellViewItemFileView.swift in Sources */,
+				1726CA2529FF3EB3004902B3 /* PreferencesMDM.swift in Sources */,
+				1726CA2629FF3EB3004902B3 /* ConstantsOld.swift in Sources */,
+				1726CA2729FF3EB3004902B3 /* ProfileExportAccessoryView.swift in Sources */,
+				1726CA2829FF3EB3004902B3 /* PayloadCellViewDatePicker.swift in Sources */,
+				1726CA2929FF3EB3004902B3 /* NumberFormatter+PropertyLists.swift in Sources */,
+				1726CA2A29FF3EB3004902B3 /* Preferences.swift in Sources */,
+				1726CA2B29FF3EB3004902B3 /* NSUserInterfaceItemIdentifier.swift in Sources */,
+				1726CA2C29FF3EB3004902B3 /* PayloadCellViewFooter.swift in Sources */,
+				1726CA2D29FF3EB3004902B3 /* ExtensionBool.swift in Sources */,
+				1726CA2E29FF3EB3004902B3 /* ValueInfoProcessorCertificate.swift in Sources */,
+				1726CA2F29FF3EB3004902B3 /* PayloadCellViewItemPopUpButton.swift in Sources */,
+				1726CA3029FF3EB3004902B3 /* ValueInfoProcessorImage.swift in Sources */,
+				1726CA3129FF3EB3004902B3 /* MainWindowOutlineView.swift in Sources */,
+				1726CA3229FF3EB3004902B3 /* PayloadCellViewPopUpButtonSegments.swift in Sources */,
+				1726CA3329FF3EB3004902B3 /* PayloadCellViewTextFieldNumber.swift in Sources */,
+				1726CA3429FF3EB3004902B3 /* PayloadCellView.swift in Sources */,
+				1726CA3529FF3EB3004902B3 /* PayloadCellViewNoKeys.swift in Sources */,
+				1726CA3629FF3EB3004902B3 /* SecCertificate.swift in Sources */,
+				1726CA3729FF3EB3004902B3 /* PayloadCellViewSegmentedControl.swift in Sources */,
+				1726CA3829FF3EB3004902B3 /* PayloadLibraryMenu.swift in Sources */,
+				1726CA3929FF3EB3004902B3 /* PropertyListType.swift in Sources */,
+				1726CA3A29FF3EB3004902B3 /* FileInfoProcessor.swift in Sources */,
+				1726CA3B29FF3EB3004902B3 /* ProfileSettingsIncluded.swift in Sources */,
+				1726CA3C29FF3EB3004902B3 /* ProfileEditorSplitView.swift in Sources */,
+				1726CA3D29FF3EB3004902B3 /* LibraryCellViewItemImageView.swift in Sources */,
+				1726CA3E29FF3EB3004902B3 /* ProfileController.swift in Sources */,
+				1726CA3F29FF3EB3004902B3 /* ValueImportProcessorDockStaticApps.swift in Sources */,
+				1726CA4029FF3EB3004902B3 /* PropertyListCollection.swift in Sources */,
+				1726CA4129FF3EB3004902B3 /* FileInfoProcessorCertificate.swift in Sources */,
+				1726CA4229FF3EB3004902B3 /* PayloadCellViewWarning.swift in Sources */,
+				1726CA4329FF3EB3004902B3 /* AppResources.swift in Sources */,
+				1726CA4429FF3EB3004902B3 /* ProfileEditorEditKeyView.swift in Sources */,
+				1726CA4529FF3EB3004902B3 /* ProfileEditorEditKey.swift in Sources */,
+				1726CA4629FF3EB3004902B3 /* ValueImportProcessor.swift in Sources */,
+				1726CA4729FF3EB3004902B3 /* KeyPath.swift in Sources */,
+				1726CA4829FF3EB3004902B3 /* ProfileSettingsValues.swift in Sources */,
+				1726CA4929FF3EB3004902B3 /* PropertyListObjectConvertible.swift in Sources */,
+				1726CA4A29FF3EB3004902B3 /* ValueImportProcessorDockStaticOthers.swift in Sources */,
+				1726CA4B29FF3EB3004902B3 /* ProfileImport.swift in Sources */,
+				1726CA4C29FF3EB3004902B3 /* ExtensionBundle.swift in Sources */,
+				1726CA4D29FF3EB3004902B3 /* PayloadCellViewPopUpButton.swift in Sources */,
+				1726CA4E29FF3EB3004902B3 /* FileInfo.swift in Sources */,
+				1726CA4F29FF3EB3004902B3 /* PropertyListDataFormatter.swift in Sources */,
+				1726CA5029FF3EB3004902B3 /* ProfileEditorEditKeyWindow.swift in Sources */,
+				1726CA5129FF3EB3004902B3 /* PayloadLibraryNoPayloadsView.swift in Sources */,
+				1726CA5229FF3EB3004902B3 /* MainWindowLibraryJSS.swift in Sources */,
+				1726CA5329FF3EB3004902B3 /* PreferencesProfileDefaults.swift in Sources */,
+				1726CA5429FF3EB3004902B3 /* Error.swift in Sources */,
+				1726CA5529FF3EB3004902B3 /* DesignatedRequirement.swift in Sources */,
+				1726CA5629FF3EB3004902B3 /* EditorTableViewCellViewTextFieldNumber.swift in Sources */,
+				1726CA5729FF3EB3004902B3 /* PayloadCellViewTitle.swift in Sources */,
+				1726CA5829FF3EB3004902B3 /* DictionaryKeys.swift in Sources */,
+				1726CA5929FF3EB3004902B3 /* ProfileSettingsPayloadKeysRequired.swift in Sources */,
+				1726CA5A29FF3EB3004902B3 /* PreferencesPayloads.swift in Sources */,
+				1726CA5B29FF3EB3004902B3 /* ProfileSettings.swift in Sources */,
+				1726CA5C29FF3EB3004902B3 /* PayloadCellViewPadding.swift in Sources */,
+				1726CA5D29FF3EB3004902B3 /* PreferencesAdvanced.swift in Sources */,
+				1726CA5E29FF3EB3004902B3 /* HexColorTransformer.swift in Sources */,
+				1726CA5F29FF3EB3004902B3 /* MainWindowLibrary.swift in Sources */,
+				1726CA6029FF3EB3004902B3 /* ProfileEditorSettings.swift in Sources */,
+				1726CA6129FF3EB3004902B3 /* PayloadCellViewItemTableView.swift in Sources */,
+				1726CA6229FF3EB3004902B3 /* PayloadLibraryCellViewLibrary.swift in Sources */,
+				1726CA6329FF3EB3004902B3 /* ProfileSettingsPayloadEnabled.swift in Sources */,
+				1726CA6429FF3EB3004902B3 /* OverlayScrollView.swift in Sources */,
+				1726CA6529FF3EB3004902B3 /* PayloadCellViews.swift in Sources */,
+				1726CA6629FF3EB3004902B3 /* ProfileEditorSettingsViewController.swift in Sources */,
+				1726CA6729FF3EB3004902B3 /* EditorTableViewCellViewCheckbox.swift in Sources */,
+				1726CA6829FF3EB3004902B3 /* AdaptiveSpaceItem.swift in Sources */,
+				1726CA6929FF3EB3004902B3 /* MainWindowWelcomeView.swift in Sources */,
+				1726CA6A29FF3EB3004902B3 /* MainWindowProfilePreview.swift in Sources */,
+				1726CA6B29FF3EB3004902B3 /* PayloadCellViewItemComboBox.swift in Sources */,
+				1726CA6C29FF3EB3004902B3 /* PayloadCellViewHostPort.swift in Sources */,
+				1726CA6D29FF3EB3004902B3 /* ProfileEditorOutlineViewController.swift in Sources */,
+				1726CA6E29FF3EB3004902B3 /* MainWindowAllProfiles.swift in Sources */,
+				1726CA6F29FF3EB3004902B3 /* NSColor+ColorCode.swift in Sources */,
+				1726CA7029FF3EB3004902B3 /* Profile.swift in Sources */,
+				1726CA7129FF3EB3004902B3 /* ValueImportProcessorLineValue.swift in Sources */,
+				1726CA7229FF3EB3004902B3 /* PayloadCellViewProtocols.swift in Sources */,
+				1726CA7329FF3EB3004902B3 /* ProfileSettingsConditionals.swift in Sources */,
+				1726CA7429FF3EB3004902B3 /* PayloadCellViewComboBox.swift in Sources */,
+				1726CA7529FF3EB3004902B3 /* ProfileSigning.swift in Sources */,
+				1726CA7629FF3EB3004902B3 /* FileInfoProcessors.swift in Sources */,
+				1726CA7729FF3EB3004902B3 /* ProfileEditorWindowToolbarItemAdd.swift in Sources */,
+				1726CA7829FF3EB3004902B3 /* AppDelegate.swift in Sources */,
+				1726CA7929FF3EB3004902B3 /* PayloadLibraryCellViewLibraryGroup.swift in Sources */,
+				1726CA7A29FF3EB3004902B3 /* PayloadCellViewEnable.swift in Sources */,
+				1726CA7B29FF3EB3004902B3 /* MainWindow.swift in Sources */,
+				1726CA7C29FF3EB3004902B3 /* ValueInfoProcessor.swift in Sources */,
+				1726CA7D29FF3EB3004902B3 /* MainWindowSplitView.swift in Sources */,
+				1726CA7E29FF3EB3004902B3 /* NSPasteboard.PasteboardType.swift in Sources */,
+				1726CA7F29FF3EB3004902B3 /* ProfileSettingsCache.swift in Sources */,
+				1726CA8029FF3EB3004902B3 /* LibraryCellViewItemButton.swift in Sources */,
+				1726CA8129FF3EB3004902B3 /* ProfileEditorTab.swift in Sources */,
+				1726CA8229FF3EB3004902B3 /* PayloadCellViewCheckbox.swift in Sources */,
+				1726CA8329FF3EB3004902B3 /* EditorTableViewCellViewComboBox.swift in Sources */,
+				1726CA8429FF3EB3004902B3 /* ValueImportProcessorPrivacyPolicy.swift in Sources */,
+				1726CA8529FF3EB3004902B3 /* EditorTableViewCellViewPopUpButton.swift in Sources */,
+				1726CA8629FF3EB3004902B3 /* ExtensionNSTextField.swift in Sources */,
+				1726CA8729FF3EB3004902B3 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift in Sources */,
+				1726CA8829FF3EB3004902B3 /* PayloadLibraryFilter.swift in Sources */,
+				1726CA8929FF3EB3004902B3 /* EditorTableViewCellViewTextField.swift in Sources */,
+				1726CA8A29FF3EB3004902B3 /* ProfileEditorWindowController.swift in Sources */,
+				1726CA8B29FF3EB3004902B3 /* ValueImportError.swift in Sources */,
+				1726CA8C29FF3EB3004902B3 /* ValueImportProcessorKernelExtensionPolicyTeamIdentifiers.swift in Sources */,
+				1726CA8D29FF3EB3004902B3 /* MainWindowToolbarItemTitle.swift in Sources */,
+				1726CA8E29FF3EB3004902B3 /* ProfileSettingsViewValues.swift in Sources */,
+				1726CA8F29FF3EB3004902B3 /* PropertyListEnums.swift in Sources */,
+				1726CA9029FF3EB3004902B3 /* ProfileEditorWindowToolbarItemSettings.swift in Sources */,
+				1726CA9129FF3EB3004902B3 /* SecIdentity.swift in Sources */,
+				1726CA9229FF3EB3004902B3 /* LibraryCellViewItemTextField.swift in Sources */,
+				1726CA9329FF3EB3004902B3 /* ViewWhite.swift in Sources */,
+				1726CA9429FF3EB3004902B3 /* PropertyListXMLWritable.swift in Sources */,
+				1726CA9529FF3EB3004902B3 /* NSColor+HSL.swift in Sources */,
+				1726CA9629FF3EB3004902B3 /* PayloadCellViewRadioButtons.swift in Sources */,
+				1726CA9729FF3EB3004902B3 /* FontInfo.swift in Sources */,
+				1726CA9829FF3EB3004902B3 /* PayloadLibraryTableViews.swift in Sources */,
+				1726CA9929FF3EB3004902B3 /* Enums.swift in Sources */,
+				1726CA9A29FF3EB3004902B3 /* ValueImportProcessorCertificateTransparency.swift in Sources */,
+				1726CA9B29FF3EB3004902B3 /* ColorKeywordMap.swift in Sources */,
+				1726CA9C29FF3EB3004902B3 /* PreferencesEditor.swift in Sources */,
+				1726CA9D29FF3EB3004902B3 /* ProfileEditor.swift in Sources */,
+				1726CA9E29FF3EB3004902B3 /* PreferencesViewElements.swift in Sources */,
+				1726CA9F29FF3EB3004902B3 /* PropertyListXMLReader.swift in Sources */,
+				1726CAA029FF3EB3004902B3 /* ProfileSettingsViewSettings.swift in Sources */,
+				1726CAA129FF3EB3004902B3 /* ValueImportProcessorFirewallApplications.swift in Sources */,
+				1726CAA229FF3EB3004902B3 /* PayloadCellViewItemTextView.swift in Sources */,
+				1726CAA329FF3EB3004902B3 /* MainWindowOutlineViewItems.swift in Sources */,
+				1726CAA429FF3EB3004902B3 /* CoreExtensions.swift in Sources */,
+				1726CAA529FF3EB3004902B3 /* ValueInfo.swift in Sources */,
+				1726CAA629FF3EB3004902B3 /* ProfileEditorExtensionTabView.swift in Sources */,
+				1726CAA729FF3EB3004902B3 /* ExtensionString.swift in Sources */,
+				1726CAA829FF3EB3004902B3 /* Keychain.swift in Sources */,
+				1726CAA929FF3EB3004902B3 /* PayloadCellViewTextField.swift in Sources */,
+				1726CAAA29FF3EB3004902B3 /* PayloadCellViewItemSegmentedControl.swift in Sources */,
+				1726CAAB29FF3EB3004902B3 /* ExtensionFileManager.swift in Sources */,
+				1726CAAC29FF3EB3004902B3 /* ProfileSettingsSetup.swift in Sources */,
+				1726CAAD29FF3EB3004902B3 /* OverlayScroller.swift in Sources */,
+				1726CAAE29FF3EB3004902B3 /* FileInfoProcessorImage.swift in Sources */,
+				1726CAAF29FF3EB3004902B3 /* ProfileSettingsType.swift in Sources */,
+				1726CAB029FF3EB3004902B3 /* MainWindowTableView.swift in Sources */,
+				1726CAB129FF3EB3004902B3 /* ValueInfoProcessorShellScript.swift in Sources */,
+				1726CAB229FF3EB3004902B3 /* ProfileSettingsPlatforms.swift in Sources */,
+				1726CAB329FF3EB3004902B3 /* Notification.Name.swift in Sources */,
+				1726CAB429FF3EB3004902B3 /* ExtensionDouble.swift in Sources */,
+				1726CAB529FF3EB3004902B3 /* ValueImportProcessors.swift in Sources */,
+				1726CAB629FF3EB3004902B3 /* PayloadCellViewItemSlider.swift in Sources */,
+				1726CAB729FF3EB3004902B3 /* PreferencesGeneral.swift in Sources */,
+				1726CAB829FF3EB3004902B3 /* PayloadCellViewTableView.swift in Sources */,
+				1726CAB929FF3EB3004902B3 /* PropertyListDictionary.swift in Sources */,
+				1726CABA29FF3EB3004902B3 /* ValueImportProcessorApplicationAccessWhiteList.swift in Sources */,
+				1726CABB29FF3EB3004902B3 /* ProfileExport.swift in Sources */,
+				1726CABC29FF3EB3004902B3 /* ProfileSettingsStrings.swift in Sources */,
+				1726CABD29FF3EB3004902B3 /* Constants.swift in Sources */,
+				1726CABE29FF3EB3004902B3 /* Identities.swift in Sources */,
+				1726CABF29FF3EB3004902B3 /* ProfileEditorUI.swift in Sources */,
+				1726CAC029FF3EB3004902B3 /* ProfileEditorWindowToolbarItemEditorView.swift in Sources */,
+				1726CAC129FF3EB3004902B3 /* ProfileEditorExtensionSourceView.swift in Sources */,
+				1726CAC229FF3EB3004902B3 /* ProfileSettingsPayloadKeysEnabled.swift in Sources */,
+				1726CAC329FF3EB3004902B3 /* ProfileSettingsCurrent.swift in Sources */,
+				1726CAC429FF3EB3004902B3 /* MainWindowTableViewItems.swift in Sources */,
+				1726CAC529FF3EB3004902B3 /* PayloadCellViewItemCheckbox.swift in Sources */,
+				1726CAC629FF3EB3004902B3 /* PayloadCellViewItemBox.swift in Sources */,
+				1726CAC729FF3EB3004902B3 /* ProfileEditorWindowToolbarItemTitle.swift in Sources */,
+				1726CAC829FF3EB3004902B3 /* MainWindowToolbarItemAdd.swift in Sources */,
+				1726CAC929FF3EB3004902B3 /* ValueImportProcessorDashboardWhiteList.swift in Sources */,
+				1726CACA29FF3EB3004902B3 /* PayloadCellViewDictionary.swift in Sources */,
+				1726CACB29FF3EB3004902B3 /* ValueImportProcessorDirectory.swift in Sources */,
+				1726CACC29FF3EB3004902B3 /* ProfileEditorExtensionOutlineView.swift in Sources */,
+				1726CACD29FF3EB3004902B3 /* ExtensionInt.swift in Sources */,
+				1726CACE29FF3EB3004902B3 /* PayloadCellViewPopOver.swift in Sources */,
+				1726CACF29FF3EB3004902B3 /* ProfileExportPlistAccessoryView.swift in Sources */,
+				1726CAD029FF3EB3004902B3 /* NSToolbarItem.Identifier.swift in Sources */,
+				1726CAD129FF3EB3004902B3 /* StreamReader.swift in Sources */,
+				1726CAD229FF3EB3004902B3 /* EditorTableViewCellViewArray.swift in Sources */,
+				1726CAD329FF3EB3004902B3 /* PayloadLibraryNoProfilePayloadsView.swift in Sources */,
+				1726CAD429FF3EB3004902B3 /* Alert.swift in Sources */,
+				1726CAD529FF3EB3004902B3 /* ValueImportProcessorSystemExtensionPolicyAllowedTypes.swift in Sources */,
+				1726CAD629FF3EB3004902B3 /* ValueImportProcessorKernelExtensionPolicyKernelExtensions.swift in Sources */,
+				1726CAD729FF3EB3004902B3 /* PayloadCellViewItemRadioButton.swift in Sources */,
+				1726CAD829FF3EB3004902B3 /* DateFormatter+PropertyLists.swift in Sources */,
+				1726CAD929FF3EB3004902B3 /* PayloadCellViewItemDatePicker.swift in Sources */,
+				1726CADA29FF3EB3004902B3 /* ExtensionData.swift in Sources */,
+				1726CADB29FF3EB3004902B3 /* PayloadLibraryCellView.swift in Sources */,
+				1726CADC29FF3EB3004902B3 /* ProfileSettingsCopy.swift in Sources */,
+				1726CADD29FF3EB3004902B3 /* PayloadCellViewItemTextField.swift in Sources */,
+				1726CADE29FF3EB3004902B3 /* FileInfoProcessorFont.swift in Sources */,
+				1726CADF29FF3EB3004902B3 /* ProfileEditorWindowToolbarItemExport.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5398320A1F0EE15400C4792D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1824,6 +2375,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1726C9FF29FF3EB3004902B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sparkle;
+			targetProxy = 1726CA0029FF3EB3004902B3 /* PBXContainerItemProxy */;
+		};
+		1726CA0129FF3EB3004902B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ProfilePayloads;
+			targetProxy = 1726CA0229FF3EB3004902B3 /* PBXContainerItemProxy */;
+		};
+		1726CA0329FF3EB3004902B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Highlightr-macOS";
+			targetProxy = 1726CA0429FF3EB3004902B3 /* PBXContainerItemProxy */;
+		};
 		537041112169E151005DAD87 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ProfilePayloads;
@@ -1858,6 +2424,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1726CAF329FF3EB3004902B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5L9PZT6JBR;
+				ENABLE_HARDENED_RUNTIME = NO;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks\"";
+				INFOPLIST_FILE = "$(SRCROOT)/ProfileCreator/Core/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ProfileCreator;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 0.3.3;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
+				PRODUCT_NAME = ProfileCreator;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEBUGEXPORT DEBUGCONDITIONS";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1726CAF429FF3EB3004902B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ProfileCreator/ProfileCreatorRelease.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5L9PZT6JBR;
+				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks\"";
+				INFOPLIST_FILE = "$(SRCROOT)/ProfileCreator/Core/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ProfileCreator;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 0.3.3;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
+				PRODUCT_NAME = ProfileCreator;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		5398321B1F0EE15400C4792D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1983,12 +2609,15 @@
 				ENABLE_HARDENED_RUNTIME = NO;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks\"";
 				INFOPLIST_FILE = "$(SRCROOT)/ProfileCreator/Core/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ProfileCreator;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 0.3.3;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2002,6 +2631,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ProfileCreator/ProfileCreatorRelease.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -2010,12 +2640,15 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Frameworks\"";
 				INFOPLIST_FILE = "$(SRCROOT)/ProfileCreator/Core/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = ProfileCreator;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 0.3.3;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2079,6 +2712,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1726CAF229FF3EB3004902B3 /* Build configuration list for PBXNativeTarget "ProfileCreator-AppStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1726CAF329FF3EB3004902B3 /* Debug */,
+				1726CAF429FF3EB3004902B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		539832091F0EE15400C4792D /* Build configuration list for PBXProject "ProfileCreator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -22,7 +22,7 @@ let kEditorTableViewColumnPaddingWidth: CGFloat = 24.0
 let kEditorTableViewColumnPayloadWidth: CGFloat = 500.0
 
 let kUTTypeMobileconfig: String = "com.apple.mobileconfig"
-let kUTTypeProfileConfiguration: String = "com.erikberglund.ProfileCreator.profileconfiguration"
+let kUTTypeProfileConfiguration: String = "com.willyu.ProfileCreator.profileconfiguration"
 
 let kMainWindowDragDropUTIs: [NSPasteboard.PasteboardType] = [.profile, .backwardsCompatibleFileURL]
 let kMainWindowDragDropFilteringOptions = [NSPasteboard.ReadingOptionKey.urlReadingContentsConformToTypes: [kUTTypeMobileconfig, NSPasteboard.PasteboardType.profile]]
