@@ -6,6 +6,8 @@
 //  Copyright © 2018 Erik Berglund. All rights reserved.
 //
 
+import CoreGraphics
+import CoreText
 import Foundation
 
 struct FontInformation {
