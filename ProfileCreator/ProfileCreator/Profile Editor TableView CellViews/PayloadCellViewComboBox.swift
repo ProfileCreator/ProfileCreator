@@ -71,12 +71,16 @@ class PayloadCellViewComboBox: PayloadCellView, ProfileCreatorCellView {
         //  Get Value
         // ---------------------------------------------------------------------
         let value: Any?
+        let isUserValue: Bool
         if let valueUser = self.profile.settings.value(forSubkey: subkey, payloadIndex: payloadIndex) {
             value = valueUser
+            isUserValue = true
         } else if let valueDefault = self.valueDefault {
             value = valueDefault
+            isUserValue = false
         } else {
             value = comboBox.objectValues.first
+            isUserValue = false
         }
 
         // ---------------------------------------------------------------------
@@ -86,7 +90,11 @@ class PayloadCellViewComboBox: PayloadCellView, ProfileCreatorCellView {
             let selectedValue = value,
             let title = PayloadUtility.title(forRangeListValue: selectedValue, subkey: subkey),
             comboBox.objectValues.containsAny(value: title, ofType: .string) {
-            comboBox.selectItem(withObjectValue: title)
+            if isUserValue {
+                comboBox.objectValue = title
+            } else {
+                comboBox.selectItem(withObjectValue: title)
+            }
         } else {
             comboBox.objectValue = value
         }
