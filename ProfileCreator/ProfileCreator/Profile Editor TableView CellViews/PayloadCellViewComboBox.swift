@@ -82,14 +82,7 @@ class PayloadCellViewComboBox: PayloadCellView, ProfileCreatorCellView {
         // ---------------------------------------------------------------------
         //  Select Value
         // ---------------------------------------------------------------------
-        if
-            let selectedValue = value,
-            let title = PayloadUtility.title(forRangeListValue: selectedValue, subkey: subkey),
-            comboBox.objectValues.containsAny(value: title, ofType: .string) {
-            comboBox.selectItem(withObjectValue: title)
-        } else {
-            comboBox.objectValue = value
-        }
+        comboBox.objectValue = value
 
         // ---------------------------------------------------------------------
         //  Setup KeyView Loop Items
