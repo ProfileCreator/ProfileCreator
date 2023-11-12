@@ -71,7 +71,6 @@ class MainWindowController: NSWindowController {
         self.toolbar.showsBaselineSeparator = true
         self.toolbar.allowsUserCustomization = false
         self.toolbar.autosavesConfiguration = false
-        self.toolbar.sizeMode = .regular
         self.toolbar.displayMode = .iconOnly
         self.toolbar.delegate = self
 
@@ -79,7 +78,7 @@ class MainWindowController: NSWindowController {
         // Add toolbar to window
         // ---------------------------------------------------------------------
         if  #available(macOS 11.0, *) {
-            self.window?.toolbarStyle = .unified
+            self.window?.toolbarStyle = .unifiedCompact
         }
 
         self.window?.toolbar = self.toolbar

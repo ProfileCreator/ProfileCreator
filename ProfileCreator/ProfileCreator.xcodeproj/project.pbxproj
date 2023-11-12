@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1726C9FA29FF3854004902B3 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53DB961922606106000FF033 /* Sparkle.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1726C9FA29FF3854004902B3 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53DB961922606106000FF033 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1726CA0729FF3EB3004902B3 /* PayloadCellViewSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFED81022417663000985DE /* PayloadCellViewSlider.swift */; };
 		1726CA0829FF3EB3004902B3 /* ProfileSettingsSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370D1D92112CF5500FA48E0 /* ProfileSettingsSettings.swift */; };
 		1726CA0929FF3EB3004902B3 /* ValueImportProcessorASAMApplications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536A00DE210854AB0088F255 /* ValueImportProcessorASAMApplications.swift */; };
@@ -393,7 +393,7 @@
 		53DADB4C1F137A110045CB3F /* MainWindowLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DADB4B1F137A110045CB3F /* MainWindowLibrary.swift */; };
 		53DADB4E1F1382B40045CB3F /* SidebarFolder.icns in Resources */ = {isa = PBXBuildFile; fileRef = 53DADB4D1F1382B40045CB3F /* SidebarFolder.icns */; };
 		53DADB501F13ACF90045CB3F /* AppResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DADB4F1F13ACF90045CB3F /* AppResources.swift */; };
-		53DB962C22606130000FF033 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DB961922606106000FF033 /* Sparkle.framework */; };
+		53DB962C22606130000FF033 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DB961922606106000FF033 /* Sparkle.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		53DD35BD20CA8C61000F9D50 /* PayloadLibraryCellViewLibraryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DD35BC20CA8C61000F9D50 /* PayloadLibraryCellViewLibraryGroup.swift */; };
 		53DDC282210B7E240011E45D /* ValueImportProcessorApplicationAccessWhiteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DDC281210B7E240011E45D /* ValueImportProcessorApplicationAccessWhiteList.swift */; };
 		53DF38771F11675F006DE5BE /* MainWindowTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DF38761F11675F006DE5BE /* MainWindowTableView.swift */; };
@@ -471,13 +471,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1726CA0029FF3EB3004902B3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 53DB960722606106000FF033 /* Sparkle.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
-			remoteInfo = Sparkle;
-		};
 		1726CA0229FF3EB3004902B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5370410A2169E14D005DAD87 /* ProfilePayloads.xcodeproj */;
@@ -1600,7 +1593,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1726C9FF29FF3EB3004902B3 /* PBXTargetDependency */,
 				1726CA0129FF3EB3004902B3 /* PBXTargetDependency */,
 				1726CA0329FF3EB3004902B3 /* PBXTargetDependency */,
 			);
@@ -2375,11 +2367,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1726C9FF29FF3EB3004902B3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Sparkle;
-			targetProxy = 1726CA0029FF3EB3004902B3 /* PBXContainerItemProxy */;
-		};
 		1726CA0129FF3EB3004902B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ProfilePayloads;

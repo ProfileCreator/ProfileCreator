@@ -38,15 +38,13 @@ class ProfileEditorWindowToolbarItemAdd: NSView {
         // ---------------------------------------------------------------------
         //  Create the size of the toolbar item
         // ---------------------------------------------------------------------
-        let rect = NSRect(x: 0, y: 0, width: 40, height: 32)
+        let rect = NSRect(x: 0, y: -5, width: 40, height: 32)
 
         // ---------------------------------------------------------------------
         //  Create the actual toolbar item
         // ---------------------------------------------------------------------
         self.toolbarItem = NSToolbarItem(itemIdentifier: .editorAdd)
         self.toolbarItem.toolTip = NSLocalizedString("Add payloads or keys", comment: "")
-        self.toolbarItem.minSize = rect.size
-        self.toolbarItem.maxSize = rect.size
 
         // ---------------------------------------------------------------------
         //  Create the disclosure triangle overlay

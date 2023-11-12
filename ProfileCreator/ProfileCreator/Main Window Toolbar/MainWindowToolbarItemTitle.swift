@@ -68,8 +68,6 @@ class MainWindowToolbarItemTitle: NSView {
         //  Create the actual toolbar item
         // ---------------------------------------------------------------------
         self.toolbarItem = NSToolbarItem(itemIdentifier: .editorTitle)
-        self.toolbarItem.minSize = frame.size
-        self.toolbarItem.maxSize = frame.size
 
         // ---------------------------------------------------------------------
         //  Initialize self after the class variables have been instantiated

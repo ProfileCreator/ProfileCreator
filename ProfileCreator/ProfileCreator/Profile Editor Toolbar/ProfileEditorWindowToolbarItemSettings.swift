@@ -36,15 +36,13 @@ class ProfileEditorWindowToolbarItemSettings: NSView {
         // ---------------------------------------------------------------------
         //  Create the size of the toolbar item
         // ---------------------------------------------------------------------
-        let rect = NSRect(x: 0, y: 0, width: 40, height: 32)
+        let rect = NSRect(x: 0, y: -5, width: 40, height: 32)
 
         // ---------------------------------------------------------------------
         //  Create the actual toolbar item
         // ---------------------------------------------------------------------
         self.toolbarItem = NSToolbarItem(itemIdentifier: .editorSettings)
         self.toolbarItem.toolTip = NSLocalizedString("Settings", comment: "")
-        self.toolbarItem.minSize = rect.size
-        self.toolbarItem.maxSize = rect.size
 
         // ---------------------------------------------------------------------
         //  Initialize self after the class variables have been instantiated

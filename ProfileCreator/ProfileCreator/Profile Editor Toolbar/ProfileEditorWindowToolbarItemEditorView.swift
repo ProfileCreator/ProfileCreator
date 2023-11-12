@@ -31,7 +31,7 @@ class ProfileEditorWindowToolbarItemView: NSView {
         // ---------------------------------------------------------------------
         //  Create the size of the toolbar item
         // ---------------------------------------------------------------------
-        let rect = NSRect(x: 0, y: 0, width: 80, height: self.toolbarItemHeight) // 116
+        let rect = NSRect(x: 0, y: -5, width: 80, height: self.toolbarItemHeight) // 116
 
         self.segmentedControl = ProfileEditorWindowToolbarItemViewSegmentedControl(frame: rect, profileEditor: profileEditor)
 
@@ -45,8 +45,6 @@ class ProfileEditorWindowToolbarItemView: NSView {
         // ---------------------------------------------------------------------
         self.toolbarItem = NSToolbarItem(itemIdentifier: .editorView)
         self.toolbarItem.toolTip = NSLocalizedString("View", comment: "")
-        self.toolbarItem.minSize = rect.size
-        self.toolbarItem.maxSize = rect.size
 
         // ---------------------------------------------------------------------
         //  Initialize self after the class variables have been instantiated
