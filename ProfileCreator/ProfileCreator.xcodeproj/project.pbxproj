@@ -1206,9 +1206,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1726C9FE29FF3EB3004902B3 /* ProfileCreator-AppStore */ = {
+		1726C9FE29FF3EB3004902B3 /* ProfileCreator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1726CAF229FF3EB3004902B3 /* Build configuration list for PBXNativeTarget "ProfileCreator-AppStore" */;
+			buildConfigurationList = 1726CAF229FF3EB3004902B3 /* Build configuration list for PBXNativeTarget "ProfileCreator" */;
 			buildPhases = (
 				1726CA0529FF3EB3004902B3 /* Run Increment Build Number */,
 				1726CA0629FF3EB3004902B3 /* Sources */,
@@ -1223,7 +1223,7 @@
 				1726CA0129FF3EB3004902B3 /* PBXTargetDependency */,
 				1726CA0329FF3EB3004902B3 /* PBXTargetDependency */,
 			);
-			name = "ProfileCreator-AppStore";
+			name = ProfileCreator;
 			productName = ProfileCreator;
 			productReference = 1726CAF529FF3EB3004902B3 /* ProfileCreator.app */;
 			productType = "com.apple.product-type.application";
@@ -1287,7 +1287,7 @@
 			projectRoot = "";
 			targets = (
 				53CD513620D90B420088B22D /* ProfileCreatorExportTests */,
-				1726C9FE29FF3EB3004902B3 /* ProfileCreator-AppStore */,
+				1726C9FE29FF3EB3004902B3 /* ProfileCreator */,
 			);
 		};
 /* End PBXProject section */
@@ -1865,7 +1865,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1726CAF229FF3EB3004902B3 /* Build configuration list for PBXNativeTarget "ProfileCreator-AppStore" */ = {
+		1726CAF229FF3EB3004902B3 /* Build configuration list for PBXNativeTarget "ProfileCreator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1726CAF329FF3EB3004902B3 /* Debug */,
