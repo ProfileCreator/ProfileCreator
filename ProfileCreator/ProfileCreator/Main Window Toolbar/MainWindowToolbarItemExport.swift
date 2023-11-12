@@ -28,7 +28,7 @@ class MainWindowToolbarItemExport: NSView {
         // ---------------------------------------------------------------------
         //  Create the size of the toolbar item
         // ---------------------------------------------------------------------
-        let rect = NSRect(x: 0, y: 0, width: 40, height: 32)
+        let rect = NSRect(x: 0, y: -5, width: 40, height: 32)
 
         // ---------------------------------------------------------------------
         //  Create the actual toolbar item

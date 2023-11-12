@@ -24,37 +24,6 @@ public class AdaptiveSpaceItem: NSToolbarItem {
     }
 
     // MARK: -
-    // MARK: Computed Variables
-
-    var calculatedMinSize: NSSize {
-        guard let items = toolbar?.items else { return super.minSize }
-        guard let index = items.firstIndex(of: self) else { return super.minSize }
-        guard let thisFrame = view?.superview?.frame else { return super.minSize }
-
-        if thisFrame.origin.x > 0 {
-            var space: CGFloat = 0
-            if items.count > index + 1 {
-                let nextItem = items[index + 1]
-                guard let nextFrame = nextItem.view?.superview?.frame else { return super.minSize }
-                guard let toolbarFrame = nextItem.view?.superview?.superview?.frame else { return super.minSize }
-
-                space = (toolbarFrame.size.width - nextFrame.size.width) / 2 - thisFrame.origin.x - 3
-                if space < 0 { space = 0 }
-            }
-
-            let size = super.minSize
-            return NSSize(width: space, height: size.height)
-        }
-
-        return super.minSize
-    }
-
-    var calculatedMaxSize: NSSize {
-        let size = super.maxSize
-        return NSSize(width: minSize.width, height: size.height)
-    }
-
-    // MARK: -
     // MARK: Initialization
 
     convenience init() {
@@ -64,14 +33,6 @@ public class AdaptiveSpaceItem: NSToolbarItem {
     override init(itemIdentifier: NSToolbarItem.Identifier) {
         super.init(itemIdentifier: itemIdentifier)
         self.view = AdaptiveSpaceItemView(spaceItem: self)
-    }
-
-    // MARK: -
-    // MARK: Public Methods
-
-    public func updateWidth() {
-        self.minSize = self.calculatedMinSize
-        self.maxSize = self.calculatedMaxSize
     }
 }
 
@@ -111,14 +72,13 @@ class AdaptiveSpaceItemView: NSView {
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
         NotificationCenter.default.addObserver(self, selector: #selector(windowDidResize), name: NSWindow.didResizeNotification, object: self.window)
-        adaptiveSpaceItem.updateWidth()
     }
 
     // MARK: -
     // MARK: Notification Observer Methods
 
     @objc func windowDidResize() {
-        adaptiveSpaceItem.updateWidth()
+        // Nothing to do
     }
 
 }
