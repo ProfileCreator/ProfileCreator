@@ -329,9 +329,9 @@ class ProfileEditorWindowToolbarItemAddButton: NSButton {
         self.mouseIsDown = false
 
         if !self.menuWasShownForLastMouseDown {
-            if let parent = self.superview, let toolbarItemAdd = parent as? MainWindowToolbarItemAdd {
-                toolbarItemAdd.disclosureTriangle(show: false)
-            }
+//            if let parent = self.superview, let toolbarItemAdd = parent as? MainWindowToolbarItemAdd {
+//                toolbarItemAdd.disclosureTriangle(show: false)
+//            }
 
             self.sendAction(self.action, to: self.target)
         }
