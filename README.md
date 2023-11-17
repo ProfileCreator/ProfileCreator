@@ -34,8 +34,6 @@ In order to develop for ProfileCreator, the following pieces of software are req
 - Xcode 14 or higher
 - macOS 12.0 or higher
 
-In addition to those pieces of software you will also need to clone [ProfilePayloads](https://github.com/ProfileCreator/ProfilePayloads) alongside the ProfileCreator repository (The repositories must be adjacent to each other).
-
 ## Compiling
 In order to compile ProfileCreator, please navigate to where the Xcode Project file is located and run the following command
 
