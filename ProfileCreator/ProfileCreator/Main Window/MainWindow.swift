@@ -21,7 +21,7 @@ class MainWindowController: NSWindowController {
                                                               NSToolbarItem.Identifier.flexibleSpace,
                                                               .mainWindowTitle]
     var toolbarItemAdd: NSMenuToolbarItem?
-    var toolbarItemExport: NSMenuToolbarItem? // MainWindowToolbarItemExport?
+    var toolbarItemExport: NSMenuToolbarItem?
     var toolbarItemTitle: MainWindowToolbarItemTitle?
 
     // Items for the `toolbarItemAdd`
