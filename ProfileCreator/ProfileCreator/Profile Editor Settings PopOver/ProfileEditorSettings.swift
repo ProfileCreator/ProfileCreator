@@ -15,7 +15,6 @@ class ProfileEditorSettings {
     // MARK: Static Variables
 
     weak var profile: Profile?
-    weak var profileWindow: NSWindow?
 
     // MARK: -
     // MARK: Variables
@@ -28,7 +27,6 @@ class ProfileEditorSettings {
 
     init(profile: Profile) {
         self.profile = profile
-        self.profileWindow = nil
 
         self.viewControllerSettings = ProfileEditorSettingsViewController(profile: profile)
         self.viewControllerSettings.editorSettings = self

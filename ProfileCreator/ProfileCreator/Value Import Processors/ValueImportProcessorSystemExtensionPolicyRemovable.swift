@@ -2,7 +2,7 @@
 //  ValueImportProcessorSystemExtensionPolicyRemovable.swift
 //  ProfileCreator
 //
-//  Created by Will Yu on 10/10/22.
+//  Created by Will Yu
 //  Copyright © 2022 Will Yu. All rights reserved.
 //
 
