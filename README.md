@@ -35,6 +35,10 @@ In order to develop for ProfileCreator, the following pieces of software are req
 - macOS 12.0 or higher
 
 ## Compiling
+Upon first clone, please update the submodules before attempting to compile
+
+`git submodule update --init --recursive`
+
 In order to compile ProfileCreator, please navigate to where the Xcode Project file is located and run the following command
 
 `xcodebuild -project ProfileCreator.xcodeproj -scheme ProfileCreator -configuration Debug`
