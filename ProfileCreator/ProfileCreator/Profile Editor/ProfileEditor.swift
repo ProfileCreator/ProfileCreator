@@ -283,10 +283,13 @@ class ProfileEditor: NSObject {
 
                     if self.selectedPayloadViewCustom != .source {
                         self.select(view: self.selectedPayloadViewCustom.rawValue)
-                        editorWindowController.toolbarItemView?.segmentedControl.setSelected(true, forSegment: self.selectedPayloadView.rawValue)
+
+                        guard let toolbarItem = editorWindowController.toolbarItemView?.toolbarItem as? NSToolbarItemGroup else { return }
+
+                        toolbarItem.setSelected(true, at: self.selectedPayloadView.rawValue)
                     }
 
-                    editorWindowController.toolbarItemView?.segmentedControl.isEnabled = true
+                    editorWindowController.toolbarItemView?.toolbarItem?.isEnabled = true
                 }
             } else {
                 self.selectedPayloadViewCustom = self.selectedPayloadView
@@ -316,10 +319,13 @@ class ProfileEditor: NSObject {
 
                     if self.selectedPayloadView != .source {
                         self.select(view: EditorViewTag.source.rawValue)
-                        editorWindowController.toolbarItemView?.segmentedControl.setSelected(true, forSegment: EditorViewTag.source.rawValue)
+
+                        guard let toolbarItem = editorWindowController.toolbarItemView?.toolbarItem as? NSToolbarItemGroup else { return }
+
+                        toolbarItem.setSelected(true, at: EditorViewTag.source.rawValue)
                     }
 
-                    editorWindowController.toolbarItemView?.segmentedControl.isEnabled = false
+                    editorWindowController.toolbarItemView?.toolbarItem?.isEnabled = false
                 }
             }
 

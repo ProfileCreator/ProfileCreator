@@ -101,6 +101,11 @@ class MainWindowController: NSWindowController {
         // Add toolbar to window
         // ---------------------------------------------------------------------
         self.window?.toolbar = self.toolbar
+
+        // ---------------------------------------------------------------------
+        // Setup Notification Observers
+        // ---------------------------------------------------------------------
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeProfileSelection(_:)), name: .didChangeProfileSelection, object: nil)
     }
 }
 
@@ -154,9 +159,6 @@ extension MainWindowController: NSToolbarDelegate {
                 toolbarItem.isEnabled = false
 
                 self.toolbarItemExport = toolbarItem
-
-                // Setup Notification Observers
-                NotificationCenter.default.addObserver(self, selector: #selector(didChangeProfileSelection(_:)), name: .didChangeProfileSelection, object: nil)
             }
 
             return self.toolbarItemExport
