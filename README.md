@@ -25,7 +25,7 @@ macOS application to create configuration profiles.
 ![ProfileCreator](https://github.com/ProfileCreator/ProfileCreator/blob/master/resources/screenshots/ProfileCreator.png)
 
 # System Requirements
-ProfileCreator requires macOS 10.12 or newer.
+ProfileCreator requires macOS 11 or newer.
 
 # Development
 
