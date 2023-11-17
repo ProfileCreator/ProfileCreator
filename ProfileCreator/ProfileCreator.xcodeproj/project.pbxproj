@@ -378,7 +378,7 @@
 		536DA48D1F11FD9D00FB325E /* MainWindowProfilePreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowProfilePreview.swift; sourceTree = "<group>"; };
 		536DA4901F1213AE00FB325E /* MainWindowWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowWelcomeView.swift; sourceTree = "<group>"; };
 		536DA4931F12143F00FB325E /* ViewWhite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWhite.swift; sourceTree = "<group>"; };
-		5370410A2169E14D005DAD87 /* ProfilePayloads.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ProfilePayloads.xcodeproj; path = ../../ProfilePayloads/ProfilePayloads/ProfilePayloads.xcodeproj; sourceTree = "<group>"; };
+		5370410A2169E14D005DAD87 /* ProfilePayloads.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ProfilePayloads.xcodeproj; path = ProfilePayloads/ProfilePayloads/ProfilePayloads.xcodeproj; sourceTree = "<group>"; };
 		5370780C1F232DAA00570090 /* ProfileEditorWindowToolbarItemTitle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEditorWindowToolbarItemTitle.swift; sourceTree = "<group>"; };
 		5370D1CA211172AE00FA48E0 /* ProfileSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettings.swift; sourceTree = "<group>"; };
 		5370D1CD211177F700FA48E0 /* ProfileSettingsSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsSetup.swift; sourceTree = "<group>"; };
