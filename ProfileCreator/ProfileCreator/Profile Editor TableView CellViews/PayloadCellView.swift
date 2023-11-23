@@ -38,7 +38,7 @@ class PayloadCellView: NSTableCellView, NSCopying {
     var isEditing = false
     var payloadIndex: Int
     var parentCellViews: [PayloadCellView]?
-    var valueInfoProcessor: ValueImportProcessor?
+    var valueInfoProcessor: ValueInfoProcessor?
     var valueImportProcessor: ValueImportProcessor?
     var allowedFileTypes: [String]?
     var deprecatedString: String?
@@ -218,6 +218,13 @@ class PayloadCellView: NSTableCellView, NSCopying {
         }
 
         // ---------------------------------------------------------------------
+        //  Add value info processor if set
+        // ---------------------------------------------------------------------
+        if let valueInfoProcessorIdentifier = subkey.valueInfoProcessor, let valueInfoProcessor = ValueInfoProcessors.shared.processor(withIdentifier: valueInfoProcessorIdentifier) {
+            self.valueInfoProcessor = valueInfoProcessor
+        }
+
+        // ---------------------------------------------------------------------
         //  Add spacing to bottom
         // ---------------------------------------------------------------------
         self.updateHeight(6.0)
@@ -264,9 +271,9 @@ class PayloadCellView: NSTableCellView, NSCopying {
                 if
                     let attributesOfFirstCharacter = self.textFieldTitle?.attributedStringValue.attributes(at: 0, effectiveRange: nil),
                     let firstCharacterColorRaw = attributesOfFirstCharacter[.foregroundColor] as? NSColor,
-                    let firstCharacterSanitizedColor = firstCharacterColorRaw.usingColorSpaceName(.calibratedRGB),
+                    let firstCharacterSanitizedColor = firstCharacterColorRaw.usingColorSpace(.genericRGB),
                     let firstCharacterColorHex = firstCharacterSanitizedColor.colorCode(type: .hex),
-                    let blackColor = NSColor.black.usingColorSpaceName(.calibratedRGB),
+                    let blackColor = NSColor.black.usingColorSpace(.genericRGB),
                     let blackColorHex = blackColor.colorCode(type: .hex) {
                     if firstCharacterColorHex == blackColorHex {
                         self.textFieldTitle?.attributedStringValue = attributedTitleKey

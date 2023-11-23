@@ -144,5 +144,5 @@ file_header: # Correct syntax for the file headers
                     \/\/  ProfileCreator
                     \/\/
                     \/\/  Created by .[A-Za-z -]*?.
-                    \/\/  Copyright © \d{4} Erik Berglund\. All rights reserved\.
+                    \/\/  Copyright © \d{4} .[A-Za-z -]*?.\. All rights reserved\.
                     \/\/
