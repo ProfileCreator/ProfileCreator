@@ -83,18 +83,17 @@ class FileInfoProcessorCertificate: FileInfoProcessor {
                 let certificateString = try String(contentsOf: fileURL, encoding: .utf8)
                 let certificateScanner = Scanner(string: certificateString)
 
-                var certificateScannerString: NSString? = ""
-
                 // Move to the first line containing '-----BEGIN CERTIFICATE-----'
-                certificateScanner.scanUpTo("-----BEGIN CERTIFICATE-----", into: nil)
+                // certificateScanner.scanUpTo("-----BEGIN CERTIFICATE-----", into: nil)
+                _ = certificateScanner.scanUpToString("-----BEGIN CERTIFICATE-----")
 
                 // Get the string contents between the first '-----BEGIN CERTIFICATE-----' and '-----END CERTIFICATE-----' encountered
-                if !( certificateScanner.scanString("-----BEGIN CERTIFICATE-----", into: nil) && certificateScanner.scanUpTo("-----END CERTIFICATE-----", into: &certificateScannerString) ) {
-                    return nil
-                }
+                _ = certificateScanner.scanString("-----BEGIN CERTIFICATE-----")
+
+                let certificateScannerString = certificateScanner.scanUpToString("-----END CERTIFICATE-----")
 
                 // If the scannerString is not empty, replace the plistString
-                if let certificateStringBase64 = certificateScannerString as String?, !certificateStringBase64.isEmpty {
+                if let certificateStringBase64 = certificateScannerString, !certificateStringBase64.isEmpty {
                     return Data(base64Encoded: certificateStringBase64, options: .ignoreUnknownCharacters)
                 }
             } catch {
