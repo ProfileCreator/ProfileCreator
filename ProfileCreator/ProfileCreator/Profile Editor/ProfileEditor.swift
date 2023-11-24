@@ -485,6 +485,15 @@ extension ProfileEditor: NSTableViewDelegate {
 class PayloadButton: NSButton {
     override var acceptsFirstResponder: Bool { self.isEnabled }
     override var canBecomeKeyView: Bool { self.isEnabled }
+
+    // Provide some margin on the button so it's not right up against the border of the cell
+    override var intrinsicContentSize: NSSize {
+        var size = super.intrinsicContentSize
+
+        size.height += 10
+
+        return size
+    }
 }
 
 class PayloadPopUpButton: NSPopUpButton {
