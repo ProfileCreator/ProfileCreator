@@ -469,16 +469,6 @@ extension PayloadCellView {
             }
         }
 
-        // ---------------------------------------------------------------------
-        //  Calculate the leading constant
-        // ---------------------------------------------------------------------
-        let leadingConstant: CGFloat
-        if viewLeading is NSPopUpButton, viewLeading is NSTextField {
-            leadingConstant = 6.0
-        } else {
-            leadingConstant = 2.0
-        }
-
         // Leading
         self.cellViewConstraints.append(NSLayoutConstraint(item: textFieldTitle,
                                                            attribute: .leading,
@@ -486,7 +476,7 @@ extension PayloadCellView {
                                                            toItem: viewLeading,
                                                            attribute: .trailing,
                                                            multiplier: 1.0,
-                                                           constant: leadingConstant))
+                                                           constant: 6.0))
 
         // Baseline
         self.cellViewConstraints.append(NSLayoutConstraint(item: textFieldTitle,
@@ -495,7 +485,7 @@ extension PayloadCellView {
                                                            toItem: viewLeading,
                                                            attribute: .firstBaseline,
                                                            multiplier: 1.0,
-                                                           constant: 0.0))
+                                                           constant: 2.0))
 
         let heightDifference = viewLeading.intrinsicContentSize.height - textFieldTitle.intrinsicContentSize.height
         if 0 < heightDifference {
