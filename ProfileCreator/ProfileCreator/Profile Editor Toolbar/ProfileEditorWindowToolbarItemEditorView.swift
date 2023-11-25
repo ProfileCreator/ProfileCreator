@@ -18,7 +18,7 @@ class ProfileEditorWindowToolbarItemView: NSObject {
 
     var toolbarItem: NSToolbarItem?
 
-    let toolBarPickerImages: [NSImage?] = [NSImage(systemSymbolName: "list.bullet", accessibilityDescription: nil), NSImage(systemSymbolName: "apple.terminal.on.rectangle", accessibilityDescription: nil)]
+    let toolBarPickerImages: [NSImage?] = [NSImage(systemSymbolName: "list.bullet", accessibilityDescription: nil), NSImage(systemSymbolName: "terminal", accessibilityDescription: nil)]
 
     // MARK: -
     // MARK: Initialization

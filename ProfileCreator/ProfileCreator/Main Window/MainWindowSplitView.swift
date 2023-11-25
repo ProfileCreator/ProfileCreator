@@ -189,15 +189,6 @@ class MainWindowSplitView: NSSplitView {
                                               attribute: .notAnAttribute,
                                               multiplier: 1,
                                               constant: 150))
-
-        // Max Width
-        constraints.append(NSLayoutConstraint(item: self.outlineViewController.scrollView,
-                                              attribute: .width,
-                                              relatedBy: .lessThanOrEqual,
-                                              toItem: nil,
-                                              attribute: .notAnAttribute,
-                                              multiplier: 1,
-                                              constant: 300))
     }
 
     private func setupSplitViewProfileList(constraints: inout [NSLayoutConstraint]) {
@@ -214,15 +205,6 @@ class MainWindowSplitView: NSSplitView {
                                               attribute: .notAnAttribute,
                                               multiplier: 1,
                                               constant: 150))
-
-        // Max Width
-        constraints.append(NSLayoutConstraint(item: self.tableViewController.scrollView,
-                                              attribute: .width,
-                                              relatedBy: .lessThanOrEqual,
-                                              toItem: nil,
-                                              attribute: .notAnAttribute,
-                                              multiplier: 1,
-                                              constant: 300))
     }
 
     private func setupSplitViewProfilePreview(constraints: inout [NSLayoutConstraint]) {
@@ -231,14 +213,24 @@ class MainWindowSplitView: NSSplitView {
         //  Add constraints
         // ---------------------------------------------------------------------
 
+        // Max Width
+        constraints.append(NSLayoutConstraint(item: self.profilePreviewController.view,
+                                              attribute: .width,
+                                              relatedBy: .lessThanOrEqual,
+                                              toItem: nil,
+                                              attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+                                              multiplier: 1.0,
+                                              constant: kEditorPreferencesWindowWidth * 1.2))
+
         // Min Width
         constraints.append(NSLayoutConstraint(item: self.profilePreviewController.view,
                                               attribute: .width,
                                               relatedBy: .greaterThanOrEqual,
                                               toItem: nil,
-                                              attribute: .notAnAttribute,
-                                              multiplier: 1,
-                                              constant: 260))
+                                              attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+                                              multiplier: 1.0,
+                                              constant: kEditorPreferencesWindowWidth))
+
     }
 
     private func setupSplitViewWelcomeView(constraints: inout [NSLayoutConstraint]) {
