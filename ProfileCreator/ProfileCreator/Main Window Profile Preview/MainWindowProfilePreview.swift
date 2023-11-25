@@ -39,6 +39,32 @@ class MainWindowProfilePreviewController: NSObject {
         insert(subview: infoViewController.view)
 
         // ---------------------------------------------------------------------
+        //  Create Layout Constraints
+        // ---------------------------------------------------------------------
+        var constraints = [NSLayoutConstraint]()
+
+        constraints.append(NSLayoutConstraint(item: self.view,
+                                              attribute: .width,
+                                              relatedBy: .lessThanOrEqual,
+                                              toItem: nil,
+                                              attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+                                              multiplier: 1.0,
+                                              constant: kEditorPreferencesWindowWidth * 1.2))
+
+        constraints.append(NSLayoutConstraint(item: self.view,
+                                              attribute: .width,
+                                              relatedBy: .greaterThanOrEqual,
+                                              toItem: nil,
+                                              attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+                                              multiplier: 1.0,
+                                              constant: kEditorPreferencesWindowWidth))
+
+        // ---------------------------------------------------------------------
+        //  Activate Layout Constraints
+        // ---------------------------------------------------------------------
+        NSLayoutConstraint.activate(constraints)
+
+        // ---------------------------------------------------------------------
         //  Setup Notification Observers
         // ---------------------------------------------------------------------
         NotificationCenter.default.addObserver(self, selector: #selector(didChangeProfileSelection(_:)), name: .didChangeProfileSelection, object: nil)
@@ -130,20 +156,24 @@ class MainWindowProfilePreviewController: NSObject {
     }
 }
 
-class MainWindowProfilePreviewViewController: NSObject {
+class MainWindowProfilePreviewViewController: NSViewController {
 
     // MARK: -
     // MARK: Variables
 
-    let view = NSView()
     let textFieldTitle = NSTextField()
     let textFieldDescription = NSTextField()
+    var profilePreviewEditorView: ProfileEditorSettingsView?
 
     // MARK: -
     // MARK: Initialization
 
-    override init() {
-        super.init()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
 
         // ---------------------------------------------------------------------
         //  Setup Variables
@@ -159,7 +189,7 @@ class MainWindowProfilePreviewViewController: NSObject {
         //  Create and add TextField
         // ---------------------------------------------------------------------
         self.setupTextFieldTitle(constraints: &constraints)
-        self.setupTextFieldDescription(constraints: &constraints)
+        self.setupAndInsertTextFieldDescription(constraints: &constraints)
 
         // ---------------------------------------------------------------------
         //  Activate Layout Constraints
@@ -172,15 +202,89 @@ class MainWindowProfilePreviewViewController: NSObject {
 
     public func updateSelection(profile: Profile) {
         self.textFieldTitle.stringValue = profile.settings.title
+
+        // Remove existing views
+        self.textFieldDescription.removeFromSuperview()
+        self.profilePreviewEditorView?.removeFromSuperview()
+
         if profile.versionFormatSupported {
-            self.textFieldDescription.stringValue = "(This will show a preview of the profile settings. Not Implemented.)"
+            var constraints = [NSLayoutConstraint]()
+
+            // Create the new settings preview view
+            self.profilePreviewEditorView = ProfileEditorSettingsView(profile: profile)
+            self.insertPreviewView(subview: self.profilePreviewEditorView!, constraints: &constraints)
+
+            NSLayoutConstraint.activate(constraints)
         } else {
+            var constraints = [NSLayoutConstraint]()
+
+            self.setupAndInsertTextFieldDescription(constraints: &constraints)
+            NSLayoutConstraint.activate(constraints)
+
             self.textFieldDescription.stringValue = "This profile is saved in an older format and cannot be read by this version of ProfileCreator.\n\nTo add this profile to the application again you need to export it as a .mobileconfig using ProfileCreator Beta 4 (0.1-4).\n\nTo learn more, please read the release notes for Beta 5."
         }
     }
 
     // MARK: -
     // MARK: Setup Layout Constraints
+
+    private func insertPreviewView(subview: NSView, constraints: inout [NSLayoutConstraint]) {
+
+        // ---------------------------------------------------------------------
+        //  Setup Variables
+        // ---------------------------------------------------------------------
+        var constraints = [NSLayoutConstraint]()
+
+        // ---------------------------------------------------------------------
+        //  Add subview to main view
+        // ---------------------------------------------------------------------
+        self.view.addSubview(subview)
+
+        // ---------------------------------------------------------------------
+        //  Add constraints
+        // ---------------------------------------------------------------------
+
+        // Top
+        constraints.append(NSLayoutConstraint(item: subview,
+                                              attribute: .top,
+                                              relatedBy: .equal,
+                                              toItem: self.textFieldTitle,
+                                              attribute: .bottom,
+                                              multiplier: 1,
+                                              constant: 0))
+
+        // Bottom
+        constraints.append(NSLayoutConstraint(item: self.view,
+                                              attribute: .bottom,
+                                              relatedBy: .equal,
+                                              toItem: subview,
+                                              attribute: .bottom,
+                                              multiplier: 1,
+                                              constant: 0))
+
+        // Leading
+        constraints.append(NSLayoutConstraint(item: self.view,
+                                              attribute: .leading,
+                                              relatedBy: .equal,
+                                              toItem: subview,
+                                              attribute: .leading,
+                                              multiplier: 1,
+                                              constant: 0))
+
+        // Trailing
+        constraints.append(NSLayoutConstraint(item: self.view,
+                                              attribute: .trailing,
+                                              relatedBy: .lessThanOrEqual,
+                                              toItem: subview,
+                                              attribute: .trailing,
+                                              multiplier: 1,
+                                              constant: 0))
+
+        // ---------------------------------------------------------------------
+        //  Activate Layout Constraints
+        // ---------------------------------------------------------------------
+        NSLayoutConstraint.activate(constraints)
+    }
 
     private func setupTextFieldTitle(constraints: inout [NSLayoutConstraint]) {
 
@@ -231,7 +335,7 @@ class MainWindowProfilePreviewViewController: NSObject {
                                               constant: 10.0))
     }
 
-    private func setupTextFieldDescription(constraints: inout [NSLayoutConstraint]) {
+    private func setupAndInsertTextFieldDescription(constraints: inout [NSLayoutConstraint]) {
 
         self.textFieldDescription.translatesAutoresizingMaskIntoConstraints = false
         self.textFieldDescription.lineBreakMode = .byWordWrapping
@@ -243,7 +347,6 @@ class MainWindowProfilePreviewViewController: NSObject {
         self.textFieldDescription.textColor = .tertiaryLabelColor
         self.textFieldDescription.alignment = .center
         self.textFieldDescription.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        self.textFieldDescription.stringValue = "(This will show a preview of the profile settings. Not Implemented.)"
 
         // ---------------------------------------------------------------------
         //  Add subview to main view
@@ -338,8 +441,6 @@ class MainWindowProfilePreviewInfoViewController: NSObject {
         switch count {
         case 0:
             self.textField.stringValue = NSLocalizedString("No Profile Selected", comment: "")
-        case 1:
-            self.textField.stringValue = NSLocalizedString("\(count) Profile Selected", comment: "")
         default:
             self.textField.stringValue = NSLocalizedString("\(count) Profiles Selected", comment: "")
         }

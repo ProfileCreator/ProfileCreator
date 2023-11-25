@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import SecurityInterface.SFChooseIdentityPanel
 
 class ProfileEditorSettings {
 
