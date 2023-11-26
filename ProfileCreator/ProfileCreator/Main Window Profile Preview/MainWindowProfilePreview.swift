@@ -27,11 +27,9 @@ class MainWindowProfilePreviewController: NSObject {
         //  Setup Effect View (Background)
         // ---------------------------------------------------------------------
         self.view.translatesAutoresizingMaskIntoConstraints = false
-        if #available(OSX 10.14, *) {
-            self.view.material = .contentBackground
-        } else {
-            self.view.material = .light
-        }
+        self.view.material = .sidebar
+        self.view.blendingMode = .behindWindow
+        self.view.state = .active
 
         // ---------------------------------------------------------------------
         //  Setup Info View
@@ -57,13 +55,11 @@ class MainWindowProfilePreviewController: NSObject {
                     self.previewViewController.updateSelection(profile: profile)
                     infoViewController.view.removeFromSuperview()
                     insert(subview: previewViewController.view)
-                    self.view.state = .inactive
                 }
             } else {
                 self.infoViewController.updateSelection(count: profileIdentifiers.count)
                 previewViewController.view.removeFromSuperview()
                 insert(subview: infoViewController.view)
-                self.view.state = .active
             }
         }
     }
