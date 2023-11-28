@@ -22,7 +22,7 @@ There is a getting started guite to describe the basics on how to create your ow
 # ProfileCreator
 macOS application to create configuration profiles.
 
-![ProfileCreator](https://github.com/ProfileCreator/ProfileCreator/blob/master/resources/screenshots/ProfileCreator.png)
+![ProfileCreator](https://github.com/WillYu91/ProfileCreator/blob/master/resources/screenshots/ProfileCreator.png)
 
 # System Requirements
 ProfileCreator requires macOS 11 or newer.
