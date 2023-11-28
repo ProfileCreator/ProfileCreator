@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -223,7 +223,6 @@
 		1726CADE29FF3EB3004902B3 /* FileInfoProcessorFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CE1ACB205C019A00B3B012 /* FileInfoProcessorFont.swift */; };
 		1726CADF29FF3EB3004902B3 /* ProfileEditorWindowToolbarItemExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5395925E1F1012F3005090B3 /* ProfileEditorWindowToolbarItemExport.swift */; };
 		1726CAE229FF3EB3004902B3 /* ProfilePayloads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5370410F2169E14D005DAD87 /* ProfilePayloads.framework */; };
-		1726CAE329FF3EB3004902B3 /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5382DA4C20E604E4000A8353 /* Highlightr.framework */; };
 		1726CAE529FF3EB3004902B3 /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 539592611F102DEE005090B3 /* DefaultPreferences.plist */; };
 		1726CAE629FF3EB3004902B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 539832151F0EE15400C4792D /* Assets.xcassets */; };
 		1726CAE729FF3EB3004902B3 /* donatePayPal_Small.gif in Resources */ = {isa = PBXBuildFile; fileRef = 531805C1225AA2630021FEBE /* donatePayPal_Small.gif */; };
@@ -233,7 +232,8 @@
 		1726CAEB29FF3EB3004902B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539832171F0EE15400C4792D /* Main.storyboard */; };
 		1726CAEC29FF3EB3004902B3 /* SidebarFolder.icns in Resources */ = {isa = PBXBuildFile; fileRef = 53DADB4D1F1382B40045CB3F /* SidebarFolder.icns */; };
 		1726CAEF29FF3EB3004902B3 /* ProfilePayloads.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5370410F2169E14D005DAD87 /* ProfilePayloads.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1726CAF029FF3EB3004902B3 /* Highlightr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5382DA4C20E604E4000A8353 /* Highlightr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		173120082B13E55800F8CD7F /* X509 in Frameworks */ = {isa = PBXBuildFile; productRef = 173120072B13E55800F8CD7F /* X509 */; };
+		173241B12B14921A00D02351 /* Highlightr in Frameworks */ = {isa = PBXBuildFile; productRef = 173241B02B14921A00D02351 /* Highlightr */; };
 		53CD513A20D90B420088B22D /* ProfileCreatorExportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CD513920D90B420088B22D /* ProfileCreatorExportTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -245,33 +245,12 @@
 			remoteGlobalIDString = E314EBFE1F461A9B00AB18C5;
 			remoteInfo = ProfilePayloads;
 		};
-		1726CA0429FF3EB3004902B3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5382DA4420E604E4000A8353 /* Highlightr.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8CD1AE151F391713000FDA02;
-			remoteInfo = "Highlightr-macOS";
-		};
 		5370410E2169E14D005DAD87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5370410A2169E14D005DAD87 /* ProfilePayloads.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E314EBFF1F461A9B00AB18C5;
 			remoteInfo = ProfilePayloads;
-		};
-		5382DA4920E604E4000A8353 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5382DA4420E604E4000A8353 /* Highlightr.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8C2FB1C21F39118F00469D0D;
-			remoteInfo = "Highlightr-iOS";
-		};
-		5382DA4B20E604E4000A8353 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5382DA4420E604E4000A8353 /* Highlightr.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8CD1AE161F391713000FDA02;
-			remoteInfo = "Highlightr-macOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -283,7 +262,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1726CAEF29FF3EB3004902B3 /* ProfilePayloads.framework in Embed Frameworks */,
-				1726CAF029FF3EB3004902B3 /* Highlightr.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +269,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1720BB2B2B15828D00609D82 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/Main.xcstrings; sourceTree = "<group>"; };
 		1726CAF529FF3EB3004902B3 /* ProfileCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProfileCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		177B876329FF217500AF23CA /* ProfileCreatorRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ProfileCreatorRelease.entitlements; sourceTree = "<group>"; };
 		17A8174F291FA7AD0050A2F6 /* ValueImportProcessorSystemExtensionPolicyRemovable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueImportProcessorSystemExtensionPolicyRemovable.swift; sourceTree = "<group>"; };
@@ -404,7 +383,6 @@
 		5378AE9D2179B9EF00559089 /* ProfileEditorExtensionTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorExtensionTabView.swift; sourceTree = "<group>"; };
 		5381221421C31AE4005FB29D /* ExtensionInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionInt.swift; sourceTree = "<group>"; };
 		5381221721C31D56005FB29D /* ExtensionBool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionBool.swift; sourceTree = "<group>"; };
-		5382DA4420E604E4000A8353 /* Highlightr.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Highlightr.xcodeproj; path = Highlightr/Highlightr.xcodeproj; sourceTree = SOURCE_ROOT; };
 		5383C1921F2C8B5C004EBE9B /* PreferencesEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesEditor.swift; sourceTree = "<group>"; };
 		5383C1951F2C9127004EBE9B /* PayloadLibraryCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayloadLibraryCellView.swift; sourceTree = "<group>"; };
 		5383C1971F2C919A004EBE9B /* PayloadLibraryCellViewProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayloadLibraryCellViewProfile.swift; sourceTree = "<group>"; };
@@ -545,7 +523,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1726CAE229FF3EB3004902B3 /* ProfilePayloads.framework in Frameworks */,
-				1726CAE329FF3EB3004902B3 /* Highlightr.framework in Frameworks */,
+				173241B12B14921A00D02351 /* Highlightr in Frameworks */,
+				173120082B13E55800F8CD7F /* X509 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,19 +737,9 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5382DA4520E604E4000A8353 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5382DA4A20E604E4000A8353 /* Highlightr.framework */,
-				5382DA4C20E604E4000A8353 /* Highlightr.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		5382DA4F20E604FD000A8353 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5382DA4420E604E4000A8353 /* Highlightr.xcodeproj */,
 				5370410A2169E14D005DAD87 /* ProfilePayloads.xcodeproj */,
 			);
 			name = Frameworks;
@@ -1215,9 +1184,12 @@
 			);
 			dependencies = (
 				1726CA0129FF3EB3004902B3 /* PBXTargetDependency */,
-				1726CA0329FF3EB3004902B3 /* PBXTargetDependency */,
 			);
 			name = ProfileCreator;
+			packageProductDependencies = (
+				173120072B13E55800F8CD7F /* X509 */,
+				173241B02B14921A00D02351 /* Highlightr */,
+			);
 			productName = ProfileCreator;
 			productReference = 1726CAF529FF3EB3004902B3 /* ProfileCreator.app */;
 			productType = "com.apple.product-type.application";
@@ -1267,13 +1239,13 @@
 				Base,
 			);
 			mainGroup = 539832051F0EE15400C4792D;
+			packageReferences = (
+				173120062B13E55800F8CD7F /* XCRemoteSwiftPackageReference "swift-certificates" */,
+				173241AF2B14921A00D02351 /* XCRemoteSwiftPackageReference "Highlightr" */,
+			);
 			productRefGroup = 5398320F1F0EE15400C4792D /* Products */;
 			projectDirPath = "";
 			projectReferences = (
-				{
-					ProductGroup = 5382DA4520E604E4000A8353 /* Products */;
-					ProjectRef = 5382DA4420E604E4000A8353 /* Highlightr.xcodeproj */;
-				},
 				{
 					ProductGroup = 5370410B2169E14D005DAD87 /* Products */;
 					ProjectRef = 5370410A2169E14D005DAD87 /* ProfilePayloads.xcodeproj */;
@@ -1293,20 +1265,6 @@
 			fileType = wrapper.framework;
 			path = ProfilePayloads.framework;
 			remoteRef = 5370410E2169E14D005DAD87 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5382DA4A20E604E4000A8353 /* Highlightr.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Highlightr.framework;
-			remoteRef = 5382DA4920E604E4000A8353 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5382DA4C20E604E4000A8353 /* Highlightr.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Highlightr.framework;
-			remoteRef = 5382DA4B20E604E4000A8353 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1612,11 +1570,6 @@
 			name = ProfilePayloads;
 			targetProxy = 1726CA0229FF3EB3004902B3 /* PBXContainerItemProxy */;
 		};
-		1726CA0329FF3EB3004902B3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Highlightr-macOS";
-			targetProxy = 1726CA0429FF3EB3004902B3 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1624,6 +1577,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				539832181F0EE15400C4792D /* Base */,
+				1720BB2B2B15828D00609D82 /* mul */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1658,6 +1612,7 @@
 				PRODUCT_NAME = ProfileCreator;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEBUGEXPORT DEBUGCONDITIONS";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1689,6 +1644,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
 				PRODUCT_NAME = ProfileCreator;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1745,6 +1701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1800,6 +1757,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -1893,6 +1851,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		173120062B13E55800F8CD7F /* XCRemoteSwiftPackageReference "swift-certificates" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-certificates.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		173241AF2B14921A00D02351 /* XCRemoteSwiftPackageReference "Highlightr" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/raspu/Highlightr/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		173120072B13E55800F8CD7F /* X509 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 173120062B13E55800F8CD7F /* XCRemoteSwiftPackageReference "swift-certificates" */;
+			productName = X509;
+		};
+		173241B02B14921A00D02351 /* Highlightr */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 173241AF2B14921A00D02351 /* XCRemoteSwiftPackageReference "Highlightr" */;
+			productName = Highlightr;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 539832061F0EE15400C4792D /* Project object */;
 }

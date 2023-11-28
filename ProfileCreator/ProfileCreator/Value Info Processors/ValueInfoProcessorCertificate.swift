@@ -8,6 +8,8 @@
 
 import Foundation
 import ProfilePayloads
+import SwiftASN1
+import X509
 
 enum CertificateType: Int {
     case p12
@@ -42,65 +44,72 @@ class ValueInfoProcessorCertificate: ValueInfoProcessor {
         // Create an empty ValueInfo struct
         var valueInfo = ValueInfo()
 
-        // Create SecCertificate from passed Data
-        let certificate: SecCertificate
-        if let cert = SecCertificateCreateWithData(kCFAllocatorDefault, data as CFData) {
-            certificate = cert
-        } else if
-            let certificateString = String(data: data, encoding: .utf8),
-            let certData = Certificate.certificateData(forString: certificateString),
-            let cert = SecCertificateCreateWithData(kCFAllocatorDefault, certData as CFData) {
-            certificate = cert
-        } else {
-            Log.shared.error(message: "Failed to create a SecCertificate instance from passed data", category: String(describing: self))
-            return nil
-        }
+        do {
+            let derBytes: [UInt8] = [UInt8](data)
+            let asn1Cert = try X509.Certificate(derEncoded: derBytes)
 
-        // Title
-        if let certificateTitle = SecCertificateCopySubjectSummary(certificate) as String? {
-            valueInfo.title = certificateTitle
-        }
+            if let title = self.valueForNestedAttribute(forDistinguishedName: asn1Cert.subject, forAttribute: .RDNAttributeType.commonName) {
 
-        // Top
-        if certificate.isSelfSigned {
-            self.certificateType = .selfSignedCA
-            valueInfo.topLabel = NSLocalizedString("Root certificate authority", comment: "")
-        } else {
-            self.certificateType = .standard
-            if certificate.isCertificateAuthority {
-                valueInfo.topLabel = NSLocalizedString("Intermediate certificate authority", comment: "")
+                valueInfo.title = String(describing: title)
             } else {
-                if let issuerName = certificate.issuerName {
-                    valueInfo.topLabel = NSLocalizedString("Issued by: \(issuerName)", comment: "")
+                valueInfo.title = "Unknown Subject"
+            }
+
+            if asn1Cert.issuer == asn1Cert.subject {
+                self.certificateType = .selfSignedCA
+
+                // Top
+                valueInfo.topLabel = NSLocalizedString("Root certificate authority", comment: "")
+            } else {
+                self.certificateType = .standard
+
+                // Is Certificate Authority
+                let isCertificateAuthority = try asn1Cert.extensions.basicConstraints == .isCertificateAuthority(maxPathLength: 0)
+
+                // Top
+                if isCertificateAuthority {
+                    valueInfo.topLabel = NSLocalizedString("Intermediate certificate authority", comment: "")
                 } else {
-                    valueInfo.topLabel = NSLocalizedString("Unknwon Issuer", comment: "")
+
+                    if let organizationName = self.valueForNestedAttribute(forDistinguishedName: asn1Cert.issuer, forAttribute: .RDNAttributeType.organizationName) {
+                        valueInfo.topLabel = NSLocalizedString("Issued by: \(organizationName)", comment: "")
+                    } else {
+                        valueInfo.topLabel = NSLocalizedString("Unknown Issuer", comment: "")
+                    }
+                }
+
+                // Not Valid Before
+                if asn1Cert.notValidBefore.compare(Date()) == ComparisonResult.orderedDescending {
+
+                    // Center
+                    valueInfo.centerLabel = NSLocalizedString("Not valid before: \(DateFormatter.localizedString(from: asn1Cert.notValidBefore, dateStyle: .long, timeStyle: .long))", comment: "")
+
+                    // Bottom
+                    valueInfo.bottomLabel = NSLocalizedString("This certificate is not yet valid", comment: "")
+                    valueInfo.bottomError = true
+                }
+
+                // Not Valid After
+                if
+                    !valueInfo.bottomError,
+                    asn1Cert.notValidAfter.compare(Date()) == ComparisonResult.orderedAscending {
+
+                    // Center
+                    valueInfo.centerLabel = NSLocalizedString("Expired: \(DateFormatter.localizedString(from: asn1Cert.notValidAfter, dateStyle: .long, timeStyle: .long))", comment: "")
+
+                    // Bottom
+                    valueInfo.bottomLabel = NSLocalizedString("This certificate has expired", comment: "")
+                    valueInfo.bottomError = true
+                } else {
+
+                    // Center
+                    valueInfo.centerLabel = NSLocalizedString("Expires: \(DateFormatter.localizedString(from: asn1Cert.notValidAfter, dateStyle: .long, timeStyle: .long))", comment: "")
                 }
             }
-        }
+        } catch {
+            Log.shared.error(message: "Failed to get certificate values with error: \(String(describing: error))", category: String(describing: self))
 
-        if let validityNotBefore = certificate.validityNotBefore, validityNotBefore.compare(Date()) == ComparisonResult.orderedDescending {
-
-            // Center
-            valueInfo.centerLabel = NSLocalizedString("Not valid before: \(DateFormatter.localizedString(from: validityNotBefore, dateStyle: .long, timeStyle: .long))", comment: "")
-
-            // Bottom
-            valueInfo.bottomLabel = NSLocalizedString("This certificate is not yet valid", comment: "")
-            valueInfo.bottomError = true
-        } else if let validityNotAfter = certificate.validityNotAfter {
-
-            if validityNotAfter.compare(Date()) == ComparisonResult.orderedAscending {
-
-                // Center
-                valueInfo.centerLabel = NSLocalizedString("Expired: \(DateFormatter.localizedString(from: validityNotAfter, dateStyle: .long, timeStyle: .long))", comment: "")
-
-                // Bottom
-                valueInfo.bottomLabel = NSLocalizedString("This certificate has expired", comment: "")
-                valueInfo.bottomError = true
-            } else {
-
-                // Center
-                valueInfo.centerLabel = NSLocalizedString("Expires: \(DateFormatter.localizedString(from: validityNotAfter, dateStyle: .long, timeStyle: .long))", comment: "")
-            }
+            return nil
         }
 
         // Icon
@@ -168,5 +177,16 @@ class ValueInfoProcessorCertificate: ValueInfoProcessor {
             Log.shared.error(message: "Failed to initialize a certificate from file at path: \(url.path)", category: String(describing: self))
             return nil
         }
+    }
+
+    private func valueForNestedAttribute(forDistinguishedName distinguishedName: DistinguishedName, forAttribute attribute: ASN1ObjectIdentifier) -> Any? {
+
+        for relativeDistinguishedName in distinguishedName {
+            if let attribute = relativeDistinguishedName.first(where: { $0.type == attribute }) {
+                return attribute.value
+            }
+        }
+
+        return nil
     }
 }
