@@ -2,7 +2,7 @@
   <img width="256" height="256" src="https://github.com/ProfileCreator/ProfileCreator/blob/master/resources/wiki/256.png">
 </p>
 
-[![Latest pre-release version tag](https://img.shields.io/github/tag-date/WillYu91/ProfileCreator.svg)](https://github.com/WillYu91/ProfileCreator/releases/tag/v0.3.4) ![macOS version support](https://img.shields.io/badge/macOS-10.12%2B-success) ![Latest release download total](https://img.shields.io/github/downloads/WillYu91/ProfileCreator/v0.3.4/total)
+[![Latest pre-release version tag](https://img.shields.io/github/tag-date/WillYu91/ProfileCreator.svg)](https://github.com/WillYu91/ProfileCreator/releases/tag/v0.3.5) ![macOS version support](https://img.shields.io/badge/macOS-10.12%2B-success) ![Latest release download total](https://img.shields.io/github/downloads/WillYu91/ProfileCreator/v0.3.5/total)
 
 
 # Download
