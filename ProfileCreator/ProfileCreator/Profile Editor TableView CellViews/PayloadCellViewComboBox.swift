@@ -86,7 +86,8 @@ class PayloadCellViewComboBox: PayloadCellView, ProfileCreatorCellView {
             let selectedValue = value,
             let title = PayloadUtility.title(forRangeListValue: selectedValue, subkey: subkey),
             comboBox.objectValues.containsAny(value: title, ofType: .string) {
-            comboBox.selectItem(withObjectValue: title)
+            comboBox.stringValue = title
+            comboBox.objectValue = selectedValue
         } else {
             comboBox.objectValue = value
         }
