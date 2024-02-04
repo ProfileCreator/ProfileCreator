@@ -2170,7 +2170,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.3.5;
+				MARKETING_VERSION = 0.3.6;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_SWIFT_FLAGS = "-DSPARKLE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
@@ -2206,7 +2206,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.3.5;
+				MARKETING_VERSION = 0.3.6;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_SWIFT_FLAGS = "-DSPARKLE";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
@@ -2239,7 +2239,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.3.5;
+				MARKETING_VERSION = 0.3.6;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
 				PRODUCT_NAME = ProfileCreator;
@@ -2272,7 +2272,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 0.3.5;
+				MARKETING_VERSION = 0.3.6;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
 				PRODUCT_NAME = ProfileCreator;
