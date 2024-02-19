@@ -445,6 +445,6 @@ extension ProfileEditorHeaderView {
                                               multiplier: 1.0,
                                               constant: 12.0))
 
-        //self.updateHeight(description.intrinsicContentSize.height)
+        // self.updateHeight(description.intrinsicContentSize.height)
     }
 }

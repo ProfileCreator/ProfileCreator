@@ -49,9 +49,9 @@ class EditorTableViewCellViewArray: NSTableCellView {
         if let lastSubkey = subkey.subkeys.last, let placeholderValue = lastSubkey.valuePlaceholder {
             self.textField?.placeholderString = String(describing: placeholderValue)
         }
-        //if let tableViewContent = cellView.tableViewContent as? [[String: Any]], let value = tableViewContent[row][subkey.keyPath] as? [Any] {
+        // if let tableViewContent = cellView.tableViewContent as? [[String: Any]], let value = tableViewContent[row][subkey.keyPath] as? [Any] {
         self.textField?.stringValue = value.compactMap { String(describing: $0) }.joined(separator: ", ")
-        //}
+        // }
         self.textField?.delegate = cellView
         self.textField?.tag = row
         self.textField?.identifier = NSUserInterfaceItemIdentifier(rawValue: keyPath)
@@ -142,7 +142,7 @@ extension EditorTableViewCellViewArray {
         //  Setup GestureRecognizer
         // ---------------------------------------------------------------------
         let gesture = NSClickGestureRecognizer()
-        gesture.numberOfClicksRequired = 1
+        gesture.buttonMask = 0x2 // Right click to show array input
         gesture.target = self
         gesture.action = #selector(self.showArrayInput(_:))
         textField.addGestureRecognizer(gesture)
@@ -746,7 +746,7 @@ extension EditorTableViewCellViewArrayView: NSTableViewDelegate {
 // MARK: -
 // MARK: NSPopUpButton Functions
 
-@objc protocol EditorTableViewProtocol: class {
+@objc protocol EditorTableViewProtocol: AnyObject {
     @objc func selected(_ popUpButton: NSPopUpButton)
     @objc func select(_ menuItem: NSMenuItem)
     func validateMenuItem(_ menuItem: NSMenuItem) -> Bool

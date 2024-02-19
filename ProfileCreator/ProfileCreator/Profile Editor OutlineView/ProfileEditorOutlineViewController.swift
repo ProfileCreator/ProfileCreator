@@ -65,9 +65,9 @@ class ProfileEditorOutlineViewController: NSObject {
 extension ProfileEditorOutlineViewController: NSOutlineViewDataSource {
 
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
-        //Swift.print("numberOfChildrenOfItem")
+        // Swift.print("numberOfChildrenOfItem")
         if let treeNode = item as? PropertyListTreeNode {
-            //Swift.print("treeNode.numberOfChildren: \(treeNode.numberOfChildren)")
+            // Swift.print("treeNode.numberOfChildren: \(treeNode.numberOfChildren)")
             return treeNode.numberOfChildren
         } else {
             return 1
@@ -247,7 +247,7 @@ extension ProfileEditorOutlineViewController {
     ///
     /// - parameter key: The key being set. If the dictionary already contains this key, has no
     ///       effect. This should not be possible because of our implementation of
-    //        `control(_:textShouldEndEditing:)`.
+    ///        `control(_:textShouldEndEditing:)`.
     /// - parameter treeNode: The tree node whose key is being set.
     private func setKey(_ key: String, of treeNode: PropertyListTreeNode) {
         guard let parent = treeNode.parent, let index = treeNode.index else {

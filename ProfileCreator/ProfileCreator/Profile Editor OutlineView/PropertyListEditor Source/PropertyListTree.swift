@@ -51,6 +51,7 @@ class PropertyListTree: NSObject {
     /// The instance’s root property list item
     private(set) var rootItem: PropertyListItem
 
+    // swiftlint:disable:next orphaned_doc_comment
     /// The instance’s root property list tree node
     // swiftlint:disable:next implicitly_unwrapped_optional
     private(set) var rootNode: PropertyListTreeNode!

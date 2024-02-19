@@ -102,8 +102,8 @@ class MainWindowSplitView: NSSplitView {
         // ---------------------------------------------------------------------
         // TODO: Fix the restore. It seems it has to be done from the SplitViewController
         // But to use that this whole implementation has to change. This need to be tested later
-        //self.setPosition(150.0, ofDividerAt: 0)
-        //self.setPosition(150.0, ofDividerAt: 0)
+        // self.setPosition(150.0, ofDividerAt: 0)
+        // self.setPosition(150.0, ofDividerAt: 0)
         //
 
     }
@@ -189,15 +189,6 @@ class MainWindowSplitView: NSSplitView {
                                               attribute: .notAnAttribute,
                                               multiplier: 1,
                                               constant: 150))
-
-        // Max Width
-        constraints.append(NSLayoutConstraint(item: self.outlineViewController.scrollView,
-                                              attribute: .width,
-                                              relatedBy: .lessThanOrEqual,
-                                              toItem: nil,
-                                              attribute: .notAnAttribute,
-                                              multiplier: 1,
-                                              constant: 300))
     }
 
     private func setupSplitViewProfileList(constraints: inout [NSLayoutConstraint]) {
@@ -214,15 +205,6 @@ class MainWindowSplitView: NSSplitView {
                                               attribute: .notAnAttribute,
                                               multiplier: 1,
                                               constant: 150))
-
-        // Max Width
-        constraints.append(NSLayoutConstraint(item: self.tableViewController.scrollView,
-                                              attribute: .width,
-                                              relatedBy: .lessThanOrEqual,
-                                              toItem: nil,
-                                              attribute: .notAnAttribute,
-                                              multiplier: 1,
-                                              constant: 300))
     }
 
     private func setupSplitViewProfilePreview(constraints: inout [NSLayoutConstraint]) {
@@ -231,14 +213,24 @@ class MainWindowSplitView: NSSplitView {
         //  Add constraints
         // ---------------------------------------------------------------------
 
+        // Max Width
+        constraints.append(NSLayoutConstraint(item: self.profilePreviewController.view,
+                                              attribute: .width,
+                                              relatedBy: .lessThanOrEqual,
+                                              toItem: nil,
+                                              attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+                                              multiplier: 1.0,
+                                              constant: kEditorPreferencesWindowWidth * 1.2))
+
         // Min Width
         constraints.append(NSLayoutConstraint(item: self.profilePreviewController.view,
                                               attribute: .width,
                                               relatedBy: .greaterThanOrEqual,
                                               toItem: nil,
-                                              attribute: .notAnAttribute,
-                                              multiplier: 1,
-                                              constant: 260))
+                                              attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+                                              multiplier: 1.0,
+                                              constant: kEditorPreferencesWindowWidth))
+
     }
 
     private func setupSplitViewWelcomeView(constraints: inout [NSLayoutConstraint]) {
@@ -326,13 +318,13 @@ extension MainWindowSplitView {
                 // Manage the 'hidden state' per view
                 // let hidden = NSString(string:components[4].lowercased()).boolValue
                 // let subView = self.subviews[i]
-                //subView.isHidden = hidden
+                // subView.isHidden = hidden
 
                 // Set height (horizontal) or width (vertical)
                 if self.isVertical {
                     if let width = Float(components[2]) {
                         position += CGFloat(width)
-                        //subView.setFrameSize(NSSize.init(width: position, height: subView.frame.size.height))
+                        // subView.setFrameSize(NSSize.init(width: position, height: subView.frame.size.height))
                     }
                 }
 

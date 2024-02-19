@@ -123,7 +123,7 @@ class MainWindowOutlineView: NSOutlineView {
         if let delegate = self.delegate as? MainWindowOutlineViewDelegate {
             if sender is NSMenuItem, self.clickedItem != nil, self.clickedItemRow != -1 {
                 delegate.shouldRemoveItems(atIndexes: IndexSet(integer: self.clickedItemRow))
-            } else if sender is MainWindowOutlineView, 0 < self.selectedRowIndexes.count {
+            } else if sender is MainWindowOutlineView, !self.selectedRowIndexes.isEmpty {
                 delegate.shouldRemoveItems(atIndexes: self.selectedRowIndexes)
             }
         }

@@ -13,7 +13,7 @@ import ProfilePayloads
 // MARK: Protocols
 // MAKR: -
 
-protocol PayloadLibraryTableViewDelegate: class {
+protocol PayloadLibraryTableViewDelegate: AnyObject {
     func payloadPlaceholder(atRow: Int, in: PayloadLibraryTableView) -> PayloadPlaceholder?
 }
 
@@ -546,22 +546,20 @@ class PayloadLibraryTableViews: NSObject, PayloadLibrarySelectionDelegate {
                 // ---------------------------------------------------------------------
                 //  Loop through all domains and settings for the current type, add all enabled
                 // ---------------------------------------------------------------------
-                for domainIdentifier in typeSettings.keys {
-                    if profile.settings.isIncludedInProfile(domainIdentifier: domainIdentifier, type: type) {
-                        if type == .custom {
-                            if
-                                let payloadContent = typeSettings[domainIdentifier],
-                                let payload = ProfilePayloads.shared.customManifest(forDomainIdentifier: domainIdentifier, ofType: type, payloadContent: payloadContent),
-                                let payloadPlaceholder = payload.placeholder {
-                                self.profilePayloads.append(payloadPlaceholder)
-                            } else {
-                                Log.shared.error(message: "Failed to ge payload and placehoder for unknown payload with content: \(String(describing: typeSettings[domainIdentifier]?.first))", category: String(describing: self))
-                            }
-                        } else if
-                            let payload = ProfilePayloads.shared.payload(forDomainIdentifier: domainIdentifier, type: type),
+                for domainIdentifier in typeSettings.keys where profile.settings.isIncludedInProfile(domainIdentifier: domainIdentifier, type: type) {
+                    if type == .custom {
+                        if
+                            let payloadContent = typeSettings[domainIdentifier],
+                            let payload = ProfilePayloads.shared.customManifest(forDomainIdentifier: domainIdentifier, ofType: type, payloadContent: payloadContent),
                             let payloadPlaceholder = payload.placeholder {
                             self.profilePayloads.append(payloadPlaceholder)
+                        } else {
+                            Log.shared.error(message: "Failed to ge payload and placehoder for unknown payload with content: \(String(describing: typeSettings[domainIdentifier]?.first))", category: String(describing: self))
                         }
+                    } else if
+                        let payload = ProfilePayloads.shared.payload(forDomainIdentifier: domainIdentifier, type: type),
+                        let payloadPlaceholder = payload.placeholder {
+                        self.profilePayloads.append(payloadPlaceholder)
                     }
                 }
             }

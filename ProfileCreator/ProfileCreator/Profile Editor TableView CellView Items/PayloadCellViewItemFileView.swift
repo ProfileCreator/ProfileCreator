@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class  EditorFileView {
+class EditorFileView {
 
     class func view(allowedFileTypes: [String]?,
                     constraints: inout [NSLayoutConstraint],

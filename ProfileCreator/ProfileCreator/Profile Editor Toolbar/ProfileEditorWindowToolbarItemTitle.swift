@@ -59,8 +59,6 @@ class ProfileEditorWindowToolbarItemTitle: NSView {
         //  Create the actual toolbar item
         // ---------------------------------------------------------------------
         self.toolbarItem = NSToolbarItem(itemIdentifier: .editorTitle)
-        self.toolbarItem.minSize = frame.size
-        self.toolbarItem.maxSize = frame.size
 
         // ---------------------------------------------------------------------
         //  Initialize self after the class variables have been instantiated
@@ -103,19 +101,6 @@ class ProfileEditorWindowToolbarItemTitle: NSView {
 
         let frame = NSRect(x: 0.0, y: 0.0, width: self.textFieldTitle.intrinsicContentSize.width, height: self.toolbarItemHeight)
         self.frame = frame
-
-        self.toolbarItem.minSize = frame.size
-        self.toolbarItem.maxSize = frame.size
-
-        self.centerTitle()
-    }
-
-    func centerTitle() {
-        guard
-            let items = self.toolbarItem.toolbar?.items,
-            let index = items.firstIndex(where: { $0.itemIdentifier == .adaptiveSpace }),
-            let adaptiveSpace = items[index] as? AdaptiveSpaceItem else { return }
-        adaptiveSpace.updateWidth()
     }
 
     // MARK: -

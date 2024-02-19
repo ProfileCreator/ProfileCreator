@@ -12,11 +12,11 @@ import Cocoa
 // MARK: Protocols
 // MAKR: -
 
-protocol MainWindowOutlineViewDelegate: class {
+protocol MainWindowOutlineViewDelegate: AnyObject {
     func shouldRemoveItems(atIndexes: IndexSet)
 }
 
-protocol MainWindowOutlineViewSelectionDelegate: class {
+protocol MainWindowOutlineViewSelectionDelegate: AnyObject {
     func selected(item: OutlineViewChildItem, sender: Any?)
     func updated(item: OutlineViewChildItem, sender: Any?)
 }
@@ -446,7 +446,7 @@ extension MainWindowOutlineViewController: NSOutlineViewDelegate {
         //  Updates internal selection state and notifies delegate of the new selection
         // ---------------------------------------------------------------------
         let selectedRowIndexes = self.outlineView.selectedRowIndexes
-        if 0 < selectedRowIndexes.count {
+        if !selectedRowIndexes.isEmpty {
 
             // -----------------------------------------------------------------
             //  Assumes MainWindowLibraryGroup and that only one selection is possible.
@@ -492,7 +492,7 @@ extension MainWindowOutlineViewController: NSOutlineViewDelegate {
             // ------------------------------------------------------------------
             //  Ugly fix to hide the AllProfiles parent view, setting it's height to 0
             // -----------------------------------------------------------------
-            //return 0
+            // return 0
         } else if item is OutlineViewParentItem {
             return 18
         }

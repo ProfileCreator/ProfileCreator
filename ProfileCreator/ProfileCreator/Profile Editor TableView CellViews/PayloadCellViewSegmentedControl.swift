@@ -73,15 +73,13 @@ class PayloadCellViewSegmentedControl: PayloadCellView, ProfileCreatorCellView, 
         //  Select the current segment
         // ---------------------------------------------------------------------
         segmentLoop: for segmentedControl in self.segmentedControls {
-            for index in 0..<segmentedControl.segmentCount {
-                if segmentedControl.label(forSegment: index) == value {
-                    if #available(OSX 10.13, *) {
-                        segmentedControl.selectSegment(withTag: index)
-                    } else {
-                        segmentedControl.setSelected(true, forSegment: index)
-                    }
-                    break segmentLoop
+            for index in 0..<segmentedControl.segmentCount where segmentedControl.label(forSegment: index) == value {
+                if #available(OSX 10.13, *) {
+                    segmentedControl.selectSegment(withTag: index)
+                } else {
+                    segmentedControl.setSelected(true, forSegment: index)
                 }
+                break segmentLoop
             }
         }
 

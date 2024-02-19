@@ -20,9 +20,31 @@ class MainWindowController: NSWindowController {
                                                               .mainWindowExport,
                                                               NSToolbarItem.Identifier.flexibleSpace,
                                                               .mainWindowTitle]
-    var toolbarItemAdd: MainWindowToolbarItemAdd?
-    var toolbarItemExport: MainWindowToolbarItemExport?
+    var toolbarItemAdd: NSMenuToolbarItem?
+    var toolbarItemExport: NSMenuToolbarItem?
     var toolbarItemTitle: MainWindowToolbarItemTitle?
+
+    // Items for the `toolbarItemAdd`
+    let addItemContextualMenu: NSMenu = {
+        let menu = NSMenu(title: "")
+
+        let menuNewProfile = NSMenuItem(title: "New Payload", action: #selector(newProfile), keyEquivalent: "")
+        let menuNewGroup = NSMenuItem(title: "New Group", action: #selector(newGroup), keyEquivalent: "")
+
+        menu.items = [menuNewProfile, menuNewGroup]
+        return menu
+    }()
+
+    // Items for the `toolbarItemExport`
+    let exportItemContextualMenu: NSMenu = {
+        let menu = NSMenu(title: "")
+
+        let menuExportProfile = NSMenuItem(title: "Export Profile", action: #selector(exportProfile), keyEquivalent: "")
+        let menuExportPlist = NSMenuItem(title: "Export Plist", action: #selector(exportPlist), keyEquivalent: "")
+
+        menu.items = [menuExportProfile, menuExportPlist]
+        return menu
+    }()
 
     // MARK: -
     // MARK: Initialization
@@ -52,6 +74,7 @@ class MainWindowController: NSWindowController {
         window.identifier = NSUserInterfaceItemIdentifier(rawValue: "ProfileCreatorMainWindow-ID")
         window.setFrameAutosaveName("ProfileCreatorMainWindow-AS")
         window.contentMinSize = NSSize(width: 600, height: 400)
+        window.toolbarStyle = .unifiedCompact
         window.center()
 
         // ---------------------------------------------------------------------
@@ -71,7 +94,6 @@ class MainWindowController: NSWindowController {
         self.toolbar.showsBaselineSeparator = true
         self.toolbar.allowsUserCustomization = false
         self.toolbar.autosavesConfiguration = false
-        self.toolbar.sizeMode = .regular
         self.toolbar.displayMode = .iconOnly
         self.toolbar.delegate = self
 
@@ -79,6 +101,11 @@ class MainWindowController: NSWindowController {
         // Add toolbar to window
         // ---------------------------------------------------------------------
         self.window?.toolbar = self.toolbar
+
+        // ---------------------------------------------------------------------
+        // Setup Notification Observers
+        // ---------------------------------------------------------------------
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeProfileSelection(_:)), name: .didChangeProfileSelection, object: nil)
     }
 }
 
@@ -106,20 +133,35 @@ extension MainWindowController: NSToolbarDelegate {
         switch identifier {
         case .mainWindowAdd:
             if self.toolbarItemAdd == nil {
-                self.toolbarItemAdd = MainWindowToolbarItemAdd()
+                let toolbarItem = NSMenuToolbarItem(itemIdentifier: .mainWindowAdd)
+                toolbarItem.showsIndicator = true
+                toolbarItem.isBordered = true
+                toolbarItem.target = self
+                toolbarItem.action = #selector(newProfile)
+                toolbarItem.menu = self.addItemContextualMenu
+                toolbarItem.image = NSImage(named: NSImage.addTemplateName)
+
+                self.toolbarItemAdd = toolbarItem
             }
 
-            if let toolbarView = self.toolbarItemAdd {
-                return toolbarView.toolbarItem
-            }
+            return self.toolbarItemAdd
+
         case .mainWindowExport:
             if self.toolbarItemExport == nil {
-                self.toolbarItemExport = MainWindowToolbarItemExport()
+                let toolbarItem = NSMenuToolbarItem(itemIdentifier: .mainWindowExport)
+
+                toolbarItem.showsIndicator = true
+                toolbarItem.isBordered = true
+                toolbarItem.target = self
+                toolbarItem.action = #selector(exportProfile)
+                toolbarItem.menu = self.exportItemContextualMenu
+                toolbarItem.image = NSImage(named: NSImage.shareTemplateName)
+                toolbarItem.isEnabled = false
+
+                self.toolbarItemExport = toolbarItem
             }
 
-            if let toolbarView = self.toolbarItemExport {
-                return toolbarView.toolbarItem
-            }
+            return self.toolbarItemExport
         case .mainWindowTitle:
             if self.toolbarItemTitle == nil {
                 self.toolbarItemTitle = MainWindowToolbarItemTitle()
@@ -132,5 +174,47 @@ extension MainWindowController: NSToolbarDelegate {
             Log.shared.error(message: "Unknown NSToolbarItem.Identifier: \(identifier)", category: String(describing: self))
         }
         return nil
+    }
+
+    // MARK: -
+    // MARK: `toolbarAddItem` actions
+    @objc func newProfile() {
+        NotificationCenter.default.post(name: .newProfile, object: self, userInfo: [NotificationKey.parentTitle: SidebarGroupTitle.library])
+    }
+
+    @objc func newGroup() {
+        NotificationCenter.default.post(name: .addGroup, object: self, userInfo: [NotificationKey.parentTitle: SidebarGroupTitle.library])
+    }
+
+    @objc func newGroupJSS() {
+        NotificationCenter.default.post(name: .addGroup, object: self, userInfo: [NotificationKey.parentTitle: SidebarGroupTitle.jamf])
+    }
+
+    // MARK: -
+    // MARK: `toolbarExportItem` actions
+    @objc func exportPlist() {
+        guard let mainWindowController = self.window?.windowController as? MainWindowController else { return }
+        let mainWindowTableViewController = mainWindowController.splitView.tableViewController
+        if let identifiers = mainWindowTableViewController.profileIdentifiers(atIndexes: mainWindowTableViewController.tableView.selectedRowIndexes) {
+            ProfileController.sharedInstance.exportPlists(withIdentifiers: identifiers, promptWindow: mainWindowController.window)
+        }
+    }
+
+    @objc func exportProfile() {
+        guard let mainWindowController = self.window?.windowController as? MainWindowController else { return }
+        let mainWindowTableViewController = mainWindowController.splitView.tableViewController
+        if let identifiers = mainWindowTableViewController.profileIdentifiers(atIndexes: mainWindowTableViewController.tableView.selectedRowIndexes) {
+            ProfileController.sharedInstance.exportProfiles(withIdentifiers: identifiers, promptWindow: mainWindowController.window)
+        }
+    }
+
+    // MARK: -
+    // MARK: Observers
+    @objc func didChangeProfileSelection(_ notification: NSNotification?) {
+        if let selectedIndexes = notification?.userInfo?[NotificationKey.indexSet] as? IndexSet, selectedIndexes.count == 1 {
+            self.toolbarItemExport?.isEnabled = true
+        } else {
+            self.toolbarItemExport?.isEnabled = false
+        }
     }
 }

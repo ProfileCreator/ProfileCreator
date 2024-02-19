@@ -33,13 +33,13 @@ class ProfileEditorSettingsViewController: NSViewController {
     // MARK: NSViewController Overrides
 
     override func loadView() {
-        if let profile = self.profile, let editorSettings = self.editorSettings {
-            self.view = ProfileEditorSettigsView(profile: profile, editorSettings: editorSettings)
+        if let profile = self.profile {
+            self.view = ProfileEditorSettingsView(profile: profile)
         } else { self.view = NSView() }
     }
 }
 
-class ProfileEditorSettigsView: NSView {
+class ProfileEditorSettingsView: NSView {
 
     // MARK: -
     // MARK: Variables
@@ -53,7 +53,7 @@ class ProfileEditorSettigsView: NSView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    init(profile: Profile, editorSettings: ProfileEditorSettings) {
+    init(profile: Profile) {
         super.init(frame: NSRect.zero)
 
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +101,6 @@ class ProfileEditorSettigsView: NSView {
         lastTextField = lastSubview
 
         lastSubview = addPopUpButtonCertificate(label: "Sign Profile",
-                                                controlSize: .regular,
                                                 bindTo: profile.settings,
                                                 bindKeyPathCheckbox: profile.settings.signSelector,
                                                 bindKeyPathPopUpButton: profile.settings.signingCertificateSelector,
@@ -260,7 +259,7 @@ class ProfileEditorSettigsView: NSView {
         // Bottom
         constraints.append(NSLayoutConstraint(item: self,
                                               attribute: .bottom,
-                                              relatedBy: .equal,
+                                              relatedBy: .greaterThanOrEqual,
                                               toItem: lastSubview,
                                               attribute: .bottom,
                                               multiplier: 1,

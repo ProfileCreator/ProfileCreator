@@ -2,12 +2,12 @@
   <img width="256" height="256" src="https://github.com/ProfileCreator/ProfileCreator/blob/master/resources/wiki/256.png">
 </p>
 
-[![Latest pre-release version tag](https://img.shields.io/github/tag-date/ProfileCreator/ProfileCreator.svg)](https://github.com/ProfileCreator/ProfileCreator/releases/latest) ![macOS version support](https://img.shields.io/badge/macOS-10.12%2B-success) ![Latest release download total](https://img.shields.io/github/downloads/ProfileCreator/ProfileCreator/v0.3.3/total)
+[![Latest pre-release version tag](https://img.shields.io/github/tag-date/WillYu91/ProfileCreator.svg)](https://github.com/WillYu91/ProfileCreator/releases/tag/v0.3.5) ![macOS version support](https://img.shields.io/badge/macOS-10.12%2B-success) ![Latest release download total](https://img.shields.io/github/downloads/WillYu91/ProfileCreator/v0.3.6/total)
 
 
 # Download
 
-See the latest download in [Releases](https://github.com/ProfileCreator/ProfileCreator/releases)
+See the latest download in [Releases](https://github.com/WillYu91/ProfileCreator/releases)
 
 # Contribute
 
@@ -22,10 +22,10 @@ There is a getting started guite to describe the basics on how to create your ow
 # ProfileCreator
 macOS application to create configuration profiles.
 
-![ProfileCreator](https://github.com/ProfileCreator/ProfileCreator/blob/master/resources/screenshots/ProfileCreator.png)
+![ProfileCreator](https://github.com/WillYu91/ProfileCreator/blob/master/resources/screenshots/ProfileCreator.png)
 
 # System Requirements
-ProfileCreator requires macOS 10.12 or newer.
+ProfileCreator requires macOS 11 or newer.
 
 # Development
 
@@ -34,9 +34,11 @@ In order to develop for ProfileCreator, the following pieces of software are req
 - Xcode 14 or higher
 - macOS 12.0 or higher
 
-In addition to those pieces of software you will also need to clone [ProfilePayloads](https://github.com/ProfileCreator/ProfilePayloads) alongside the ProfileCreator repository (The repositories must be adjacent to each other).
-
 ## Compiling
+Upon first clone, please update the submodules before attempting to compile
+
+`git submodule update --init --recursive`
+
 In order to compile ProfileCreator, please navigate to where the Xcode Project file is located and run the following command
 
 `xcodebuild -project ProfileCreator.xcodeproj -scheme ProfileCreator -configuration Debug`

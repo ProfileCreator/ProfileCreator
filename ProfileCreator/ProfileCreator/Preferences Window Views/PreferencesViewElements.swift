@@ -655,7 +655,7 @@ public func addPopUpButtonCertificate(label: String?,
                                           toItem: textFieldLabel,
                                           attribute: .firstBaseline,
                                           multiplier: 1,
-                                          constant: 0.0))
+                                          constant: 2.5))
 
     // PopUpButton Leading
     constraints.append(NSLayoutConstraint(item: popUpButton,
@@ -664,7 +664,7 @@ public func addPopUpButtonCertificate(label: String?,
                                           toItem: checkbox,
                                           attribute: .trailing,
                                           multiplier: 1,
-                                          constant: 1.0))
+                                          constant: 5.0))
 
     // PopUpButton Baseline
     constraints.append(NSLayoutConstraint(item: popUpButton,
@@ -731,7 +731,7 @@ class SigningCertificatePopUpButton: NSPopUpButton, NSMenuDelegate {
 
 public func addButton(label: String?,
                       title: String?,
-                      controlSize: NSControl.ControlSize  = .regular,
+                      controlSize: NSControl.ControlSize = .regular,
                       bindToEnabled: Any?,
                       bindKeyPathEnabled: String?,
                       target: Any?,
@@ -1014,6 +1014,7 @@ public func addCheckbox(label: String?,
         if controlSize == .small {
             constantTop = 7.0
         }
+
         constraints.append(NSLayoutConstraint(item: checkbox,
                                               attribute: .top,
                                               relatedBy: .equal,
@@ -1038,7 +1039,7 @@ public func addCheckbox(label: String?,
                                               toItem: label,
                                               attribute: .firstBaseline,
                                               multiplier: 1,
-                                              constant: 0.0))
+                                              constant: 2.0))
     } else {
 
         var constantTop: CGFloat = 6.0

@@ -18,6 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let mainWindowController: MainWindowController
     let preferencesWindowController: PreferencesWindowController
 
+    @IBOutlet private weak var checkForUpdateMenuItem: NSMenuItem!
+
     // MARK: -
     // MARK: Initialization
 
@@ -188,6 +190,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //  Show the developer menu item if enabled
         // ---------------------------------------------------------------------
         self.showMenuDeveloper(UserDefaults.standard.bool(forKey: PreferenceKey.showDeveloperMenu))
+
+        // ---------------------------------------------------------------------
+        //  Hide the 'Check For Updates...' menu item if non Mac App Store distribution
+        // ---------------------------------------------------------------------
+        #if !SPARKLE
+        self.checkForUpdateMenuItem.isEnabled = false
+        self.checkForUpdateMenuItem.isHidden = true
+        #endif
     }
 
     func showMenuDeveloper(_ show: Bool) {

@@ -51,7 +51,9 @@ extension ProfileEditor {
         if self.selectedPayloadView != .source {
             self.select(view: EditorViewTag.source.rawValue)
             if let editorWindowController = self.scrollView.window?.windowController as? ProfileEditorWindowController {
-                editorWindowController.toolbarItemView?.segmentedControl.setSelected(true, forSegment: EditorViewTag.source.rawValue)
+                guard let toolbarItem = editorWindowController.toolbarItemView?.toolbarItem as? NSToolbarItemGroup else { return }
+
+                toolbarItem.setSelected(true, at: EditorViewTag.source.rawValue)
             }
         }
         self.setPayloadContent(payload.manifestDict)
@@ -130,17 +132,17 @@ extension ProfileEditor {
 
             // Create a scanner from the file contents
             let scanner = Scanner(string: string)
-            var scannerString: NSString? = ""
 
             // Move to the first line containing '<dict>'
-            scanner.scanUpTo("<dict>", into: nil)
+            _ = scanner.scanUpToString("<dict>")
 
             // Add all lines until a line contains '</plist>' to scannerString
-            scanner.scanUpTo("</plist>", into: &scannerString)
+            if let scannerString = scanner.scanUpToString("</plist>") {
 
-            // If the scannerString is not empty, replace the plistString
-            if scannerString?.length != 0 {
-                plistString = scannerString as String?
+                // If the scannerString is not empty, replace the plistString
+                if !scannerString.isEmpty {
+                    plistString = scannerString
+                }
             }
         }
 

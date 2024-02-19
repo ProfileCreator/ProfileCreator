@@ -49,7 +49,7 @@ class HexColorTransformer: ValueTransformer {
 
         let color = value as? NSColor ?? .labelColor
 
-        let sanitizedColor = color.usingColorSpaceName(.calibratedRGB)
+        let sanitizedColor = color.usingColorSpace(.genericRGB)
 
         return sanitizedColor?.colorCode(type: .hex)
     }

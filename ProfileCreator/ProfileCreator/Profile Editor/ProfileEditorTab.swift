@@ -22,7 +22,7 @@ class ProfileEditorTab: NSView {
     var color = NSColor.clear
     let colorSelected = NSColor.controlBackgroundColor
     let colorDeSelected = NSColor.quaternaryLabelColor // NSColor.black.withAlphaComponent(0.08)
-    let colorDeSelectedMouseOver = NSColor.tertiaryLabelColor //NSColor.black.withAlphaComponent(0.14)
+    let colorDeSelectedMouseOver = NSColor.tertiaryLabelColor // NSColor.black.withAlphaComponent(0.14)
 
     var trackingArea: NSTrackingArea?
 

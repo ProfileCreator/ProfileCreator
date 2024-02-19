@@ -6,6 +6,7 @@
 //  Copyright © 2018 Erik Berglund. All rights reserved.
 //
 
+import CoreText
 import Foundation
 
 struct FontInformation {
@@ -25,8 +26,8 @@ struct FontInformation {
         }
     }
 
-    func descriptions(forLanguage language: FontTableName.LanguageID) -> [FontDescription] {
-        self.descriptions.filter { $0.language == language }
+    func descriptions(forLanguages language: [FontTableName.LanguageID]) -> [FontDescription] {
+        self.descriptions.filter { language.contains($0.language) }
     }
 
     func descriptions(forLanguage language: FontTableName.LanguageID, platform: FontTableName.PlatformIdentifier) -> [FontDescription] {
@@ -110,33 +111,39 @@ struct FontInformation {
             loc += MemoryLayout.size(ofValue: offset)
 
             // String
-            let encoding: String.Encoding
-            if platformIDRaw == 0 || 3 <= platformSpecificIDRaw {
+            var encoding: String.Encoding
+
+            // Use UTF-16 if
+            // Platform ID is Unicode OR Platform specific ID is Unicode 2.0 or above
+            // OR
+            // Platform ID is Microsoft AND Platform specific ID is Unicode
+            if (platformIDRaw == FontTableName.PlatformIdentifier.unicode.rawValue || FontTableName.PlatformSpecificID.Unicode.unicode2_0_bmp_only.rawValue <= platformSpecificIDRaw) ||
+                (platformIDRaw == FontTableName.PlatformIdentifier.microsoft.rawValue && platformSpecificIDRaw == FontTableName.PlatformSpecificID.Microsoft.unicodeBMP.rawValue) {
                 encoding = .utf16
             } else {
                 encoding = .utf8
             }
 
             guard let string = fontTable.fontTableString(atOffset: (Int(offset + stringOffset)), length: Int(length), encoding: encoding) else {
-                //Log.shared.debug(message: "Failed to get string for platformID: \(platformIDRaw), platfomrSpecificID: \(platformSpecificIDRaw), languageID: \(languageIDRaw), nameID: \(nameIDRaw)", category: String(describing: self))
+                // Log.shared.debug(message: "Failed to get string for platformID: \(platformIDRaw), platfomrSpecificID: \(platformSpecificIDRaw), languageID: \(languageIDRaw), nameID: \(nameIDRaw)", category: String(describing: self))
                 continue
             }
 
             guard let platformIdentifier = FontTableName.PlatformIdentifier(rawValue: platformIDRaw) else {
-                //Log.shared.debug(message: "Failed to get platformIdentifier from platformIDRaw: \(platformIDRaw)", category: String(describing: self))
-                //Log.shared.debug(message: "platformIdentifierString: \(string)", category: String(describing: self))
+                // Log.shared.debug(message: "Failed to get platformIdentifier from platformIDRaw: \(platformIDRaw)", category: String(describing: self))
+                // Log.shared.debug(message: "platformIdentifierString: \(string)", category: String(describing: self))
                 continue
             }
 
             guard let language = FontTableName.LanguageID(rawValue: languageIDRaw) else {
-                //Log.shared.debug(message: "Failed to get language from languageIDRaw: \(languageIDRaw)", category: String(describing: self))
-                //Log.shared.debug(message: "languageString: \(string)", category: String(describing: self))
+                // Log.shared.debug(message: "Failed to get language from languageIDRaw: \(languageIDRaw)", category: String(describing: self))
+                // Log.shared.debug(message: "languageString: \(string)", category: String(describing: self))
                 continue
             }
 
             guard let nameID = FontTableName.NameID(rawValue: nameIDRaw) else {
-                //Log.shared.debug(message: "Failed to get nameID from nameIDRaw: \(nameIDRaw)", category: String(describing: self))
-                //Log.shared.debug(message: "nameIDString: \(string)", category: String(describing: self))
+                // Log.shared.debug(message: "Failed to get nameID from nameIDRaw: \(nameIDRaw)", category: String(describing: self))
+                // Log.shared.debug(message: "nameIDString: \(string)", category: String(describing: self))
                 continue
             }
 
@@ -472,6 +479,232 @@ enum FontTableName {
         case greek_polytonic = 148
         case greenlandic = 149
         case azerbaijani_roman_script = 150
+
+        // Sticking the Microsoft Windows language IDs in here too since they are
+        // non-overlapping with the Macintosh language IDs
+        case ar_sa = 1_025
+        case bg_bg = 1_026
+        case ca_es = 1_027
+        case zh_tw = 1_028
+        case cs_cz = 1_029
+        case da_dk = 1_030
+        case de_de = 1_031
+        case el_gr = 1_032
+        case en_us = 1_033
+        case es_es_tradnl = 1_034
+        case fi_fi = 1_035
+        case fr_fr = 1_036
+        case he_il = 1_037
+        case hu_hu = 1_038
+        case is_is = 1_039
+        case it_it = 1_040
+        case ja_jp = 1_041
+        case ko_kr = 1_042
+        case nl_nl = 1_043
+        case nb_no = 1_044
+        case pl_pl = 1_045
+        case pt_br = 1_046
+        case rm_ch = 1_047
+        case ro_ro = 1_048
+        case ru_ru = 1_049
+        case hr_hr = 1_050
+        case sk_sk = 1_051
+        case sq_al = 1_052
+        case sv_se = 1_053
+        case th_th = 1_054
+        case tr_tr = 1_055
+        case ur_pk = 1_056
+        case id_id = 1_057
+        case uk_ua = 1_058
+        case be_by = 1_059
+        case sl_si = 1_060
+        case et_ee = 1_061
+        case lv_lv = 1_062
+        case lt_lt = 1_063
+        case tg_cyrl_tj = 1_064
+        case fa_ir = 1_065
+        case vi_vn = 1_066
+        case hy_am = 1_067
+        case az_latn_az = 1_068
+        case eu_es = 1_069
+        case wen_de = 1_070
+        case mk_mk = 1_071
+        case st_za = 1_072
+        case ts_za = 1_073
+        case tn_za = 1_074
+        case ven_za = 1_075
+        case xh_za = 1_076
+        case zu_za = 1_077
+        case af_za = 1_078
+        case ka_ge = 1_079
+        case fo_fo = 1_080
+        case hi_in = 1_081
+        case mt_mt = 1_082
+        case se_no = 1_083
+        case gd_gb = 1_084
+        case yi = 1_085
+        case ms_my = 1_086
+        case kk_kz = 1_087
+        case ky_kg = 1_088
+        case sw_ke = 1_089
+        case tk_tm = 1_090
+        case uz_latn_uz = 1_091
+        case tt_ru = 1_092
+        case bn_in = 1_093
+        case pa_in = 1_094
+        case gu_in = 1_095
+        case or_in = 1_096
+        case ta_in = 1_097
+        case te_in = 1_098
+        case kn_in = 1_099
+        case ml_in = 1_100
+        case as_in = 1_101
+        case mr_in = 1_102
+        case sa_in = 1_103
+        case mn_mn = 1_104
+        case bo_cn = 1_105
+        case cy_gb = 1_106
+        case km_kh = 1_107
+        case lo_la = 1_108
+        case my_mm = 1_109
+        case gl_es = 1_110
+        case kok_in = 1_111
+        case mni = 1_112
+        case sd_in = 1_113
+        case syr_sy = 1_114
+        case si_lk = 1_115
+        case chr_us = 1_116
+        case iu_cans_ca = 1_117
+        case am_et = 1_118
+        case tmz = 1_119
+        case ks_arab_in = 1_120
+        case ne_np = 1_121
+        case fy_nl = 1_122
+        case ps_af = 1_123
+        case fil_ph = 1_124
+        case dv_mv = 1_125
+        case bin_ng = 1_126
+        case fuv_ng = 1_127
+        case ha_latn_ng = 1_128
+        case ibb_ng = 1_129
+        case yo_ng = 1_130
+        case quz_bo = 1_131
+        case nso_za = 1_132
+        case ig_ng = 1_136
+        case kr_ng = 1_137
+        case gaz_et = 1_138
+        case ti_er = 1_139
+        case gn_py = 1_140
+        case haw_us = 1_141
+        case la = 1_142
+        case so_so = 1_143
+        case ii_cn = 1_144
+        case pap_an = 1_145
+        case ug_arab_cn = 1_152
+        case mi_nz = 1_153
+        case ar_iq = 2_049
+        case zh_cn = 2_052
+        case de_ch = 2_055
+        case en_gb = 2_057
+        case es_mx = 2_058
+        case fr_be = 2_060
+        case it_ch = 2_064
+        case nl_be = 2_067
+        case nn_no = 2_068
+        case pt_pt = 2_070
+        case ro_md = 2_072
+        case ru_md = 2_073
+        case sr_latn_cs = 2_074
+        case sv_fi = 2_077
+        case ur_in = 2_080
+        case az_cyrl_az = 2_092
+        case ga_ie = 2_108
+        case ms_bn = 2_110
+        case uz_cyrl_uz = 2_115
+        case bn_bd = 2_117
+        case pa_pk = 2_118
+        case mn_mong_cn = 2_128
+        case bo_bt = 2_129
+        case sd_pk = 2_137
+        case tzm_latn_dz = 2_143
+        case ks_deva_in = 2_144
+        case ne_in = 2_145
+        case quz_ec = 2_155
+        case ti_et = 2_163
+        case ar_eg = 3_073
+        case zh_hk = 3_076
+        case de_at = 3_079
+        case en_au = 3_081
+        case es_es = 3_082
+        case fr_ca = 3_084
+        case sr_cyrl_cs = 3_098
+        case quz_pe = 3_179
+        case ar_ly = 4_097
+        case zh_sg = 4_100
+        case de_lu = 4_103
+        case en_ca = 4_105
+        case es_gt = 4_106
+        case fr_ch = 4_108
+        case hr_ba = 4_122
+        case ar_dz = 5_121
+        case zh_mo = 5_124
+        case de_li = 5_127
+        case en_nz = 5_129
+        case es_cr = 5_130
+        case fr_lu = 5_132
+        case bs_latn_ba = 5_146
+        case ar_mo = 6_145
+        case en_ie = 6_153
+        case es_pa = 6_154
+        case fr_mc = 6_156
+        case ar_tn = 7_169
+        case en_za = 7_177
+        case es_do = 7_178
+        case fr_029 = 7_180
+        case ar_om = 8_193
+        case en_jm = 8_201
+        case es_ve = 8_202
+        case fr_re = 8_204
+        case ar_ye = 9_217
+        case en_029 = 9_225
+        case es_co = 9_226
+        case fr_cg = 9_228
+        case ar_sy = 10_241
+        case en_bz = 10_249
+        case es_pe = 10_250
+        case fr_sn = 10_252
+        case ar_jo = 11_265
+        case en_tt = 11_273
+        case es_ar = 11_274
+        case fr_cm = 11_276
+        case ar_lb = 12_289
+        case en_zw = 12_297
+        case es_ec = 12_298
+        case fr_ci = 12_300
+        case ar_kw = 13_313
+        case en_ph = 13_321
+        case es_cl = 13_322
+        case fr_ml = 13_324
+        case ar_ae = 14_337
+        case en_id = 14_345
+        case es_uy = 14_346
+        case fr_ma = 14_348
+        case ar_bh = 15_361
+        case en_hk = 15_369
+        case es_py = 15_370
+        case fr_ht = 15_372
+        case ar_qa = 16_385
+        case en_in = 16_393
+        case es_bo = 16_394
+        case en_my = 17_417
+        case es_sv = 17_418
+        case en_sg = 18_441
+        case es_hn = 18_442
+        case es_ni = 19_466
+        case es_pr = 20_490
+        case es_us = 21_514
+        case es_419 = 58_378
+        case fr_015 = 58_380
     }
 
     enum NameID: UInt16 {

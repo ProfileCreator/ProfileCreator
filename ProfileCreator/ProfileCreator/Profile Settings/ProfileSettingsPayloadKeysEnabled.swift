@@ -20,8 +20,8 @@ extension ProfileSettings {
         if domainSettings.isEmpty {
             return self.isEnabled(subkey, onlyByUser: onlyByUser, ignoreConditionals: ignoreConditionals, payloadIndex: 0)
         } else {
-            for payloadIndex in domainSettings.indices {
-                if self.isEnabled(subkey, onlyByUser: onlyByUser, ignoreConditionals: ignoreConditionals, payloadIndex: payloadIndex) { return true }
+            for payloadIndex in domainSettings.indices where self.isEnabled(subkey, onlyByUser: onlyByUser, ignoreConditionals: ignoreConditionals, payloadIndex: payloadIndex) {
+                return true
             }
         }
         return false

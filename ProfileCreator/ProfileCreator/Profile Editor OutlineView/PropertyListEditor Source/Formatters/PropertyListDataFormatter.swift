@@ -97,7 +97,7 @@ class PropertyListDataFormatter: Formatter {
         if scanner.isAtEnd {
             // The string is empty
             return true
-        } else if !scanner.scanString("<", into: nil) {
+        } else if scanner.scanString("<") == nil {
             // The string does not begin with a "<"
             return false
         }
@@ -109,10 +109,10 @@ class PropertyListDataFormatter: Formatter {
         // "<>" in a single code path
         repeat {
             // If we hit a >, we’re done with our loop
-            if scanner.scanString(">", into: nil) {
+            if scanner.scanString(">") != nil {
                 break
             }
-        } while scanner.scanCharacters(from: hexadecimalDigitCharacterSet, into: nil)
+        } while scanner.scanCharacters(from: hexadecimalDigitCharacterSet) != nil
 
         return scanner.isAtEnd
     }

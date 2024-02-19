@@ -48,14 +48,14 @@ class MainWindowToolbarItemTitle: NSView {
         self.textFieldTitle.alignment = .left
         self.textFieldTitle.lineBreakMode = .byTruncatingTail
 
-        var titleString = NSLocalizedString("Beta", comment: "")
+        var titleString = NSLocalizedString("Profile Creator", comment: "")
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             titleString += " \(version)"
             /*
             if let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
                 titleString += "-\(build)"
             }
- */
+            */
         }
         self.textFieldTitle.stringValue = titleString
 
@@ -67,9 +67,7 @@ class MainWindowToolbarItemTitle: NSView {
         // ---------------------------------------------------------------------
         //  Create the actual toolbar item
         // ---------------------------------------------------------------------
-        self.toolbarItem = NSToolbarItem(itemIdentifier: .editorTitle)
-        self.toolbarItem.minSize = frame.size
-        self.toolbarItem.maxSize = frame.size
+        self.toolbarItem = NSToolbarItem(itemIdentifier: .mainWindowTitle)
 
         // ---------------------------------------------------------------------
         //  Initialize self after the class variables have been instantiated

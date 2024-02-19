@@ -20,7 +20,7 @@ struct KeyPath {
     }
 
     var next: String? {
-        0 < segments.count ? segments[0] : nil
+        !segments.isEmpty ? segments[0] : nil
     }
 
     /// Strips off the first segment and returns a pair

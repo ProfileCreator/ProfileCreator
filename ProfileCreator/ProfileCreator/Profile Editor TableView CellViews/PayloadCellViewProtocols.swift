@@ -38,6 +38,6 @@ protocol ProfileCreatorCellView {
     func selected(_ slider: NSSlider)
 }
 
-@objc protocol TableViewCellView: class, NSTableViewDelegate, NSTableViewDataSource, NSTextFieldDelegate {
+@objc protocol TableViewCellView: AnyObject, NSTableViewDelegate, NSTableViewDataSource, NSTextFieldDelegate {
 
 }

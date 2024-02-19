@@ -37,7 +37,7 @@ extension ProfileSettings {
                             payloadsEnabled.append(payload)
                         }
                     }
-                //}
+                // }
             }
         }
         return payloadsEnabled

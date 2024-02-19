@@ -24,12 +24,11 @@ extension ProfileSettings {
         if domainSettingsArray.isEmpty {
             return 1
         } else {
-            for domainSettings in domainSettingsArray {
-                if Array(Set(domainSettings.keys).subtracting([PayloadKey.payloadVersion, PayloadKey.payloadUUID])).isEmpty {
-                    emptyCount += 1
-                }
+            for domainSettings in domainSettingsArray where Array(Set(domainSettings.keys).subtracting([PayloadKey.payloadVersion, PayloadKey.payloadUUID])).isEmpty {
+                emptyCount += 1
             }
         }
+
         return emptyCount
     }
 

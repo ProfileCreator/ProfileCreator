@@ -101,6 +101,6 @@ extension PropertyListCollection {
     }
 }
 
-func ==<CollectionType: PropertyListCollection>(lhs: CollectionType, rhs: CollectionType) -> Bool {
+func == <CollectionType: PropertyListCollection>(lhs: CollectionType, rhs: CollectionType) -> Bool {
     lhs.elements == rhs.elements
 }

@@ -256,7 +256,7 @@ class PayloadCellViews {
 
                 if !UserDefaults.standard.bool(forKey: PreferenceKey.payloadEditorShowSegmentedControls) { continue }
 
-                if 0 < segments.keys.count {
+                if !segments.keys.isEmpty {
                     let defaultSegment = subkey.rangeListTitles != nil ? subkey.rangeListTitles!.first! : segments.keys.first!
                     // let selectedSegment = profile.settings.getPayloadValue(forKeyPath: subkey.keyPath, domain: subkey.domain, type: subkey.payloadType, payloadIndex: payloadIndex) as? String ?? defaultSegment
                     let selectedSegment = profile.settings.value(forSubkey: subkey, payloadIndex: payloadIndex) as? String ?? defaultSegment
@@ -413,7 +413,7 @@ class PayloadCellViews {
             }
         case .integer, .float:
             return PayloadCellViewTextFieldNumber(subkey: subkey, payloadIndex: payloadIndex, enabled: enabled, required: required, editor: profileEditor)
-        //case .float:
+        // case .float:
         //    return PayloadCellViewSlider(subkey: subkey, payloadIndex: payloadIndex, enabled: enabled, required: required, editor: profileEditor)
         case .date:
             return PayloadCellViewDatePicker(subkey: subkey, payloadIndex: payloadIndex, enabled: enabled, required: required, editor: profileEditor)
