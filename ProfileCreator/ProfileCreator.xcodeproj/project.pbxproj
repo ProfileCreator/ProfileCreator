@@ -2173,7 +2173,7 @@
 				MARKETING_VERSION = 0.3.6;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_SWIFT_FLAGS = "-DSPARKLE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ProfileCreator;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
 				PRODUCT_NAME = ProfileCreator;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2209,7 +2209,7 @@
 				MARKETING_VERSION = 0.3.6;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
 				OTHER_SWIFT_FLAGS = "-DSPARKLE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ProfileCreator;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME)";
 				PRODUCT_NAME = ProfileCreator;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2241,7 +2241,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.3.6;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
-				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ProfileCreator;
 				PRODUCT_NAME = ProfileCreator;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEBUGEXPORT DEBUGCONDITIONS";
@@ -2274,7 +2274,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.3.6;
 				OTHER_CODE_SIGN_FLAGS = "--timestamp";
-				PRODUCT_BUNDLE_IDENTIFIER = com.willyu.profilecreator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ProfileCreator;
 				PRODUCT_NAME = ProfileCreator;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2419,7 +2419,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.profileCreator.ProfileCreatorExportTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ProfileCreatorExportTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProfileCreator.app/Contents/MacOS/ProfileCreator";
@@ -2446,7 +2446,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.profileCreator.ProfileCreatorExportTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.ProfileCreatorExportTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProfileCreator.app/Contents/MacOS/ProfileCreator";
