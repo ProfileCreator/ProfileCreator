@@ -66,7 +66,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.3.6</string>
 	<key>CFBundleVersion</key>
-	<string>202404201951</string>
+	<string>202404292318</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>LSMinimumSystemVersion</key>
@@ -80,21 +80,19 @@
 	<key>SUEnableInstallerLauncherService</key>
 	<true/>
 	<key>SUFeedURL</key>
-	<string>https://github.com/WillYu91/ProfileCreator/releases/latest/download/appcast.xml</string>
-	<key>SUPublicEDKey</key>
-	<string>wuXt+PkKjbUoTAPaenohKYXR6uWt1nNQzAA2gw/4D9k=</string>
+	<string>https://raw.githubusercontent.com/erikberglund/ProfileCreator/master/appcast.xml</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
 			<key>UTTypeDescription</key>
 			<string>Profile</string>
 			<key>UTTypeIdentifier</key>
-			<string>com.willyu.ProfileCreator</string>
+			<string>com.github.erikberglund.ProfileCreator</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>com.apple.nspboard-type</key>
 				<array>
-					<string>com.willyu.ProfileCreator.profile</string>
+					<string>com.github.erikberglund.ProfileCreator.profile</string>
 				</array>
 				<key>public.filename-extension</key>
 				<array>
