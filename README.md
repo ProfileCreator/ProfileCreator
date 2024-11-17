@@ -13,11 +13,11 @@ See the latest download in [Releases](https://github.com/ProfileCreator/ProfileC
 
 If you want to contribute to the payloads available in this project, please go to the ProfileManifests repo:
 
-[ProfileManifests](https://github.com/ProfileCreator/ProfileManifests)
+[ProfileManifests](https://github.com/ProfileManifests/ProfileManifests)
 
 There is a getting started guite to describe the basics on how to create your own manifest:
 
-[ProfileManifests - Getting Started](https://github.com/ProfileCreator/ProfileManifests/wiki/Getting-Started)
+[ProfileManifests - Getting Started](https://github.com/ProfileManifests/ProfileManifests/wiki/Getting-Started)
 
 # ProfileCreator
 macOS application to create configuration profiles.
@@ -42,8 +42,6 @@ In order to compile ProfileCreator, please navigate to where the Xcode Project f
 `xcodebuild -project ProfileCreator.xcodeproj -scheme ProfileCreator -configuration Debug`
 
 This will compile the application and output the result in the DerivedData path as set by your Xcode preferences. The default DerivedData location will be `~/Library/Developer/Xcode/DerivedData/`.
-
-In addition, please take a look at the [ProfileManifests](https://github.com/ProfileCreator/ProfileManifests) project which supplies ProfileCreator with its payloads is very much active!
 
 # Have Questions?
 Consult [the wiki](https://github.com/ProfileCreator/ProfileCreator/wiki). Join the conversion over in the #profilecreator channel in the [MacAdmins Slack](https://www.macadmins.org/).
