@@ -166,7 +166,7 @@ class ProfileSettings: NSObject {
     public let scopeUpdatedSelector = NSStringFromSelector(#selector(getter: ProfileSettings.scopeUpdated))
 
     // Title
-    //@objc public dynamic var title = ""
+    // @objc public dynamic var title = ""
     public let titleSelector = NSStringFromSelector(#selector(getter: ProfileSettings.title))
 
     // MARK: -

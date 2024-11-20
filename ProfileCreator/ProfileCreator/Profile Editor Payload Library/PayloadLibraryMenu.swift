@@ -9,7 +9,7 @@
 import Cocoa
 import ProfilePayloads
 
-protocol PayloadLibrarySelectionDelegate: class {
+protocol PayloadLibrarySelectionDelegate: AnyObject {
     func selectLibrary(type: PayloadType, sender: Any?)
 }
 

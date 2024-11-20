@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import SwiftASN1
+import X509
 
 enum CertificateFormat {
     case pkcs1
@@ -83,18 +85,17 @@ class FileInfoProcessorCertificate: FileInfoProcessor {
                 let certificateString = try String(contentsOf: fileURL, encoding: .utf8)
                 let certificateScanner = Scanner(string: certificateString)
 
-                var certificateScannerString: NSString? = ""
-
                 // Move to the first line containing '-----BEGIN CERTIFICATE-----'
-                certificateScanner.scanUpTo("-----BEGIN CERTIFICATE-----", into: nil)
+                // certificateScanner.scanUpTo("-----BEGIN CERTIFICATE-----", into: nil)
+                _ = certificateScanner.scanUpToString("-----BEGIN CERTIFICATE-----")
 
                 // Get the string contents between the first '-----BEGIN CERTIFICATE-----' and '-----END CERTIFICATE-----' encountered
-                if !( certificateScanner.scanString("-----BEGIN CERTIFICATE-----", into: nil) && certificateScanner.scanUpTo("-----END CERTIFICATE-----", into: &certificateScannerString) ) {
-                    return nil
-                }
+                _ = certificateScanner.scanString("-----BEGIN CERTIFICATE-----")
+
+                let certificateScannerString = certificateScanner.scanUpToString("-----END CERTIFICATE-----")
 
                 // If the scannerString is not empty, replace the plistString
-                if let certificateStringBase64 = certificateScannerString as String?, !certificateStringBase64.isEmpty {
+                if let certificateStringBase64 = certificateScannerString, !certificateStringBase64.isEmpty {
                     return Data(base64Encoded: certificateStringBase64, options: .ignoreUnknownCharacters)
                 }
             } catch {
@@ -137,35 +138,20 @@ class FileInfoProcessorCertificate: FileInfoProcessor {
                 message = NSLocalizedString("This content is stored in Personal Information Exchange (PKCS12) format, and is password protected.\nNo information can be displayed.", comment: "")
 
             } else if
-                let fileData = self.fileData(),
-                let certificate = SecCertificateCreateWithData(nil, fileData as CFData) {
-                var errorRef: Unmanaged<CFError>?
+                let fileData = self.fileData() {
 
-                let certificateValues = SecCertificateCopyValues(certificate,
-                                                                 [kSecOIDX509V1ValidityNotBefore,
-                                                                  kSecOIDX509V1ValidityNotAfter,
-                                                                  kSecOIDX509V1IssuerName,
-                                                                  kSecOIDBasicConstraints,
-                                                                  kSecOIDTitle] as CFArray, &errorRef) as? [String: Any]
-                let error = errorRef?.takeRetainedValue()
+                do {
+                    let derBytes: [UInt8] = [UInt8](fileData)
+                    let asn1Cert = try X509.Certificate(derEncoded: derBytes)
 
-                if let certValues = certificateValues {
+                    if let certTitle = self.valueForNestedAttribute(forDistinguishedName: asn1Cert.subject, forAttribute: .RDNAttributeType.commonName) {
 
-                    // Title
-                    if let certificateTitle = SecCertificateCopySubjectSummary(certificate) { title = certificateTitle as String }
-
-                    // Check if certificate is self signed
-                    let issuerData = SecCertificateCopyNormalizedIssuerContent(certificate, &errorRef)
-                    if issuerData == nil {
-                        Log.shared.error(message: "Failed to get certificate issuer data with error: \(String(describing: errorRef?.takeRetainedValue()))", category: String(describing: self))
+                        title = String(describing: certTitle)
+                    } else {
+                        title = "Unknown Subject"
                     }
 
-                    let subjectData = SecCertificateCopyNormalizedSubjectContent(certificate, &errorRef)
-                    if subjectData == nil {
-                        Log.shared.error(message: "Failed to get certificate subject data with error: \(String(describing: errorRef?.takeRetainedValue()))", category: String(describing: self))
-                    }
-
-                    if issuerData == subjectData {
+                    if asn1Cert.issuer == asn1Cert.subject {
                         self.certificateType = .selfSignedCA
 
                         // Top
@@ -174,74 +160,48 @@ class FileInfoProcessorCertificate: FileInfoProcessor {
                         self.certificateType = .standard
 
                         // Is Certificate Authority
-                        var isCertificateAuthority: Bool = false
-                        if
-                            let basicConstraintsDict = certValues[kSecOIDBasicConstraints as String] as? [String: Any],
-                            let basicConstraints = basicConstraintsDict[kSecPropertyKeyValue as String] as? [[String: Any]] {
-                            isCertificateAuthority = basicConstraints.contains(where: {
-                                if
-                                    let label = $0[kSecPropertyKeyLabel as String] as? String, label == "Certificate Authority",
-                                    let value = $0[kSecPropertyKeyValue as String] as? NSString {
-                                    return value.boolValue
-                                } else { return false }
-                            })
-                        }
+                        let isCertificateAuthority = try asn1Cert.extensions.basicConstraints == .isCertificateAuthority(maxPathLength: 0)
 
                         // Top
                         if isCertificateAuthority {
                             topLabel = NSLocalizedString("Intermediate certificate authority", comment: "")
                         } else {
-                            if
-                                let issuersDict = certValues[kSecOIDX509V1IssuerName as String] as? [String: Any],
-                                let issuers = issuersDict[kSecPropertyKeyValue as String] as? [[String: Any]],
-                                let issuer = issuers.first,
-                                let issuerName = issuer[kSecPropertyKeyValue as String] as? String {
-                                topLabel = NSLocalizedString("Issued by: \(issuerName)", comment: "")
+                            if let organizationName = self.valueForNestedAttribute(forDistinguishedName: asn1Cert.issuer, forAttribute: .RDNAttributeType.organizationName) {
+                                topLabel = NSLocalizedString("Issued by: \(organizationName)", comment: "")
                             } else {
-                                topLabel = NSLocalizedString("Unknwon Issuer", comment: "")
+                                topLabel = NSLocalizedString("Unknown Issuer", comment: "")
                             }
                         }
 
                         // Not Valid Before
-                        if
-                            let notValidBeforeDict = certValues[kSecOIDX509V1ValidityNotBefore as String] as? [String: Any],
-                            let notValidBefore = notValidBeforeDict[kSecPropertyKeyValue as String] as? Double,
-                            let notValidBeforeDate = CFDateCreate(kCFAllocatorDefault, notValidBefore) as Date? {
+                        if asn1Cert.notValidBefore.compare(Date()) == ComparisonResult.orderedDescending {
 
-                            if notValidBeforeDate.compare(Date()) == ComparisonResult.orderedDescending {
+                            // Center
+                            centerLabel = NSLocalizedString("Not valid before: \(DateFormatter.localizedString(from: asn1Cert.notValidBefore, dateStyle: .long, timeStyle: .long))", comment: "")
 
-                                // Center
-                                centerLabel = NSLocalizedString("Not valid before: \(DateFormatter.localizedString(from: notValidBeforeDate, dateStyle: .long, timeStyle: .long))", comment: "")
-
-                                // Bottom
-                                bottomLabel = NSLocalizedString("This certificate is not yet valid", comment: "")
-                                bottomError = true
-                            }
+                            // Bottom
+                            bottomLabel = NSLocalizedString("This certificate is not yet valid", comment: "")
+                            bottomError = true
                         }
 
                         // Not Valid After
                         if
                             !bottomError,
-                            let notValidAfterDict = certValues[kSecOIDX509V1ValidityNotAfter as String] as? [String: Any],
-                            let notValidAfter = notValidAfterDict[kSecPropertyKeyValue as String] as? Double,
-                            let notValidAfterDate = CFDateCreate(kCFAllocatorDefault, notValidAfter) as Date? {
+                            asn1Cert.notValidAfter.compare(Date()) == ComparisonResult.orderedAscending {
 
-                            if notValidAfterDate.compare(Date()) == ComparisonResult.orderedAscending {
+                            // Center
+                            centerLabel = NSLocalizedString("Expired: \(DateFormatter.localizedString(from: asn1Cert.notValidAfter, dateStyle: .long, timeStyle: .long))", comment: "")
 
-                                // Center
-                                centerLabel = NSLocalizedString("Expired: \(DateFormatter.localizedString(from: notValidAfterDate, dateStyle: .long, timeStyle: .long))", comment: "")
+                            // Bottom
+                            bottomLabel = NSLocalizedString("This certificate has expired", comment: "")
+                            bottomError = true
+                        } else {
 
-                                // Bottom
-                                bottomLabel = NSLocalizedString("This certificate has expired", comment: "")
-                                bottomError = true
-                            } else {
-
-                                // Center
-                                centerLabel = NSLocalizedString("Expires: \(DateFormatter.localizedString(from: notValidAfterDate, dateStyle: .long, timeStyle: .long))", comment: "")
-                            }
+                            // Center
+                            centerLabel = NSLocalizedString("Expires: \(DateFormatter.localizedString(from: asn1Cert.notValidAfter, dateStyle: .long, timeStyle: .long))", comment: "")
                         }
                     }
-                } else {
+                } catch {
                     Log.shared.error(message: "Failed to get certificate values with error: \(String(describing: error))", category: String(describing: self))
                 }
             } else {
@@ -275,5 +235,16 @@ class FileInfoProcessorCertificate: FileInfoProcessor {
                                         iconPath: iconPath)
             return self.fileInfoVar!
         }
+    }
+
+    private func valueForNestedAttribute(forDistinguishedName distinguishedName: DistinguishedName, forAttribute attribute: ASN1ObjectIdentifier) -> Any? {
+
+        for relativeDistinguishedName in distinguishedName {
+            if let attribute = relativeDistinguishedName.first(where: { $0.type == attribute }) {
+                return attribute.value
+            }
+        }
+
+        return nil
     }
 }

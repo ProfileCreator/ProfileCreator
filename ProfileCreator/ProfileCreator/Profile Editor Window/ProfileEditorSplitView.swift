@@ -366,10 +366,10 @@ extension ProfileEditorSplitView: NSSplitViewDelegate {
         // ---------------------------------------------------------------------
         //  Allow left view (SIDEBAR) to be collapsed
         // ---------------------------------------------------------------------
-        //if subview == splitView.subviews.first && splitView.subviews.contains(self.tableViewController.scrollView) {
+        // if subview == splitView.subviews.first && splitView.subviews.contains(self.tableViewController.scrollView) {
         return true
-        //}
-        //return false
+        // }
+        // return false
     }
 
     func splitView(_ splitView: NSSplitView, shouldHideDividerAt dividerIndex: Int) -> Bool {

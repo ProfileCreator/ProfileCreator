@@ -8,6 +8,7 @@
 
 import Cocoa
 
+// swiftlint:disable:next inclusive_language
 class ValueImportProcessorApplicationAccessWhiteList: ValueImportProcessor {
 
     init() {

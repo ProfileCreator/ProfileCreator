@@ -8,13 +8,13 @@
 
 import Cocoa
 
-protocol PreferencesItem: class {
+protocol PreferencesItem: AnyObject {
     var identifier: NSToolbarItem.Identifier { get }
     var toolbarItem: NSToolbarItem { get }
     var view: PreferencesView { get }
 }
 
-protocol PreferencesView: class {
+protocol PreferencesView: AnyObject {
     var height: CGFloat { get }
 }
 
@@ -29,7 +29,7 @@ class PreferencesWindowController: NSWindowController {
                                                               .preferencesEditor,
                                                               .preferencesProfileDefaults,
                                                               .preferencesPayloads,
-                                                              //.preferencesMDM,
+                                                              // .preferencesMDM,
                                                               .preferencesAdvanced,
                                                               NSToolbarItem.Identifier.flexibleSpace]
 

@@ -12,7 +12,7 @@ import Cocoa
 // MARK: Protocols
 // MAKR: -
 
-protocol MainWindowTableViewDelegate: class {
+protocol MainWindowTableViewDelegate: AnyObject {
     func shouldRemoveItems(atIndexes: IndexSet)
     func profileIdentifier(atRow: Int) -> UUID?
 }
@@ -194,7 +194,7 @@ class MainWindowTableViewController: NSObject, MainWindowOutlineViewSelectionDel
         // ---------------------------------------------------------------------
         //  Verify there is a mainWindow present
         // ---------------------------------------------------------------------
-        guard 0 < atIndexes.count,
+        guard !atIndexes.isEmpty,
             let mainWindow = NSApplication.shared.mainWindow,
             let selectedProfileGroup = self.selectedProfileGroup else {
                 return
@@ -551,7 +551,7 @@ class MainWindowTableView: NSTableView {
     // -------------------------------------------------------------------------
     override func keyDown(with event: NSEvent) {
         if event.charactersIgnoringModifiers == String(Character(UnicodeScalar(NSEvent.SpecialKey.delete.rawValue)!)) {
-            if let delegate = self.delegate as? MainWindowTableViewDelegate, 0 < self.selectedRowIndexes.count {
+            if let delegate = self.delegate as? MainWindowTableViewDelegate, !self.selectedRowIndexes.isEmpty {
                 delegate.shouldRemoveItems(atIndexes: self.selectedRowIndexes)
             }
         }

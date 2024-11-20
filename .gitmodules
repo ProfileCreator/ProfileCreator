@@ -1,0 +1,6 @@
+[submodule "ProfileCreator/ProfilePayloads"]
+	path = ProfileCreator/ProfilePayloads
+	url = https://github.com/WillYu91/ProfilePayloads
+[submodule "ProfileCreator/Highlightr"]
+	path = ProfileCreator/Highlightr
+	url = https://github.com/raspu/Highlightr

@@ -128,7 +128,7 @@ class ProfileEditor: NSObject {
         // ---------------------------------------------------------------------
         //  Reload the TableView
         // ---------------------------------------------------------------------
-        //self.reloadTableView(updateCellViews: true)
+        // self.reloadTableView(updateCellViews: true)
     }
 
     @objc func didSaveProfile(_ notification: Notification) {
@@ -234,7 +234,7 @@ class ProfileEditor: NSObject {
                 self.showTabView(payloadPlaceholder: selectedPayloadPlaceholder)
             }
 
-            //self.select(tab: self.selectedPayloadIndex)
+            // self.select(tab: self.selectedPayloadIndex)
             self.reloadTableView(updateCellViews: true)
             self.scrollView.documentView = self.tableView
         case EditorViewTag.source.rawValue:
@@ -247,7 +247,7 @@ class ProfileEditor: NSObject {
                 self.updateSourceView(payloadPlaceholder: selectedPayloadPlaceholder)
             }
 
-            //self.select(tab: self.selectedPayloadIndex)
+            // self.select(tab: self.selectedPayloadIndex)
             self.scrollView.documentView = self.textView
         case EditorViewTag.outlineView.rawValue:
             self.selectedPayloadView = .outlineView
@@ -283,10 +283,13 @@ class ProfileEditor: NSObject {
 
                     if self.selectedPayloadViewCustom != .source {
                         self.select(view: self.selectedPayloadViewCustom.rawValue)
-                        editorWindowController.toolbarItemView?.segmentedControl.setSelected(true, forSegment: self.selectedPayloadView.rawValue)
+
+                        guard let toolbarItem = editorWindowController.toolbarItemView?.toolbarItem as? NSToolbarItemGroup else { return }
+
+                        toolbarItem.setSelected(true, at: self.selectedPayloadView.rawValue)
                     }
 
-                    editorWindowController.toolbarItemView?.segmentedControl.isEnabled = true
+                    editorWindowController.toolbarItemView?.toolbarItem?.isEnabled = true
                 }
             } else {
                 self.selectedPayloadViewCustom = self.selectedPayloadView
@@ -316,10 +319,13 @@ class ProfileEditor: NSObject {
 
                     if self.selectedPayloadView != .source {
                         self.select(view: EditorViewTag.source.rawValue)
-                        editorWindowController.toolbarItemView?.segmentedControl.setSelected(true, forSegment: EditorViewTag.source.rawValue)
+
+                        guard let toolbarItem = editorWindowController.toolbarItemView?.toolbarItem as? NSToolbarItemGroup else { return }
+
+                        toolbarItem.setSelected(true, at: EditorViewTag.source.rawValue)
                     }
 
-                    editorWindowController.toolbarItemView?.segmentedControl.isEnabled = false
+                    editorWindowController.toolbarItemView?.toolbarItem?.isEnabled = false
                 }
             }
 
@@ -479,6 +485,15 @@ extension ProfileEditor: NSTableViewDelegate {
 class PayloadButton: NSButton {
     override var acceptsFirstResponder: Bool { self.isEnabled }
     override var canBecomeKeyView: Bool { self.isEnabled }
+
+    // Provide some margin on the button so it's not right up against the border of the cell
+    override var intrinsicContentSize: NSSize {
+        var size = super.intrinsicContentSize
+
+        size.height += 10
+
+        return size
+    }
 }
 
 class PayloadPopUpButton: NSPopUpButton {

@@ -280,14 +280,14 @@ class ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView: NSView {
     func informationForIdentifier(_ identifier: String) -> [String: Any]? {
         var information = [String: Any]()
         if
-            let bundlePath = NSWorkspace.shared.absolutePathForApplication(withBundleIdentifier: identifier),
-            let bundle = Bundle(path: bundlePath) {
+            let bundlePath = NSWorkspace.shared.urlForApplication(withBundleIdentifier: identifier),
+            let bundle = Bundle(path: bundlePath.path) {
             guard let designatedCodeRequirement = bundle.designatedCodeRequirementString else { return nil }
             information["CodeRequirement"] = designatedCodeRequirement
             information["Identifier"] = identifier
             information["IdentifierType"] = "bundleID"
             information["Title"] = bundle.bundleURL.lastPathComponent
-            information["Icon"] = NSWorkspace.shared.icon(forFile: bundlePath)
+            information["Icon"] = NSWorkspace.shared.icon(forFile: bundlePath.path)
             information["Path"] = bundle.bundleURL.path
         } else if
             let designatedCodeRequirement = SecRequirementCopyString(forURL: URL(fileURLWithPath: identifier)) {
@@ -302,8 +302,8 @@ class ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView: NSView {
     }
 
     func iconForIdentifier(_ identifier: String) -> NSImage {
-        if let bundlePath = NSWorkspace.shared.absolutePathForApplication(withBundleIdentifier: identifier) {
-            return NSWorkspace.shared.icon(forFile: bundlePath)
+        if let bundlePath = NSWorkspace.shared.urlForApplication(withBundleIdentifier: identifier) {
+            return NSWorkspace.shared.icon(forFile: bundlePath.path)
         } else {
             return NSWorkspace.shared.icon(forFile: identifier)
         }
@@ -455,10 +455,10 @@ class ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView: NSView {
                     information["CodeRequirement"] = codeRequirement
 
                     if
-                        let bundlePath = NSWorkspace.shared.absolutePathForApplication(withBundleIdentifier: identifier),
-                        let bundle = Bundle(path: bundlePath) {
+                        let bundlePath = NSWorkspace.shared.urlForApplication(withBundleIdentifier: identifier),
+                        let bundle = Bundle(path: bundlePath.path) {
                         information["Title"] = bundle.bundleURL.lastPathComponent
-                        information["Icon"] = NSWorkspace.shared.icon(forFile: bundlePath)
+                        information["Icon"] = NSWorkspace.shared.icon(forFile: bundlePath.path)
                         information["Path"] = bundle.bundleURL.path
                     } else {
                         information["Title"] = URL(fileURLWithPath: identifier).lastPathComponent
@@ -480,10 +480,10 @@ class ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView: NSView {
                         information["CodeRequirement"] = codeRequirement
 
                         if
-                            let bundlePath = NSWorkspace.shared.absolutePathForApplication(withBundleIdentifier: identifier),
-                            let bundle = Bundle(path: bundlePath) {
+                            let bundlePath = NSWorkspace.shared.urlForApplication(withBundleIdentifier: identifier),
+                            let bundle = Bundle(path: bundlePath.path) {
                             information["Title"] = bundle.bundleURL.lastPathComponent
-                            information["Icon"] = NSWorkspace.shared.icon(forFile: bundlePath)
+                            information["Icon"] = NSWorkspace.shared.icon(forFile: bundlePath.path)
                             information["Path"] = bundle.bundleURL.path
                         } else {
                             information["Title"] = URL(fileURLWithPath: identifier).lastPathComponent
@@ -617,7 +617,7 @@ class ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView: NSView {
         let menuItem = NSMenuItem()
         menuItem.title = information["Title"] as? String ?? "Unknown"
         menuItem.representedObject = information
-        //menuItem.image = information["Icon"] as? NSImage
+        // menuItem.image = information["Icon"] as? NSImage
         return menuItem
     }
 
@@ -746,7 +746,7 @@ class ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView: NSView {
 
     func setupImageViewSendingApp(constraints: inout [NSLayoutConstraint]) {
         self.imageViewSendingApp.translatesAutoresizingMaskIntoConstraints = false
-        //self.imageViewSendingApp.imageFrameStyle = .grayBezel
+        // self.imageViewSendingApp.imageFrameStyle = .grayBezel
         self.imageViewSendingApp.imageScaling = .scaleProportionallyUpOrDown
         self.imageViewSendingApp.setContentHuggingPriority(.required, for: .horizontal)
         if let itemURL = self.url {
@@ -832,7 +832,7 @@ class ValueImportProcessorPrivacyPolicyAppleEventsAccessoryView: NSView {
 
     func setupImageViewRecievingApp(constraints: inout [NSLayoutConstraint]) {
         self.imageViewRecievingApp.translatesAutoresizingMaskIntoConstraints = false
-        //self.imageViewRecievingApp.imageFrameStyle = .grayBezel
+        // self.imageViewRecievingApp.imageFrameStyle = .grayBezel
         self.imageViewRecievingApp.imageScaling = .scaleProportionallyUpOrDown
         if let itemURL = self.url {
             self.imageViewRecievingApp.image = NSWorkspace.shared.icon(forFile: itemURL.path)

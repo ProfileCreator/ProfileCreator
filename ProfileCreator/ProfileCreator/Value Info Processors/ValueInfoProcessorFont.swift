@@ -35,13 +35,16 @@ class ValueInfoProcessorFont: ValueInfoProcessor {
             return nil
         }
 
-        let fontDescriptions = fontInformation.descriptions(forLanguage: .english)
+        // Look for both language types to search across macintosh(.english), microsoft(.en_us) and unicode font descriptions.
+        let fontDescriptions = fontInformation.descriptions(forLanguages: [.english, .en_us])
 
         let fontDescription: FontDescription
         if let unicode = fontDescriptions.first(where: { $0.platformIdentifier == .unicode }) {
             fontDescription = unicode
         } else if let macintosh = fontDescriptions.first(where: { $0.platformIdentifier == .macintosh }) {
             fontDescription = macintosh
+        } else if let microsoft = fontDescriptions.first(where: { $0.platformIdentifier == .microsoft }) {
+            fontDescription = microsoft
         } else {
             return nil
         }

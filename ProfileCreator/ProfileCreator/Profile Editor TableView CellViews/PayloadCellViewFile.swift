@@ -153,72 +153,71 @@ class PayloadCellViewFile: PayloadCellView, ProfileCreatorCellView {
                         informativeText: NSLocalizedString("This action will create one payload for each file.\n\nThe combined size for the files is: \(ByteCountFormatter.string(fromByteCount: Int64(importSize), countStyle: .file)).", comment: ""),
                         firstButton: ButtonTitle.cancel,
                         secondButton: ButtonTitle.ok,
-                        thirdButton: nil,
-                        returnValue: { response in
-                            if response == .alertSecondButtonReturn {
-                                let dispatchQueue = DispatchQueue(label: "serial")
-                                let dispatchGroup = DispatchGroup()
-                                let dispatchSemaphore = DispatchSemaphore(value: 0)
-                                dispatchQueue.async {
-                                    for (idx, url) in urls.enumerated() {
-                                        dispatchGroup.enter()
+                        thirdButton: nil) { response in
 
-                                        if !importSuccess {
-                                            dispatchSemaphore.signal()
-                                            dispatchGroup.leave()
-                                            break
-                                        }
+            if response == .alertSecondButtonReturn {
+                let dispatchQueue = DispatchQueue(label: "serial")
+                let dispatchGroup = DispatchGroup()
+                let dispatchSemaphore = DispatchSemaphore(value: 0)
+                dispatchQueue.async {
+                    for (idx, url) in urls.enumerated() {
+                        dispatchGroup.enter()
 
-                                        if idx == 0 {
-                                            DispatchQueue.main.async {
-                                            self.processFile(atURL: url, forPayloadIndex: self.payloadIndex, verifySize: false) { success in
-                                                importSuccess = success
-                                                dispatchSemaphore.signal()
-                                                dispatchGroup.leave()
-                                            }
-                                            }
-                                        } else if let payload = self.subkey.payload {
+                        if !importSuccess {
+                            dispatchSemaphore.signal()
+                            dispatchGroup.leave()
+                            break
+                        }
 
-                                            // Add a new empty payload
-                                            self.profile.settings.setSettingsDefault(forPayload: payload)
-
-                                            // Get the new payload index
-                                            let index = (self.profile.settings.settingsCount(forDomainIdentifier: payload.domainIdentifier, type: payload.type) - 1)
-
-                                            // Enable the new payload
-                                            self.profile.settings.setPayloadEnabled(self.profile.settings.isEnabled(payload), payload: payload)
-
-                                            DispatchQueue.main.async {
-                                            self.processFile(atURL: url, forPayloadIndex: index, verifySize: false) { success in
-                                                importSuccess = success
-                                                dispatchSemaphore.signal()
-                                                dispatchGroup.leave()
-                                            }
-                                            }
-                                        } else {
-                                            Log.shared.error(message: "Found no Payload instance for subkey: \(self.subkey.keyPath)", category: "")
-                                        }
-                                        dispatchSemaphore.wait()
-                                    }
-
-                                    dispatchGroup.notify(queue: dispatchQueue) {
-                                        DispatchQueue.main.async {
-                                            Log.shared.debug(message: "Imported \(urls.count) URLs.", category: String(describing: self))
-                                            if let placeholder = self.subkey.payload?.placeholder {
-                                                self.profileEditor.select(payloadPlaceholder: placeholder, ignoreCurrentSelection: true)
-
-                                                // FIXME: This is clunky and resource heavy for what it does, should use a notification maybe, or just upadte the specific cellview not BOTH table views
-                                                if let editorWindowController = self.profile.windowControllers.first as? ProfileEditorWindowController,
-                                                    let libraryTableViews = editorWindowController.splitView.librarySplitView?.tableViews {
-                                                    libraryTableViews.reloadTableviews()
-                                                }
-                                            }
-                                        }
-                                    }
+                        if idx == 0 {
+                            DispatchQueue.main.async {
+                                self.processFile(atURL: url, forPayloadIndex: self.payloadIndex, verifySize: false) { success in
+                                    importSuccess = success
+                                    dispatchSemaphore.signal()
+                                    dispatchGroup.leave()
                                 }
-
                             }
-        })
+                        } else if let payload = self.subkey.payload {
+
+                            // Add a new empty payload
+                            self.profile.settings.setSettingsDefault(forPayload: payload)
+
+                            // Get the new payload index
+                            let index = (self.profile.settings.settingsCount(forDomainIdentifier: payload.domainIdentifier, type: payload.type) - 1)
+
+                            // Enable the new payload
+                            self.profile.settings.setPayloadEnabled(self.profile.settings.isEnabled(payload), payload: payload)
+
+                            DispatchQueue.main.async {
+                                self.processFile(atURL: url, forPayloadIndex: index, verifySize: false) { success in
+                                    importSuccess = success
+                                    dispatchSemaphore.signal()
+                                    dispatchGroup.leave()
+                                }
+                            }
+                        } else {
+                            Log.shared.error(message: "Found no Payload instance for subkey: \(self.subkey.keyPath)", category: "")
+                        }
+                        dispatchSemaphore.wait()
+                    }
+
+                    dispatchGroup.notify(queue: dispatchQueue) {
+                        DispatchQueue.main.async {
+                            Log.shared.debug(message: "Imported \(urls.count) URLs.", category: String(describing: self))
+                            if let placeholder = self.subkey.payload?.placeholder {
+                                self.profileEditor.select(payloadPlaceholder: placeholder, ignoreCurrentSelection: true)
+
+                                // FIXME: This is clunky and resource heavy for what it does, should use a notification maybe, or just upadte the specific cellview not BOTH table views
+                                if let editorWindowController = self.profile.windowControllers.first as? ProfileEditorWindowController,
+                                   let libraryTableViews = editorWindowController.splitView.librarySplitView?.tableViews {
+                                    libraryTableViews.reloadTableviews()
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @objc private func removeFile(_ button: NSButton) {

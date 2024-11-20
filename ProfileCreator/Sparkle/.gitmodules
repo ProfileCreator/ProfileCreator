@@ -1,3 +1,0 @@
-[submodule "ed25519"]
-	path = ed25519
-	url = https://github.com/orlp/ed25519

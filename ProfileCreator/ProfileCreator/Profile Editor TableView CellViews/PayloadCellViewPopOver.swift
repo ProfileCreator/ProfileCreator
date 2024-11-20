@@ -453,6 +453,7 @@ extension PayloadCellViewPopOverView {
                 belowDescription: NSView?,
                 belowExample: NSView?,
                 height: inout CGFloat,
+                // swiftlint:disable:next large_tuple
                 constraints: inout [NSLayoutConstraint]) -> (NSTextField?, NSTextField?, NSTextField?) {
 
         // -------------------------------------------------------------------------

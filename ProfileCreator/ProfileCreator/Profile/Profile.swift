@@ -305,7 +305,7 @@ public class Profile: NSDocument, NSCopying {
 
     public func edit() {
         let windowController: NSWindowController
-        if 0 < self.windowControllers.count {
+        if !self.windowControllers.isEmpty {
             windowController = self.windowControllers.first!
         } else {
             windowController = ProfileEditorWindowController(profile: self)

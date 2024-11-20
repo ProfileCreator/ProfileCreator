@@ -8,98 +8,55 @@
 
 import Cocoa
 
-class ProfileEditorWindowToolbarItemSettings: NSView {
+class ProfileEditorWindowToolbarItemSettings: NSObject {
 
     // MARK: -
     // MARK: Variables
 
-    public weak var profile: Profile?
-    public weak var profileEditorSettings: ProfileEditorSettings?
+    weak var profile: Profile?
+    weak var profileEditorSettings: ProfileEditorSettings?
 
-    let toolbarItem: NSToolbarItem
+    var toolbarItem: NSToolbarItem?
 
     // MARK: -
     // MARK: Initialization
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     init(profile: Profile, profileEditorSettings: ProfileEditorSettings) {
+        super.init()
 
         // ---------------------------------------------------------------------
         //  Setup Variables
         // ---------------------------------------------------------------------
         self.profile = profile
         self.profileEditorSettings = profileEditorSettings
-
-        // ---------------------------------------------------------------------
-        //  Create the size of the toolbar item
-        // ---------------------------------------------------------------------
-        let rect = NSRect(x: 0, y: 0, width: 40, height: 32)
+        self.toolbarItem = NSToolbarItem(itemIdentifier: .editorSettings)
 
         // ---------------------------------------------------------------------
         //  Create the actual toolbar item
         // ---------------------------------------------------------------------
-        self.toolbarItem = NSToolbarItem(itemIdentifier: .editorSettings)
-        self.toolbarItem.toolTip = NSLocalizedString("Settings", comment: "")
-        self.toolbarItem.minSize = rect.size
-        self.toolbarItem.maxSize = rect.size
+        let toolbarItem = NSToolbarItem(itemIdentifier: .editorSettings)
+        toolbarItem.toolTip = NSLocalizedString("Settings", comment: "")
+        toolbarItem.image = NSImage(named: NSImage.actionTemplateName)
+        toolbarItem.isBordered = true
+        toolbarItem.target = self
+        toolbarItem.action = #selector(settingsClicked)
+        toolbarItem.isEnabled = false
 
-        // ---------------------------------------------------------------------
-        //  Initialize self after the class variables have been instantiated
-        // ---------------------------------------------------------------------
-        super.init(frame: rect)
-
-        // ---------------------------------------------------------------------
-        //  Create the button instance and add it to the toolbar item view
-        // ---------------------------------------------------------------------
-        self.addSubview(ProfileEditorWindowToolbarItemSettingsButton(frame: rect, profileEditorSettings: profileEditorSettings))
-
-        // ---------------------------------------------------------------------
-        //  Set the toolbar item view
-        // ---------------------------------------------------------------------
-        self.toolbarItem.view = self
-    }
-}
-
-class ProfileEditorWindowToolbarItemSettingsButton: NSButton {
-
-    // MARK: -
-    // MARK: Variables
-
-    public weak var profileEditorSettings: ProfileEditorSettings?
-
-    // MARK: -
-    // MARK: Initialization
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.toolbarItem = toolbarItem
     }
 
-    init(frame frameRect: NSRect, profileEditorSettings: ProfileEditorSettings) {
-        super.init(frame: frameRect)
-
-        self.profileEditorSettings = profileEditorSettings
-
-        // ---------------------------------------------------------------------
-        //  Setup Self (Toolbar Item)
-        // ---------------------------------------------------------------------
-        self.bezelStyle = .texturedRounded
-        self.image = NSImage(named: NSImage.actionTemplateName)
-        self.target = self
-        self.action = #selector(self.clicked(button:))
-        self.imageScaling = .scaleProportionallyDown
-        self.imagePosition = .imageOnly
-    }
-
-    // MARK: -
-    // MARK: Button/Menu Actions
-
-    @objc func clicked(button: NSButton) {
+    @objc func settingsClicked() {
         if let profileEditorSettings = self.profileEditorSettings {
-            profileEditorSettings.profileWindow = self.window
-            profileEditorSettings.popOver.show(relativeTo: self.bounds, of: self, preferredEdge: .maxY)
+            guard let toolbarItem = self.toolbarItem else { return }
+
+            if #available(macOS 14.0, *) {
+                profileEditorSettings.popOver.show(relativeTo: toolbarItem)
+            } else {
+                guard let itemViewer = toolbarItem.value(forKey: "_itemViewer") as? NSView else {
+                      return
+                }
+
+                profileEditorSettings.popOver.show(relativeTo: itemViewer.bounds, of: itemViewer, preferredEdge: .minY)
+            }
         }
     }
 }

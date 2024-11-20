@@ -94,19 +94,17 @@ public class ProfileEditorWindowController: NSWindowController {
         self.toolbar.showsBaselineSeparator = true
         self.toolbar.allowsUserCustomization = false
         self.toolbar.autosavesConfiguration = false
-        self.toolbar.sizeMode = .regular
         self.toolbar.displayMode = .iconOnly
         self.toolbar.delegate = self
 
         // ---------------------------------------------------------------------
         // Add toolbar to window
         // ---------------------------------------------------------------------
-        self.window?.toolbar = self.toolbar
+        if  #available(macOS 11.0, *) {
+            self.window?.toolbarStyle = .unifiedCompact
+        }
 
-        // ---------------------------------------------------------------------
-        // Tell ToolbarItem Adaptive Space to update width (as it doesn't do that initially)
-        // ---------------------------------------------------------------------
-        self.toolbarItemAdaptiveSpace.updateWidth()
+        self.window?.toolbar = self.toolbar
 
         // ---------------------------------------------------------------------
         // Update the Key View Loop and set first responder
