@@ -2,12 +2,12 @@
   <img width="256" height="256" src="https://github.com/ProfileCreator/ProfileCreator/blob/master/resources/wiki/256.png">
 </p>
 
-[![Latest pre-release version tag](https://img.shields.io/github/tag-date/WillYu91/ProfileCreator.svg)](https://github.com/WillYu91/ProfileCreator/releases/tag/v0.3.5) ![macOS version support](https://img.shields.io/badge/macOS-10.12%2B-success) ![Latest release download total](https://img.shields.io/github/downloads/WillYu91/ProfileCreator/v0.3.6/total)
+[![Latest pre-release version tag](https://img.shields.io/github/tag-date/ProfileCreator/ProfileCreator.svg)](https://github.com/ProfileCreator/ProfileCreator/releases/tag/v0.3.3) ![macOS version support](https://img.shields.io/badge/macOS-10.12%2B-success) ![Latest release download total](https://img.shields.io/github/downloads/ProfileCreator/ProfileCreator/v0.3.3/total)
 
 
 # Download
 
-See the latest download in [Releases](https://github.com/WillYu91/ProfileCreator/releases)
+See the latest download in [Releases](https://github.com/ProfileCreator/ProfileCreator/releases)
 
 # Contribute
 
@@ -22,7 +22,7 @@ There is a getting started guite to describe the basics on how to create your ow
 # ProfileCreator
 macOS application to create configuration profiles.
 
-![ProfileCreator](https://github.com/WillYu91/ProfileCreator/blob/master/resources/screenshots/ProfileCreator.png)
+![ProfileCreator](https://github.com/ProfileCreator/ProfileCreator/blob/master/resources/screenshots/ProfileCreator.png)
 
 # System Requirements
 ProfileCreator requires macOS 11 or newer.
