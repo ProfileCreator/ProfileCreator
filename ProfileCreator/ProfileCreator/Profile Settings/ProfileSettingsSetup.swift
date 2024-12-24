@@ -29,7 +29,7 @@ extension ProfileSettings {
     }
 
     class func profileIdentifierDefault(forUUID uuid: UUID = UUID()) -> String {
-        let defaultOrganizationIdentifier = UserDefaults.standard.string(forKey: PreferenceKey.defaultOrganizationIdentifier) ?? "com.willyu.ProfileCreator"
+        let defaultOrganizationIdentifier = UserDefaults.standard.string(forKey: PreferenceKey.defaultOrganizationIdentifier) ?? "com.github.ProfileCreator"
         var defaultIdentifier = UserDefaults.standard.string(forKey: PreferenceKey.defaultProfileIdentifierFormat) ?? StringConstant.profileIdentifierFormat
         defaultIdentifier = defaultIdentifier.replacingOccurrences(of: "%ORGID%", with: defaultOrganizationIdentifier)
         defaultIdentifier = defaultIdentifier.replacingOccurrences(of: "%UUID%", with: uuid.uuidString)

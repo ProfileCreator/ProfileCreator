@@ -66,7 +66,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.3.6</string>
 	<key>CFBundleVersion</key>
-	<string>202411201851</string>
+	<string>202412241647</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>LSMinimumSystemVersion</key>
@@ -87,12 +87,12 @@
 			<key>UTTypeDescription</key>
 			<string>Profile</string>
 			<key>UTTypeIdentifier</key>
-			<string>com.github.erikberglund.ProfileCreator</string>
+			<string>com.github.ProfileCreator</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>com.apple.nspboard-type</key>
 				<array>
-					<string>com.github.erikberglund.ProfileCreator.profile</string>
+					<string>com.github.ProfileCreator.profile</string>
 				</array>
 				<key>public.filename-extension</key>
 				<array>

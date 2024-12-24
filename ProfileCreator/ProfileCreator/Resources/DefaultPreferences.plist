@@ -5,7 +5,7 @@
 	<key>DefaultOrganization</key>
 	<string>ProfileCreator</string>
 	<key>DefaultOrganizationIdentifier</key>
-	<string>com.willyu.ProfileCreator</string>
+	<string>com.github.ProfileCreator</string>
 	<key>DefaultPayloadIdentifierFormat</key>
 	<string>%ROOTID%.%TYPE%.%UUID%</string>
 	<key>DefaultProfileIdentifierFormat</key>
