@@ -5,6 +5,27 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
+            <title>Version 0.3.7</title>
+            <pubDate>Wed, 24 Dec 2024 18:43:00 +0600</pubDate>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://profilecreator.github.io/releasenotes/v0.3.7.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/ProfileCreator/ProfileCreator/releases/download/0.3.7/ProfileCreator-0.3.7.dmg" sparkle:shortVersionString="0.3.7" sparkle:version="202412241834" length="15286149" type="application/octet-stream"/>
+        </item>
+        <item>
+            <title>Version 0.3.6</title>
+            <pubDate>Wed, 23 Dec 2024 17:42:00 +0600</pubDate>
+            <sparkle:minimumSystemVersion>11.0</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://profilecreator.github.io/releasenotes/v0.3.6.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/ProfileCreator/ProfileCreator/releases/download/0.3.6/ProfileCreator-0.3.6.dmg" sparkle:shortVersionString="0.3.6" sparkle:version="202412231733" length="13265373" type="application/octet-stream"/>
+        </item>
+        <item>
+            <title>Version 0.3.3</title>
+            <pubDate>Wed, 25 Jun 2021 12:09:00 +0600</pubDate>
+            <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+            <sparkle:releaseNotesLink>https://profilecreator.github.io/releasenotes/v0.3.3.html</sparkle:releaseNotesLink>
+            <enclosure url="https://github.com/ProfileCreator/ProfileCreator/releases/download/v0.3.3/ProfileCreator-v0.3.3-UNSIGNED.zip" sparkle:shortVersionString="0.3.3" sparkle:version="202009171135" length="13437454" type="application/octet-stream"/>
+        </item>
+        <item>
             <title>Version 0.3.2</title>
             <pubDate>Wed, 17 Jul 2019 10:32:55 +0200</pubDate>
             <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
